@@ -1,43 +1,74 @@
-<section>
-  <nav class="position-relative navbar navbar-expand-lg navbar-light">
-    <div class="container text-center ">
-      <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag "logo.svg", width: 50 %>
-      <% end %>
-      <button class="navbar-toggler" type="button" data-toggle="side-menu" data-target="#sideMenu04" aria-controls="sideMenu04" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav position-absolute top-50 left-50 translate-middle">
-          <li class="nav-item mr-4"><a class="nav-link" href="#">Créer son activité</a></li>
-          <li class="nav-item mr-4"><a class="nav-link" href="#">Modifier son activité</a></li>
-          <li class="nav-item mr-4"><a class="nav-link" href="#">Créer son activité</a></li>
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+  <%= link_to "/" , class: "navbar-brand" do %>
+    <%= image_tag "logo.svg", width: 40 %>
+  <% end %>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownId">
+          <a class="dropdown-item" href="#">Action 1</a>
+          <a class="dropdown-item" href="#">Action 2</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav class="position-relative navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <%= link_to "/" , class: "navbar-brand" do %>
+      <%= image_tag "logo.svg", width: 40 %>
+    <% end %>
+    <button class="navbar-toggler" type="button" data-toggle="side-menu" data-target="#sideMenu04" aria-controls="sideMenu04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav position-absolute top-50 left-50 translate-middle">
+        <li class="nav-item mr-4"><a class="nav-link" href="#">Créer son activité</a></li>
+        <li class="nav-item mr-4"><a class="nav-link" href="#">Modifier son activité</a></li>
+        <li class="nav-item mr-4"><a class="nav-link" href="#">Créer son activité</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Articles</a></li>
+        <li></li>
+      </ul>
+      <div class="ml-auto"><a class="btn btn-outline-primary mr-2 rounded-pill" href="#">Se connecter</a><a class="btn btn-primary rounded-pill" href="#">Créer un compte</a></div>
+      <%= link_to "My Dashboard" ,  "#", class: "dropdown-item" %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="d-none fixed-top top-0 bottom-0" id="sideMenu04">
+  <div class="position-absolute top-0 right-0 bottom-0 left-0 bg-dark" style="opacity: 0.7"></div>
+  <nav class="navbar navbar-light position-absolute top-0 bottom-0 left-0 w-75 pt-3 pb-4 px-4 bg-white" style="overflow-y: auto;">
+    <div class="d-flex flex-column w-100 h-100">
+      <div class="d-flex justify-content-between mb-4">
+        <%= link_to "/" do %>
+          <%= image_tag "logo.svg", width: 40 %>
+        <% end %>
+        <button class="btn-close" type="button" data-toggle="side-menu" data-target="#sideMenu04" aria-controls="sideMenu04" aria-label="Close"></button>
+      </div>
+      <div>
+        <ul class="navbar-nav mb-4">
+          <li class="nav-item"><a class="nav-link" href="#">Créer son activité</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Modifier son activité</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Créer son activité</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Articles</a></li>
         </ul>
-        <div class="ml-auto"><a class="btn btn-outline-primary mr-2" href="#">Se connecter</a><a class="btn btn-primary" href="#">Créer un compte</a></div>
+        <div class="border-top pt-4 mb-5"><a class="btn btn-outline-primary w-100 mb-2 rounded-pill" href="#">Log in</a><a class="btn btn-primary w-100 rounded-pill" href="#">Sign up</a></div>
       </div>
     </div>
   </nav>
-  <div class="d-none fixed-top top-0 bottom-0" id="sideMenu04">
-    <div class="position-absolute top-0 right-0 bottom-0 left-0 bg-dark" style="opacity: 0.7"></div>
-    <nav class="navbar navbar-light position-absolute top-0 bottom-0 left-0 w-75 pt-3 pb-4 px-4 bg-white" style="overflow-y: auto;">
-      <div class="d-flex flex-column w-100 h-100">
-        <div class="d-flex justify-content-between mb-4">
-          <%= link_to "#" do %>
-            <%= image_tag "logo.svg", width: 50 %>
-          <% end %>
-          <button class="btn-close" type="button" data-toggle="side-menu" data-target="#sideMenu04" aria-controls="sideMenu04" aria-label="Close"></button>
-        </div>
-        <div>
-          <ul class="navbar-nav mb-4">
-            <li class="nav-item"><a class="nav-link" href="#">Créer son activité</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Modifier son activité</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Créer son activité</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Articles</a></li>
-          </ul>
-          <div class="border-top pt-4 mb-5"><a class="btn btn-outline-primary w-100 mb-2" href="#">Log in</a><a class="btn btn-primary w-100" href="#">Sign up</a></div>
-        </div>
-      </div>
-    </nav>
-  </div>
+</div>
 </section>
+b4-nav
