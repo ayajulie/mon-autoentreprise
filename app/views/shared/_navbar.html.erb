@@ -1,35 +1,31 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
+<section id="navbar">
+  <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top ">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <%= link_to "/" , class: "navbar-brand" do %>
+          <%= image_tag "logo.svg", width: 40 %>
+        <% end %>
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+          <li class="nav-item"><%= link_to "Créer son activité", "#", class: "nav-link text-primary" %></li>
+          <li class="nav-item"><%= link_to "Modifier son activité", "#", class: "nav-link text-primary" %></li>
+          <li class="nav-item"><%= link_to "Créer son activité", "#", class: "nav-link text-primary" %></li>
+          <li class="nav-item"><%= link_to "Articles", "#", class: "nav-link text-primary" %></li>
+        </ul>
+        <nav class="navbar navbar-light bg-light">
+          <% if user_signed_in? %>
+            <a class="nav-item dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false"><img class="rounded-circle"
+                            src="https://via.placeholder.com/50" alt="avatar"></a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><%= link_to "My Dashboard" , "#", class: "dropdown-item text-primary" %></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item text-primary" %></li>
+            </ul>
+          <% else %>
+            <%= link_to "Se Connecter", new_user_session_path, class: "nav-link btn btn-sm btn-outline-primary rounded-pill  nav-item", id:"login" %>
+            <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link btn btn-sm  btn-primary rounded-pill  nav-item" %>
+          <% end %>
+        </nav>
+      </div>
+    </div>
+  </nav>
+</section>
