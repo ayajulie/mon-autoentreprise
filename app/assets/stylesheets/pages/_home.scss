@@ -1,2 +1,46 @@
 // Specific CSS for your home-page
+
+
+.col-8 {
+   padding: 150px;
+   top:25px;
+   line-height: 100px;
+}
+
+.container-fluid bg-grey {
+  text-align: center;
+}
+
+.row {
+  padding:100px;
+}
+
+h4{
+  text-align:center;
+}
+
+
+
+.presentation {
+  text-align:center;
+}
+
+.container-fluid {
+  background-color:#DCEBF9;
+  font-color:white;
+}
+
+ #pub {
+
+   background-color: #DCDCDC;
+   height:250px;
+   padding : 75px;
+ }
+
+ .container-fluid bg-grey{
+  background-color :#DCDCDC!important;
+ }
+
+
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;1,400&display=swap");
+
