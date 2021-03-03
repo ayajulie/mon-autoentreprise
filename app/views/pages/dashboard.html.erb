@@ -1,0 +1,41 @@
+<div class="container-fluid px-0">
+  <div class="dashboard-container ">
+    <div class="row">
+      <%# vertical navigation %>
+      <div class="col-2  no-float sidebar bg-primary pl-5 pt-5 fixed-top">
+        <table class="user-info pb-10">
+          <td> <i class="fas fa-user-circle fa-2x text-white"></i></td>
+          <td>
+            <p class="text-white pl-3">current_user.name</p>
+            <p class="text-white pl-3"><%= current_user.email %></p>
+          </td>
+        </table>
+        <div class="nav-link py-2">
+          <i class="fas fa-concierge-bell pr-1 text-white"></i>
+          <a class="text-white sidebar-link" href="#"> Mes Services</a>
+        </div>
+        <div class="nav-link py-2">
+          <i class="fas fa-info pr-3 text-white"></i>
+          <a class="text-white sidebar-link" href="#">Mes Informations</a>
+        </div>
+        <div class="nav-link py-2">
+          <i class="fa fa-calculator pr-2 text-white"></i>
+          <a class="text-white sidebar-link" href="#">Calculer mes Charges</a>
+        </div>
+        <div class="nav-link py-2">
+          <i class="fas fa-file-invoice pr-2 text-white"></i>
+          <a class="text-white sidebar-link" href="#">Générer une Facture</a>
+        </div>
+        <div class="nav-link py-2">
+          <a class="text-white sidebar-link" href="#">Mes Démarches</a>
+        </div>
+        <div class="nav-link py-2">
+          <i class="fas fa-bell pr-2 text-white"></i>
+          <a class="text-white sidebar-link" href="#">Mes Notifications</a>
+        </div>
+      </div>
+      <div class="col-6">
+      </div>
+    </div>
+  </div>
+</div>
