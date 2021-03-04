@@ -1,12 +1,12 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.dropdown-toggle::after {
+  content: none;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+#login {
+  margin-right: 6px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-item {
+  font-family: "Mulish", sans-serif;
+  font-weight: 500;
 }
