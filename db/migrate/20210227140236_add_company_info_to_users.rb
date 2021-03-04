@@ -5,7 +5,6 @@ class AddCompanyInfoToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :company_city, :string
     add_column :users, :company_zipcode, :string
     add_column :users, :company_country, :string
-    add_column :users, :company_country, :string
 
     add_column :users, :start_activity, :datetime
     add_column :users, :seasonal_activity, :boolean

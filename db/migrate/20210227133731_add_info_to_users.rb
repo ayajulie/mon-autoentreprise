@@ -15,15 +15,12 @@ class AddInfoToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :address, :string
     add_column :users, :city, :string
     add_column :users, :zipcode, :string
-    add_column :users, :country :string
+    add_column :users, :country, :string
 
     add_column :users, :spouse_working_in_company, :boolean
 
-    add_column :users, :email, :string
     add_column :users, :phone_number, :string
     add_column :users, :ssn, :string
     add_column :users, :remarks, :string
-
-
   end
 end
