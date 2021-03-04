@@ -1,20 +1,17 @@
 // Specific CSS for your home-page
 
-.col-8 {
+#col {
    padding: 150px;
    top:25px;
    line-height: 100px;
 }
 
-.container-fluid bg-grey {
-  text-align: center;
-}
 
-.row {
+ #cadre {
   padding:100px;
 }
 
-h4{
+#title-middle{
   text-align:center;
 }
 
@@ -24,7 +21,7 @@ h4{
   text-align:center;
 }
 
-.container-fluid {
+#frame {
   background-color:#DCEBF9;
   font-color:white;
 }
@@ -36,7 +33,8 @@ h4{
    padding : 75px;
  }
 
- .container-fluid bg-grey{
-  background-color :#DCDCDC!important;
+#frame-fluid{
+  background-color:#DCEBF9;
+  text-align: center;
  }
 
