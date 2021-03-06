@@ -1,0 +1,8 @@
+<%= simple_form_for invoice do |f| %>
+  <%= f.input :name %>
+  <%= f.input :object %>
+  <%= f.input :amount %>
+  <%= f.input :date %>
+  <%= f.input :client, as: :select, collection: Client.all.map{[client]}%>
+  <%= f.button :submit %>
+<% end -%>
