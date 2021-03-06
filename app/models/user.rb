@@ -5,12 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   def form_user_filled?
-    # to do =
+    first_name.present? && last_name.present? && birth_last_name.present?
   end
 
- def form_company_filled?
-    # to do =
+  def form_company_at_least_one_filled?
+    company_name.present? || company_address.present?
   end
 
-
+  def form_company_all_filled?
+    company_name.present? && company_address.present?
+  end
 end

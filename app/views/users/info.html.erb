@@ -1,0 +1,8 @@
+<% if @user.form_user_filled? == false %>
+  <%= link_to "Continue to fill your personal information", personal_info_users_path  %>
+<% elsif @user.form_company_all_filled? == false  %>
+  <%= link_to "Continue to fill your company information", personal_info_users_path  %>
+<% else %>
+  <p>Tout est renseigné!!</p>
+  <p>Générer votre Cerfa</p>
+<% end %>
