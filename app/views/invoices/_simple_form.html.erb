@@ -3,6 +3,6 @@
   <%= f.input :object %>
   <%= f.input :amount %>
   <%= f.input :date %>
-  <%= f.input :client, as: :select, collection: Client.all.map{[client]}%>
+  <%= f.association :client %>
   <%= f.button :submit %>
 <% end -%>
