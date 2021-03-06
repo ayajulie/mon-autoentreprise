@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/info', to: 'pages#information'
   get'/dashboard', to: 'pages#dashboard'
+  get '/fill', to: 'pages#fill'
+  get '/download', to: 'pages#download'
 
   resources :personal_info_users, only: [:edit, :create]
   resources :company_info_users, only: [:edit, :create]
