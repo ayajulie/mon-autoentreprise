@@ -3,4 +3,16 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def form_user_filled?
+    first_name.present? && last_name.present? && birth_last_name.present?
+  end
+
+  def form_company_at_least_one_filled?
+    company_name.present? || company_address.present?
+  end
+
+  def form_company_all_filled?
+    company_name.present? && company_address.present?
+  end
 end
