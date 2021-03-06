@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/info', to: 'pages#information'
+  get'/dashboard', to: 'pages#dashboard'
 
   scope '/dashboard' do
     get '/personal_info_users', to: 'users#personal_info_users'
