@@ -2,9 +2,6 @@ class InvoicesController < ApplicationController
 
   before_action :set_client, only: [:edit, :upadate, :destroy]
 
-  def index
-    @invoices = Invoice.all
-  end
 
   def new
     @invoice = Invoice.new
@@ -12,6 +9,7 @@ class InvoicesController < ApplicationController
 
   def show
     @invoice=Invoice.find(params[:id])
+    @invoices = Invoice.all
   end
 
   def create
