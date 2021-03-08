@@ -3,6 +3,6 @@
   <%= f.input :object %>
   <%= f.input :amount %>
   <%= f.input :date %>
-  <%= f.association :client %>
+  <%= f.association :client, label_method: :client, value_method: :id, include_blank: false %>
   <%= f.button :submit %>
 <% end -%>
