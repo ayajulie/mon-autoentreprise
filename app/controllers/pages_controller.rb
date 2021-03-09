@@ -17,7 +17,7 @@ class PagesController < ApplicationController
              'ENTREPRENEUR INDIVIDUEL (EI)' => 'On',
              'Nom dusage' => @user.use_name,
              'Pr&#233;noms' => @user.first_name,
-             'M' => @user.gender = 'M' ? 'On' : 'Off' }
+             'M' => @user.gender == 'M' ? 'On' : 'Off' }
     pdftk.fill_form pdf_name, @file_name, data
     # type: "application/pdf"
   end
