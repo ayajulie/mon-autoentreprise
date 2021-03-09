@@ -12,10 +12,12 @@ class InvoicesController < ApplicationController
     @invoices = Invoice.all
   end
 
+
   def create
     @invoice = Invoice.new(invoice_params)
+    @invoice.user = current_user
     if @invoice.save
-        redirect_to invoice_path
+        redirect_to info_path
     else
         render "new"
     end
@@ -31,6 +33,15 @@ class InvoicesController < ApplicationController
       redirect_to invoice
   end
 
+  def calculate
+    @invoices = Invoice.all
+     @turn_over = 0
+    @invoices.each do |invoice|
+    @turn_over += invoice.amount
+    @charge_sociale = @turn_over*0.22
+    end
+  end
+
   def destroy
     @invoice = Invoice.find(params[:id])
     @invoice.destroy
@@ -38,9 +49,10 @@ class InvoicesController < ApplicationController
   end
 
   private
+  require 'date'
 
   def invoice_params
-        params.require(:invoice).permit(:name, :amount, :object, :date, :client_id)
+      params.require(:invoice).permit(:object, :amount, :date, :user_id, :client_id)
   end
 
   def set_client

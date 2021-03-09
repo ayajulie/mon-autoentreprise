@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/info', to: 'pages#information'
+  get '/invoices/calculate', to: 'invoices#calculate'
 
   resources :personal_info_users, only: [:edit, :create]
   resources :company_info_users, only: [:edit, :create]
