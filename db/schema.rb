@@ -10,11 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
+ActiveRecord::Schema.define(version: 2021_03_06_130843) do
+=======
+
 ActiveRecord::Schema.define(version: 2021_03_04_185320) do
 =======
 ActiveRecord::Schema.define(version: 2021_03_06_095014) do
->>>>>>> c4ac640fe3480a9852339a659ae2cfa1514c3f13
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +29,21 @@ ActiveRecord::Schema.define(version: 2021_03_06_095014) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_clients_on_user_id"
+  end
+
+  create_table "invoices", force: :cascade do |t|
+    t.string "name"
+    t.string "object"
+    t.integer "amount"
+    t.integer "pretaxamout"
+    t.integer "postaxmout"
+    t.datetime "date"
+    t.bigint "client_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_invoices_on_client_id"
+    t.index ["user_id"], name: "index_invoices_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,4 +96,6 @@ ActiveRecord::Schema.define(version: 2021_03_06_095014) do
   end
 
   add_foreign_key "clients", "users"
+  add_foreign_key "invoices", "clients"
+  add_foreign_key "invoices", "users"
 end

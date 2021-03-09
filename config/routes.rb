@@ -3,6 +3,15 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/info', to: 'pages#information'
+
+  get '/invoices/calculate', to: 'invoices#calculate'
+
+  resources :personal_info_users, only: [:edit, :create]
+  resources :company_info_users, only: [:edit, :create]
+
+
+  namespace :dashboard do
+
   get'/dashboard', to: 'pages#dashboard'
 
   scope '/dashboard' do
@@ -10,6 +19,7 @@ Rails.application.routes.draw do
     get '/company_info_users', to: 'users#company_info_users'
     get '/info', to: 'users#info', as: "toto"
     resources :invoices
+
     resources :taxes, only: [:index]
   end
 
