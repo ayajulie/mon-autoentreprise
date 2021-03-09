@@ -12,7 +12,7 @@ class PagesController < ApplicationController
     pdftk_path = ENV['PDFTK_PATH']
     pdf_name = '/public/asset/cerfa.pdf'
     pdftk = PdfForms.new(pdftk_path)
-    data = { 'NOM DE NAISSANCE' => 'KOFFI',
+    data = { 'NOM DE NAISSANCE' => 'user.birth_last_name',
              'ENTREPRENEUR INDIVIDUEL (EI)' => 'On' }
     pdftk.fill_form pdf_name, @file_name, data
     # type: "application/pdf"
