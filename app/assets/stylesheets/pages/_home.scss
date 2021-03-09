@@ -1,31 +1,39 @@
 // Specific CSS for your home-page
 
-.col-8 {
-  padding: 150px;
-  top: 25px;
-  line-height: 100px;
+
+#col {
+   padding: 150px;
+   top:25px;
+   line-height: 100px;
 }
 
-.container-fluid bg-grey {
+
+ #cadre {
+  padding:100px;
+}
+
+#title-middle{
+  text-align:center;
+}
+
+
+
+#frame {
+  background-color:#DCEBF9;
+  font-color:white;
+}
+
+ #pub {
+
+   background-color: #DCDCDC;
+   height:250px;
+   padding : 75px;
+ }
+
+#frame-fluid{
+  background-color:#DCEBF9;
   text-align: center;
-}
-
-.row {
-  padding: 100px;
-}
-
-h4 {
-  text-align: center;
-}
-
-.presentation {
-  text-align: center;
-}
-
-.container-fluid {
-  background-color: #dcebf9;
-  font-color: white;
-}
+ }
 
 #pub {
   background-color: #dcdcdc;
@@ -33,6 +41,3 @@ h4 {
   padding: 75px;
 }
 
-.container-fluid bg-grey {
-  background-color: #dcdcdc !important;
-}

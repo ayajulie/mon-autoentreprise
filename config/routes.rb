@@ -3,14 +3,26 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/info', to: 'pages#information'
+
   get '/invoices/calculate', to: 'invoices#calculate'
 
   resources :personal_info_users, only: [:edit, :create]
   resources :company_info_users, only: [:edit, :create]
-  resources :invoices
+
 
   namespace :dashboard do
+
+  get'/dashboard', to: 'pages#dashboard'
+
+  scope '/dashboard' do
+    get '/personal_info_users', to: 'users#personal_info_users'
+    get '/company_info_users', to: 'users#company_info_users'
+    get '/info', to: 'users#info', as: "toto"
+    resources :invoices
+
     resources :taxes, only: [:index]
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :users, only: [:update] # Pas propre car current_user donc pas besoin d'id mais choisi par Joseph pour faciliter les simple forms
+   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
