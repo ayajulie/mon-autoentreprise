@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :company_info_users, only: [:edit, :create]
 
 
-  namespace :dashboard do
+
 
   get'/dashboard', to: 'pages#dashboard'
 
@@ -27,7 +27,6 @@ Rails.application.routes.draw do
 
     resources :taxes, only: [:index]
   end
-
   resources :users, only: [:update] # Pas propre car current_user donc pas besoin d'id mais choisi par Joseph pour faciliter les simple forms
    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
