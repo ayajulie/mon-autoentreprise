@@ -1,39 +1,28 @@
 // Specific CSS for your home-page
 
-
 #col {
-   padding: 150px;
-   top:25px;
-   line-height: 100px;
+  padding: 150px;
+  top: 25px;
+  line-height: 100px;
 }
 
-
- #cadre {
-  padding:100px;
+#cadre {
+  padding: 100px;
 }
 
-#title-middle{
-  text-align:center;
+#title-middle {
+  text-align: center;
 }
 
-
+#h4 {
+  text-align: center;
+}
 
 #frame {
-  background-color:#DCEBF9;
-  font-color:white;
+  background-color: #dcebf9;
+  font-color: white;
+  height: 450px;
 }
-
- #pub {
-
-   background-color: #DCDCDC;
-   height:250px;
-   padding : 75px;
- }
-
-#frame-fluid{
-  background-color:#DCEBF9;
-  text-align: center;
- }
 
 #pub {
   background-color: #dcdcdc;
@@ -41,3 +30,37 @@
   padding: 75px;
 }
 
+
+#frame_fluid {
+  background-color: #dcebf9;
+  text-align: center;
+  padding:20px;
+  height:600px;
+}
+
+#pub {
+  background-color: #de6e6e5;
+  height: 250px;
+  padding: 75px;
+}
+
+#frame_one {
+ padding: 25px;
+ position:center;
+ margin: 0 auto;
+ width: 100px;
+ padding-top: 100px;
+}
+
+#frame_fluid {
+ padding: 40px;
+}
+
+#New_letter {
+padding:40px;
+}
+
+#dashboard{
+padding:40px;
+padding-top:40px;
+}
