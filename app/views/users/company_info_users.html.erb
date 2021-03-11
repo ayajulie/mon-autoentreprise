@@ -1,9 +1,26 @@
 <div class="container">
    <%= simple_form_for @user do |f| %>
-    <%= f.input :company_name %>
-    <%= f.input :company_address %>
+    <%= f.input :company_name, placeholder: 'Nom commercial' %>
+    <%= f.input :company_address, label: "Adresse de l'établissement" %>
+    <%= f.input :company_city, label: 'Commune' %>
+    <%= f.input :company_zipcode, label: 'Code postal' %>
+    <%= f.input :company_country, label: 'Pays' %>
+    <%= f.input :start_activity, label: "Début de l'activité", as: :date, order: [:day, :month, :year] %>
+    <%= f.input :seasonal_activity, label: "Activité permanente", as: :select  %>
+    <%= f.input :itinerant_activity, label: "Activité saisonnière", as: :select  %>
+    <%= f.input :main_activity_freetext, label: "Activité principale" %>
+    <%= f.input :main_activity_choose, collection: ["Commerce de détail en magasin", "Commerce de détail sur marché", "Commerce de détail sur Internet",
+                                          "Commerce de gros Fabrication", "Production", "Bâtiment", "travaux publics", "Autre"] %>
+    <%= f.input :employee, label: "Effectif salarié", as: :select %>
+    <%= f.input :partner, as: :select %>
+    <%= f.input :individual_entrepreneur, as: :select %>
+    <%= f.input :bic_status, as: :select %>
+    <%= f.input :contribution_periodicity, collection: ["Mensuelle", "Trimestrielle"] %>
+    <%= f.input :other_activity, as: :select %>
+    <%= f.input :income_tax_lump_payment, as: :select %>
     <%= f.submit %>
   <% end %>
 
 
 </div>
+

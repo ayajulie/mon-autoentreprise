@@ -35,7 +35,13 @@ before_action :set_user
   private
 
   def user_params
-  params.require(:user).permit(:first_name, :last_name, :birth_last_name, :company_name, :company_address)
+  params.require(:user).permit(:first_name, :last_name, :birth_last_name, :use_name, :pseudonym, :citizenship,
+    :gender, :birth_city, :birth_department, :birth_country, :address, :city, :zipcode, :country, :spouse_working_in_company,
+    :phone_number, :ssn, :remarks,
+    :company_name, :company_address, :company_city, :company_city, :company_zipcode, :company_country,
+    :start_activity, :seasonal_activity, :itinerant_activity, :main_activity_freetext, :employee,
+    :partner, :siren, :individual_entrepreneur, :bic_status, :contribution_periodicity, :other_activity, :income_tax_lump_payment
+    )
   end
 
   def set_user
@@ -43,3 +49,5 @@ before_action :set_user
   end
 
 end
+
+
