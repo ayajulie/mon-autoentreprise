@@ -12,6 +12,7 @@ class PagesController < ApplicationController
     @file_name = "/tmp/2021_User.pdf"
     pdftk_path = ENV['PDFTK_PATH']
     pdf_name = '/public/asset/cerfa.pdf'
+    # prenom = CGI.unescapeHTML('Pr&#233;noms')
     pdftk = PdfForms.new(pdftk_path)
     data = { 'NOM DE NAISSANCE' => @user.birth_last_name,
              'ENTREPRENEUR INDIVIDUEL (EI)' => 'On',
