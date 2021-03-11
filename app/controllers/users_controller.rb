@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 before_action :set_user
+before_action :authenticate_user!
 
   def personal_info_users
     if @user.form_user_filled?

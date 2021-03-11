@@ -11,8 +11,6 @@ Rails.application.routes.draw do
 
   get '/invoices/calculate', to: 'invoices#calculate'
 
-  resources :personal_info_users, only: [:edit, :create]
-  resources :company_info_users, only: [:edit, :create]
 
 
 
@@ -20,7 +18,7 @@ Rails.application.routes.draw do
   get'/dashboard', to: 'pages#dashboard'
 
   scope '/dashboard' do
-    get '/personal_info_users', to: 'users#personal_info_users'
+    get '/personal_info_users', to: 'users#personal_info_users', as: 'personal_info_users'
     get '/company_info_users', to: 'users#company_info_users'
     get '/info', to: 'users#info', as: "toto"
     resources :invoices
