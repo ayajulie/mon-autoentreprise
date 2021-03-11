@@ -8,3 +8,5 @@
 
 Client.create(user_id: "1", client: "Astra", amout: "50")
 Client.create(user_id: "1",client: "Volvo", amout: "5")
+
+
