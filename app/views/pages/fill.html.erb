@@ -5,5 +5,22 @@
     <td>Nom</td>
     <td><%= current_user.birth_last_name %></td>
   </tr>
-</table>
-<%= link_to "Téléchargez votre cerfa", download_path %>
+  <tr>
+    <td>Prénom</td>
+    <td><%= current_user.first_name %></td>
+  </tr>
+  <tr>
+    <tr>
+      <td>Nom d'usage</td>
+      <td><%= current_user.use_name %></td>
+    </tr>
+    <tr>
+      <td>Nationalité</td>
+      <td><%= current_user.citizenship %></td>
+    </tr>
+    <tr>
+      <td>Pseudonyme</td>
+      <td><%= current_user.pseudonym %></td>
+    </tr>
+  </table>
+  <%= link_to "Téléchargez votre cerfa", download_path %>
