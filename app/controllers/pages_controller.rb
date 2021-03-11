@@ -23,8 +23,6 @@ class PagesController < ApplicationController
   end
 
   def download
-    @user = current_user
-
-    send_file "/tmp/cerfa_15253_06_#{@user.first_name}_#{@user.birth_last_name}.pdf"
+    send_file "/tmp/2021_User.pdf"
   end
 end
