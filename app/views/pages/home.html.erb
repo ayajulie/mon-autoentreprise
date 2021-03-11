@@ -1,9 +1,9 @@
 
 
-<div class="container-fluid">
+<div class="container-fluid" id="frame">
 
  <div class="row">
-  <div class="col-sm-7">
+  <div class="col-sm-7" id ="frame_one">
 <h2>Mon auto-entreprise</h2>
 
 <br>
@@ -12,66 +12,57 @@
 <%= link_to "Je me lance", " new_user_session_path", class: "btn btn-outline-dark" %>
 
 </div>
-  <div class="col-sm-4">
+  <div class="col-sm-4" id="frame_one">
 
-  <img src="/Users/Geoffroy/destkop/image1.jpg" alt="Card image">
+  <img src="" alt="Card image">
 
 
 </div>
 </div>
 
-<div class="container-fluid" id="frame">
-  <div class="row" id="cadre">
-    <div class="col-sm-7">
-      <h2>Mon auto-entreprise</h2>
-      <br>
-      <p>Le site qui vous aide à réaliser toutes les démarches administratives pour votre auto entreprise.</p>
-      <%= link_to "Je me lance",  personal_info_users_path, class: "btn btn-outline-dark" %>
-    </div>
-    <div class="col-sm-4">
-      <img src="/Users/Geoffroy/destkop/image1.jpg" alt="Card image">
+</div>
+<div class="container-fluid" id="pub">
+  <h4 id= "h4">Pourquoi nous rejoindre?</h4>
+  <p class="presentation" id="h4">L'équipe de Mon auto-entreprise vous accompagne dans les démarches administratives et la gestion de votre société.</p>
+  <br>
+  <p class="presentation" id="h4"> Nous nous tenons à disposition pour toutes informations complémentaires</p>
+</div>
+<div class="container-fluid" id="frame_fluid">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Créer son activité</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
     </div>
   </div>
-
-</div>
-<div class="container-fluid bg-grey" id="pub">
-  <h4 id= "h4">Pourquoi nous rejoindre?</h4>
-  <p class="presentation">L'équipe de Mon auto-entreprise vous accompagne dans les démarches administratives et la gestion de votre société.</p>
-  <br>
-  <p class="presentation"> Nous nous tenons à disposition pour toutes informations complémentaires</p>
-</div>
-<div class="container-fluid bg-grey" id="frame-fluid">
-  <div class="row row-cols-1 row-cols-md-3 g-4" id="cadre">
-    <div class="col">
-      <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Créer son activité </h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Modifier son activité</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Cesser son activité</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Modifier son activité</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       </div>
     </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cesser son activité</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+</div>
+  <br>
+  <br>
+  <br>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-7">
+        <div class="col-sm-7" id="dashboard">
           <h2>Profitez de votre dashboard</h2>
           <br>
           <p>Cet outil vous permettra de connaître tous les éléments de votre facturation et juridique de votre micro-entreprise</p>
@@ -87,36 +78,10 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid" id="frame-fluid">
-      <div class="row" id="cadre">
-        <div class="col-sm-7">
-          <h2>Profitez de votre dashboard</h2>
-          <br>
-          <p>Cet outil vous permettra de connaître tous les éléments de votre facturation et juridique de votre micro-entreprise</p>
-          <%= link_to "Je vois mon dashboard", "#", class: "btn btn-outline-dark" =%>
-        </div>
-        <div class="col-sm-4">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
+
         </div>
       </div>
-    </div>
-  </div>
-  <div class="jumbotron">
-    <div class="row" id="cadre">
-      <div class="col-sm-7">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
+      <div class="col-sm-4" id="New_letter">
         <h2>Inscrivez-vous à notre News-letter</h2>
         <br>
         <p>Suivez toute l'information de la Micro-entreprise</p>

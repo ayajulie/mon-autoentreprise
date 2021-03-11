@@ -14,26 +14,53 @@
   text-align: center;
 }
 
-#frame {
-  background-color: #dcebf9;
-  font-color: white;
-}
-
-#pub {
-  background-color: #dcdcdc;
-  height: 250px;
-  padding: 75px;
-}
-
-
-#frame-fluid {
-  background-color: #dcebf9;
+#h4 {
   text-align: center;
 }
 
+#frame {
+  background-color: #dcebf9;
+  font-color: white;
+  height: 450px;
+}
+
 #pub {
   background-color: #dcdcdc;
   height: 250px;
   padding: 75px;
 }
 
+
+#frame_fluid {
+  background-color: #dcebf9;
+  text-align: center;
+  padding:20px;
+  height:600px;
+}
+
+#pub {
+  background-color: #de6e6e5;
+  height: 250px;
+  padding: 75px;
+}
+
+#frame_one {
+ padding: 25px;
+ position:center;
+ margin: 0 auto;
+ width: 100px;
+ padding-top: 100px;
+}
+
+#frame_fluid {
+ padding: 40px;
+}
+
+#New_letter {
+padding:40px;
+}
+
+#dashboard{
+padding:40px;
+padding-top:40px;
+}
