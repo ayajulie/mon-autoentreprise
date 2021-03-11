@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
 
   def form_user_filled?
-    first_name.present? && last_name.present? && use_name.present? && birth_last_name.present? && citizenship.present? && ssn.present?
+    first_name.present? && use_name.present? && birth_last_name.present? && citizenship.present? && ssn.present?
   end
 
   def form_company_at_least_one_filled?
