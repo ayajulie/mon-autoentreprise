@@ -14,7 +14,8 @@
 </div>
   <div class="col-sm-4" id="frame_one">
 
-  <img src="" alt="Card image">
+  <%= cl_image_tag("first",
+      width: 400, height: 300, crop: :fill) %>
 
 
 </div>
@@ -24,39 +25,43 @@
 <div class="container-fluid" id="pub">
   <h4 id= "h4">Pourquoi nous rejoindre?</h4>
   <p class="presentation" id="h4">L'équipe de Mon auto-entreprise vous accompagne dans les démarches administratives et la gestion de votre société.</p>
-  <br>
   <p class="presentation" id="h4"> Nous nous tenons à disposition pour toutes informations complémentaires</p>
 </div>
 <div class="container-fluid" id="frame_fluid">
   <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+      <%= cl_image_tag("création",
+      width: 426, height: 100, crop: :fill) %>
       <div class="card-body">
         <h5 class="card-title">Créer son activité</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"> VOus avez la phobue administrative ? <br> Créer votre auto-entreprise avec ce site </p>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+       <%= cl_image_tag("transformation",
+      width: 426, height: 100, crop: :fill) %>
       <div class="card-body">
         <h5 class="card-title">Modifier son activité</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"> Le site qui vous propose une modification de votre activité rapide et sans souci.</p>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+     <%= cl_image_tag("stop",
+      width: 426, height: 100, crop: :fill) %>
       <div class="card-body">
         <h5 class="card-title">Cesser son activité</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">Vous pouvez cesser votre activité en un seul clic.</p>
       </div>
     </div>
   </div>
 </div>
+
+
   <br>
   <br>
   <br>
@@ -70,21 +75,35 @@
         </div>
         <div class="col-sm-4">
           <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <%= cl_image_tag("dashboard",
+      width: 400, height: 190, crop: :fill) %>
+
+
             </div>
           </div>
+          <br>
+          <br>
         </div>
       </div>
     </div>
 
+
         </div>
       </div>
-      <div class="col-sm-4" id="New_letter">
+       <div class="row">
+      <div class="col-sm-7" id="New_letter">
         <h2>Inscrivez-vous à notre News-letter</h2>
         <br>
         <p>Suivez toute l'information de la Micro-entreprise</p>
         <%= link_to "Inscrivez-vous", "#", class: "btn btn-outline-dark" %>
       </div>
+       <div class="col-sm-4">
+          <div class="card" style="width: 18rem;">
+              <%= cl_image_tag("newsletter",
+      width: 400, height: 190, crop: :fill) %>
+
+
+            </div>
+          </div>
+        </div>
     </div>
