@@ -29,7 +29,7 @@ before_action :authenticate_user!
     # utilisant current_user.form_company_filled? true = redirige vers l'étape suivante, false màj de la company
   end
 
-  def info
+  def informations
   end
 
 
