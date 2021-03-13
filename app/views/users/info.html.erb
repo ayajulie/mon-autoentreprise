@@ -28,7 +28,7 @@
         <li>
         <% if @user.form_user_filled? == true %>
           <%= link_to(toto_path(tab: "personal_info"), class: "tab-underlined #{'active' if params[:tab] == 'personal_info'}") do %>
-            <i class="fa fa-check" aria-hidden="true" style="color: black"> Informations personnelles</i>
+            <i class="fa fa-check" aria-hidden="true" style="color: black"></i> Informations personnelles
           <% end %>
         <% else %>
           <%= link_to "Informations personnelles", toto_path(tab: "personal_info"), class: "tab-underlined #{'active' if params[:tab] == 'personal_info'}"   %>
@@ -40,7 +40,7 @@
         <li>
         <% if @user.form_company_all_filled? == true %>
           <%= link_to(toto_path(tab: "company_info"), class: "tab-underlined #{'active' if params[:tab] == 'company_info'}") do  %>
-          <i class="fa fa-check" aria-hidden="true" style="color: black"> Informations sur l'entreprise</i>
+          <i class="fa fa-check" aria-hidden="true" style="color: black"></i> Informations de l'entreprise
           <% end %>
         <% else %>
           <%= link_to "Informations de l'entreprise", toto_path(tab: "company_info"), class: "tab-underlined #{'active' if params[:tab] == 'company_info'}"  %>
@@ -51,6 +51,9 @@
         </li>
         <li>
           <% if @user.form_user_filled? == true && @user.form_company_all_filled? == true %>
+            <!-- Rajouter dans la condition la création du CERFA et alors la coche -->
+            <%= link_to "Générer le CERFA", toto_path(tab: "cerfa"), class: "tab-underlined #{'active' if params[:tab] == 'cerfa'}" %>
+          <% else %>
             <%= link_to "Générer le CERFA", toto_path(tab: "cerfa"), class: "tab-underlined #{'active' if params[:tab] == 'cerfa'}" %>
           <% end %>
         </li>

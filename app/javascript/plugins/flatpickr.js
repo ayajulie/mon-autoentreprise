@@ -11,10 +11,27 @@ const initFlatpickr = () => {
     flatpickr(".calendar", {
       altInput: true,
       altFormat: "j F Y",
-      dateFormat: "Y-m-d",
-      "locale": French
+      dateFormat: "dmY",
+      "locale": French,
+      minDate: "today",
+      maxDate: new Date().fp_incr(365)
+    });
+  });
+};
+
+const birthFlatpickr = () => {
+  const calendars = document.querySelectorAll(".birth-calendar")
+  calendars.forEach((calendar) => {
+    flatpickr(".birth-calendar", {
+      altInput: true,
+      altFormat: "j F Y",
+      dateFormat: "dmY",
+      "locale": French,
+      defaultDate: "01011990",
+      maxDate: "01012005"
     });
   });
 };
 
 export { initFlatpickr };
+export { birthFlatpickr };

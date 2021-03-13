@@ -15,3 +15,6 @@ simple_form:
     error_notification:
 
       default_message: "Merci de corriger les erreurs signalées:"
+
+# http://www.ct2c.fr/blog/starter-app-ruby-on-rails-partie-01
+# http://www.ct2c.fr/blog/starter-app-ruby-on-rails-partie-04
