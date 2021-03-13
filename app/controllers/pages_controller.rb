@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @user = current_user
   end
 
   def fill
@@ -34,10 +35,10 @@ class PagesController < ApplicationController
              CGI.unescapeHTML('RENONCIATION &#224; linsaisissabilit&#233; de droit de la r&#') => 'On' }
 
     pdftk.fill_form pdf_name, @file_name, data
-    # type: "application/pdf"
   end
 
   def download
+    @user = current_user
     send_file "/tmp/2021_User.pdf"
   end
 end
