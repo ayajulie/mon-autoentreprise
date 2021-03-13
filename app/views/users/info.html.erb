@@ -1,47 +1,83 @@
-<div class="container">
+<div class="container-fluid px-0">
+  <div class="row">
+    <%# sidebar %>
+    <div class="col  sidebar bg-primary  mt-5 fixed-top">
+      <div class="nav-link py-4">
+        <a class="text-white sidebar-link" href="#"> <i class="fas fa-info pr-3 text-white"></i>Mes Informations</a>
+      </div>
+      <div class="nav-link py-3">
+        <a class="text-white sidebar-link" href="#"> <i class="fas fa-concierge-bell pr-1 text-white"></i>  Mes Services</a>
+      </div>
+      <div class="nav-link py-3">
+        <a class="text-white sidebar-link" href="#"> <i class="fa fa-calculator pr-2 text-white"></i>Mes Charges</a>
+      </div>
+      <div class="nav-link py-3">
+        <a class="text-white sidebar-link" href="#"> <i class="fas fa-file-invoice pr-2 text-white"></i> Générer une Facture</a>
+      </div>
+      <div class="nav-link py-3">
+        <a class="text-white sidebar-link" href="#">Mes Démarches</a>
+      </div>
+      <div class="nav-link py-3">
+        <a class="text-white sidebar-link" href="#"> <i class="fas fa-bell pr-2 text-white"></i>Mes Notifications</a>
+      </div>
+    </div>
 
-  <ul class="list-inline tabs-underlined">
-    <li>
-    <% if @user.form_user_filled? == true %>
-      <%= link_to(toto_path(tab: "personal_info"), class: "tab-underlined #{'active' if params[:tab] == 'personal_info'}") do %>
-        <i class="fa fa-check" aria-hidden="true" style="color: black"> Informations personnelles</i>
-      <% end %>
-    <% else %>
-      <%= link_to "Informations personnelles", toto_path(tab: "personal_info"), class: "tab-underlined #{'active' if params[:tab] == 'personal_info'}"   %>
-    <% end %>
-    </li>
-    <li>
-    <i class="fas fa-arrow-circle-right"></i>
-    </li>
-    <li>
-    <% if @user.form_company_all_filled? == true %>
-      <%= link_to(toto_path(tab: "company_info"), class: "tab-underlined #{'active' if params[:tab] == 'company_info'}") do  %>
-      <i class="fa fa-check" aria-hidden="true" style="color: black"> Informations personnelles</i>
-      <% end %>
-    <% else %>
-      <%= link_to "Informations de l'entreprise", toto_path(tab: "company_info"), class: "tab-underlined #{'active' if params[:tab] == 'company_info'}"  %>
-    <% end %>
-    </li>
-     <li>
-    <i class="fas fa-arrow-circle-right"></i>
-    </li>
-    <li>
-      <% if @user.form_user_filled? == true && @user.form_company_all_filled? == true %>
-        <%= link_to "Générer votre Cerfa", toto_path, class: "btn btn-primary ml-4"  %>
-      <% else %>
-        <%= link_to "Générer votre Cerfa", toto_path, class: "btn btn-secondary ml-4"  %>
-      <% end %>
-    </li>
-  </ul>
+    <div class="dashboard-content">
+      <div >
+      <ul class="list-inline tabs-underlined" >
+        <li>
+        <% if @user.form_user_filled? == true %>
+          <%= link_to(toto_path(tab: "personal_info"), class: "tab-underlined #{'active' if params[:tab] == 'personal_info'}") do %>
+            <i class="fa fa-check" aria-hidden="true" style="color: black"> Informations personnelles</i>
+          <% end %>
+        <% else %>
+          <%= link_to "Informations personnelles", toto_path(tab: "personal_info"), class: "tab-underlined #{'active' if params[:tab] == 'personal_info'}"   %>
+        <% end %>
+        </li>
+        <li>
+        <i class="fas fa-arrow-circle-right"></i>
+        </li>
+        <li>
+        <% if @user.form_company_all_filled? == true %>
+          <%= link_to(toto_path(tab: "company_info"), class: "tab-underlined #{'active' if params[:tab] == 'company_info'}") do  %>
+          <i class="fa fa-check" aria-hidden="true" style="color: black"> Informations sur l'entreprise</i>
+          <% end %>
+        <% else %>
+          <%= link_to "Informations de l'entreprise", toto_path(tab: "company_info"), class: "tab-underlined #{'active' if params[:tab] == 'company_info'}"  %>
+        <% end %>
+        </li>
+         <li>
+        <i class="fas fa-arrow-circle-right"></i>
+        </li>
+        <li>
+          <% if @user.form_user_filled? == true && @user.form_company_all_filled? == true %>
+            <%= link_to "Générer le CERFA", toto_path(tab: "cerfa"), class: "tab-underlined #{'active' if params[:tab] == 'cerfa'}" %>
+          <% end %>
+        </li>
+      </ul>
+      </div>
   <hr>
-
-  <% if params[:tab] == "personal_info" %>
-    toto
-  <% end %>
-
-  <% if params[:tab] == "company_info" %>
-    tata
-  <% end %>
-
-
+    <% if params[:tab] == "personal_info" %>
+      <div class="dashboard-information">
+        <%= render '/users/personal_info_users', locals: { user: @user } %>
+      </div>
+    <% end %>
+    <% if params[:tab] == "company_info" %>
+      <div class="dashboard-information">
+        <%= render '/users/company_info_users', locals: { user: @user } %>
+      </div>
+    <% end %>
+    <% if params[:tab] == "cerfa" %>
+      <div class="dashboard-information">
+         <% if @user.form_user_filled? == true && @user.form_company_all_filled? == true %>
+            <%= link_to "Générer votre Cerfa", toto_path, class: "btn btn-primary ml-4"  %>
+          <% else %>
+            <%= link_to "Générer votre Cerfa", toto_path, class: "btn btn-secondary ml-4"  %>
+          <% end %>
+      </div>
+    <% end %>
+    </div>
+  </div>
 </div>
+
+
