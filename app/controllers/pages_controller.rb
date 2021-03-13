@@ -38,10 +38,7 @@ class PagesController < ApplicationController
   end
 
   def download
-<<<<<<< HEAD
     @user = current_user
-=======
->>>>>>> 579c1c5c3eddf2c6cb26debac103a2416b32858b
     send_file "/tmp/2021_User.pdf"
   end
 end
