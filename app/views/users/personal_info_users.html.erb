@@ -15,7 +15,8 @@
                               start_year: Date.today.year - 10,
                               end_year: Date.today.year - 90,
                               order: [:day, :month, :year],
-                              input_html: {html5: true}
+                              input_html: {html5: true},
+                              input_html: { class: "calendar" }
                               %>
     <%= f.input :birth_department, label: "Département de naissance", collection: ((1..95).to_a+[971, 971, 973, 974, 976]) %>
     <%= f.input :birth_city, label: "Commune de naissance" %>
@@ -30,7 +31,7 @@
     <%= f.input :phone_number, label: "Tél" %>
 
     <%= f.input :remarks, label: "Observations" %>
-    <%= f.submit "Entrer", class: "btn btn-primary"%>
+    <%= f.submit "Cliquez pour enregistrer les informations", class: "btn btn-primary"%>
   <% end %>
 
 </div>
