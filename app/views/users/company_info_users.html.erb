@@ -1,24 +1,49 @@
 <div class="container">
-   <%= simple_form_for @user do |f| %>
-    <%= f.input :company_name, placeholder: 'Nom commercial' %>
-    <%= f.input :company_address, label: "Adresse de l'établissement" %>
+
+
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+      <span class="sr-only">70% Complete</span>
+    </div>
+  </div>
+
+   <%= simple_form_for(@user, remote: true) do |f| %>
+    <!-- <%= f.input :individual_entrepreneur, as: :select %> -->
+<h1>INFORMATIONS PREALABLES</h1>
+    <%= f.input :past_salaried_activity, label: "Avez-vous déjà exercé une activité non salariée", as: :select %>
+    <%= f.input :exercising_mode_declaration, label: "Déclaration relative au mode d'exercice", collection: ["Entrepreneur Individuel", "Entrepreneur individuel à responsabilité limitée"] %>
+    <%= f.input :spouse_working_in_company, label: "Avez-vous un conjoint marié ou pacsé exerçant una activité régulière dans l'entreprise", as: :select %>
+
+<h1>DECLARATION RELATIVE A L’ETABLISSEMENT ET A L’ACTIVITE</h1>
+    <%= f.input :company_address, label: "Adresse de l'entreprise", collection: ["Etablissement où vous exercez votre activité", "Dans une entreprise de domiciliation", "Votre domicile personnel"] %>
+    <%= f.input :establishment_address, label: "Adresse de l'établissement" %>
     <%= f.input :company_city, label: 'Commune' %>
-    <%= f.input :company_zipcode, label: 'Code postal' %>
-    <%= f.input :company_country, label: 'Pays' %>
-    <%= f.input :start_activity, label: "Début de l'activité", as: :date, order: [:day, :month, :year] %>
+    <%= f.input :company_zipcode, label: 'Code postal'%>
+    <%= f.input :company_country, label: 'Pays', priority: [ "France" ], input_html: { class: "select2" }  %>
+    <%= f.input :start_activity, label: "Début de l'activité", input_html: { class: "calendar" } %>
     <%= f.input :seasonal_activity, label: "Activité permanente", as: :select  %>
     <%= f.input :itinerant_activity, label: "Activité saisonnière", as: :select  %>
-    <%= f.input :main_activity_freetext, label: "Activité principale" %>
-    <%= f.input :main_activity_choose, collection: ["Commerce de détail en magasin", "Commerce de détail sur marché", "Commerce de détail sur Internet",
+    <%= f.input :main_activity_freetext, label: "Activité(s) exercée(s) dans l'établissment" %>
+    <%= f.input :main_activity_choose, label: "Activité principale", collection: ["Commerce de détail en magasin", "Commerce de détail sur marché", "Commerce de détail sur Internet",
                                           "Commerce de gros Fabrication", "Production", "Bâtiment", "travaux publics", "Autre"] %>
+    <%= f.input :company_name, label: 'Nom commercial' %>
     <%= f.input :employee, label: "Effectif salarié", as: :select %>
-    <%= f.input :partner, as: :select %>
-    <%= f.input :individual_entrepreneur, as: :select %>
-    <%= f.input :bic_status, as: :select %>
-    <%= f.input :contribution_periodicity, collection: ["Mensuelle", "Trimestrielle"] %>
-    <%= f.input :other_activity, as: :select %>
-    <%= f.input :income_tax_lump_payment, as: :select %>
-    <%= f.submit %>
+    <%= f.input :business_origin, label: "Origine du fonds", collection: ["Création","Location - Gérance", "Achat, Partage, Licitation", "Autre"]%>
+
+
+    <!-- <%= f.input :partner, as: :select %> -->
+    <!-- <%= f.input :bic_status, as: :select %> -->
+
+
+<h1>DECLARATION SOCIALE</h1>
+    <%= f.input :other_activity, label: "Exercice simultanée d'une autre acivité", as: :select %>
+    <%= f.input :contribution_periodicity, label: "Vous êtes au régime micro-social simplifié : périodicité du versement des cotisations", collection: ["Mensuelle", "Trimestrielle"] %>
+
+
+<h1>OPTIONS FISCALES HORS EIRL</h1>
+    <%= f.input :income_tax_lump_payment, label: "Vous relevez du régime microfiscal - Bénéfices Industriels et Commerciaux (BIC) : Option pour le versement libératoire de l’impôt sur le revenu", as: :select %>
+    <%= f.submit "Suivant", class: "btn btn-primary" %>
   <% end %>
 
 

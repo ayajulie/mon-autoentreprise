@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_185249) do
+ActiveRecord::Schema.define(version: 2021_03_13_092024) do
+=======
+ActiveRecord::Schema.define(version: 2021_03_13_081408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "clients", force: :cascade do |t|
     t.string "client"
@@ -70,7 +93,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_185249) do
     t.string "company_city"
     t.string "company_zipcode"
     t.string "company_country"
-    t.datetime "start_activity"
+    t.string "start_activity"
     t.boolean "seasonal_activity"
     t.boolean "itinerant_activity"
     t.string "main_activity_freetext"
@@ -84,11 +107,17 @@ ActiveRecord::Schema.define(version: 2021_03_09_185249) do
     t.boolean "other_activity"
     t.boolean "income_tax_lump_payment"
     t.string "last_name"
-    t.datetime "birth_date"
+    t.string "birth_date"
+    t.string "exercising_mode_declaration"
+    t.string "business_origin"
+    t.string "establishment_address"
+    t.string "paying_agent"
+    t.boolean "past_salaried_activity"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "clients", "users"
   add_foreign_key "invoices", "clients"
   add_foreign_key "invoices", "users"

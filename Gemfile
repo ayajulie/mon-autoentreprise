@@ -27,6 +27,8 @@ gem 'redis', '~> 4.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'cloudinary', '~> 1.16.0'
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'devise'
 
@@ -35,8 +37,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'country_select'
 gem 'pdf-forms'
-
-
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+gem 'cgi'
 
 group :development, :test do
   gem 'pry-byebug'
