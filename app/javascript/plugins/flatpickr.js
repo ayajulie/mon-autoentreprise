@@ -5,7 +5,7 @@ const initFlatpickr = () => {
   calendars.forEach((calendar) => {
     flatpickr(".calendar", {
       altInput: true,
-      altFormat: "F j, Y",
+      altFormat: "j F, Y",
       dateFormat: "Y-m-d",
     });
   });
