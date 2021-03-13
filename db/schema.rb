@@ -11,6 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_03_13_092024) do
+=======
+ActiveRecord::Schema.define(version: 2021_03_13_081408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,7 +77,6 @@ ActiveRecord::Schema.define(version: 2021_03_13_092024) do
     t.string "pseudonym"
     t.string "citizenship"
     t.string "gender"
-    t.string "birth_date"
     t.string "birth_city"
     t.string "birth_department"
     t.string "birth_country"
@@ -92,7 +93,7 @@ ActiveRecord::Schema.define(version: 2021_03_13_092024) do
     t.string "company_city"
     t.string "company_zipcode"
     t.string "company_country"
-    t.datetime "start_activity"
+    t.string "start_activity"
     t.boolean "seasonal_activity"
     t.boolean "itinerant_activity"
     t.string "main_activity_freetext"
@@ -106,6 +107,12 @@ ActiveRecord::Schema.define(version: 2021_03_13_092024) do
     t.boolean "other_activity"
     t.boolean "income_tax_lump_payment"
     t.string "last_name"
+    t.string "birth_date"
+    t.string "exercising_mode_declaration"
+    t.string "business_origin"
+    t.string "establishment_address"
+    t.string "paying_agent"
+    t.boolean "past_salaried_activity"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
