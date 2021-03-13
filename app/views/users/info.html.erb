@@ -1,8 +1,31 @@
-<% if @user.form_user_filled? == false %>
-  <%= link_to "Continue to fill your personal information", personal_info_users_path  %>
-<% elsif @user.form_company_all_filled? == false  %>
-  <%= link_to "Continue to fill your company information", personal_info_users_path  %>
-<% else %>
-  <p>Tout est renseigné!!</p>
-  <p>Générer votre Cerfa</p>
-<% end %>
+<div class="container">
+  <ul>
+    <li>
+      <% if @user.form_user_filled? == true %>
+        <i class="fa fa-check" aria-hidden="true" style="color: green"></i>
+        <%= link_to "Renseigner vos informations personnelles", personal_info_users_path  %>
+      <% else %>
+        <%= link_to "Renseigner vos informations personnelles", personal_info_users_path  %>
+        <%= link_to "Continuer", personal_info_users_path,  class: "btn btn-primary"  %>
+      <% end %>
+    </li>
+    <li>
+      <% if @user.form_company_all_filled? == true %>
+        <i class="fa fa-check" aria-hidden="true" style="color: green"></i>
+        <%= link_to "Renseigner les informations de votre future entreprise", company_info_users_path  %>
+      <% elsif @user.form_company_all_filled? == false && @user.form_user_filled? == true  %>
+        <%= link_to "Renseigner les informations de votre future entreprise", company_info_users_path  %>
+        <%= link_to "Continuer", company_info_users_path, class: "btn btn-primary"  %>
+        <% else %>
+        <%= link_to "Renseigner les informations de votre future entreprise", company_info_users_path  %>
+      <% end %>
+    </li>
+  </ul>
+
+  <% if @user.form_user_filled? == true && @user.form_company_all_filled? == true %>
+    <br>
+    All done
+    <hr>
+    <%= link_to "Générer votre Cerfa", toto_path, class: "btn btn-primary"  %>
+  <% end %>
+</div>
