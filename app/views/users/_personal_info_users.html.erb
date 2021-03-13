@@ -1,0 +1,23 @@
+<%= simple_form_for @user do |f| %>
+  <%= f.input :birth_last_name, label: "Nom de naissance" %>
+  <%= f.input :use_name, label: "Nom d'usage"  %>
+  <%= f.input :first_name, label: "Prénoms" %>
+  <%= f.input :pseudonym, label: "Pseudonyme" %>
+  <%= f.input :citizenship, label: "Nationalité", as: :country, priority: [ "France" ] %>
+  <%= f.input :gender, label: "Sexe", collection: ["M", "F"] %>
+  <%= f.input :birth_date, label: 'Né le', as: :date,
+                              start_year: Date.today.year - 10, end_year: Date.today.year - 90,
+                              order: [:day, :month, :year] %>
+  <%= f.input :birth_department, label: "Dépt", collection: ((1..95).to_a+[971, 971, 973, 974, 976]) %>
+  <%= f.input :birth_city, label: "Commune" %>
+  <%= f.input :birth_country, label: "Pays", as: :country, priority: [ "France" ] %>
+  <%= f.input :address, label: "Domicile", placeholder: "rés, bât, n°, voie, lieu-dit" %>
+  <%= f.input :zipcode, label: "Code postal" %>
+  <%= f.input :city, label: "Commune" %>
+  <%= f.input :country, label: "Pays", as: :country, priority: [ "France" ] %>
+  <%= f.input :spouse_working_in_company, label: "Avez-vous un conjoint marié ou pacsé exerçant una activité régulière dans l'entreprise", as: :select %>
+  <%= f.input :phone_number %>
+  <%= f.input :ssn, label: "Votre n° de sécurité sociale" %>
+  <%= f.input :remarks, label: "Observations" %>
+  <%= f.submit %>
+<% end %>
