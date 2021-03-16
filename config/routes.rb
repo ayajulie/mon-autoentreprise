@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
   get '/invoices/calculate', to: 'invoices#calculate'
-
+  post '/invoices/calculate', to: 'invoices#calculate'
 
   get'/dashboard', to: 'pages#dashboard'
   scope '/dashboard' do

@@ -28,9 +28,9 @@ class InvoicesController < ApplicationController
   end
 
   def update
-      @invoice = Invoice.find(params[:id])
-      @invoice.update!(invoice_params)
-      redirect_to invoice
+    @invoice = Invoice.find(params[:id])
+    @invoice.update!(invoice_params)
+    redirect_to invoice
   end
 
   def calculate
@@ -41,12 +41,14 @@ class InvoicesController < ApplicationController
     @charge_sociale_service = @turn_over*0.22
     @charge_sociale_vente = @turn_over*0.12
 
-    @taxe_consulaire_service = @turn_over*0.013
-    @taxe_consulaire_vente = @turn_over*0.044
     @taxe_chambre_consulaire_vente = @turn_over*0.0015
     @taxe_chambre_consulaire_service = @turn_over*0.0044
+    @income_tax_revente = (@turn_over*0.7)*1.07
+    @income_tax_service = (@turn_over*0.5)
+    @tva = @turn_over*0.20
 
     end
+
   end
 
   def destroy
