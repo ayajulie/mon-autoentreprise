@@ -1,28 +1,21 @@
 <div class="container">
 <p> Votre chiffre d'affaires est égal à <%= @turn_over %> €</p>
   <b>Cotisations sociales</b><br />
+  <% if current_user.main_activity_choose == "commerce de détail" %>
+<p> Vos cotisations Sociales sont égales à <%= @charge_sociale_vente %> €</p>
+  <% else %>
 <p> Vos cotisations Sociales sont égales à <%= @charge_sociale_service %> €</p>
+   <% end %>
 <p>
     <b>Taxe consulaire</b><br />
 </p>
- <form>
-  <div>
-    <input type="checkbox" id="mycheck" name="subscribe" value="service">
-    <label for="subscribeNews">Avez-vous une activité de service ?</label>
-  </div>
-  <div>
-    <button type="submit">Répondre</button>
-  </div>
-</form>
-
 <br>
-
-<p>Votre taxe sur les chambres consulaires est égale à <%= @taxe_chambre_consulaire_service%> </p>
-
-
-
-<p> Vos cotisations Sociales sont égales à <%= @charge_sociale_vente %> €</p>
-<p> Votre taxe sur les chambres Consultaires est égale à <%= @taxe_consulaire_vente %> €</p>
+  <% if current_user.main_activity_choose == "commerce de détail" %>
+<p> Vos cotisations Sociales sont égales à <%= @taxe_chambre_consulaire_service %> €</p>
+  <% else %>
+<p> Votre taxe consulaire est égale à <%= @taxe_chambre_consulaire_service %> €</p>
+   <% end %>
+<p>
 
 </div>
 
