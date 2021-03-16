@@ -16,7 +16,19 @@
 <p> Votre taxe consulaire est égale à <%= @taxe_chambre_consulaire_service %> €</p>
    <% end %>
 <p>
+ <% if current_user.main_activity_choose == "commerce de détail" %>
+<p> Votre impôt sur le revenu à déclarer est égal <%= @income_tax_revente %> €</p>
+  <% else %>
+<p> Votre impôt sur le revenu à déclarer est égal <%= @income_tax_service %> €</p>
+   <% end %>
+<p> Si vous avez choisi d'être assujeti à la TVA, vous devez déclarer le chiffre <%= @tva %>€ </p>
+<% if current_user.main_activity_choose == "commerce de détail" %>
 
+<p> Il vous reste à facturer <%= @restant_a_facture_commerce %> €</p>
+  <% else %>
+
+<p> Votre chiffre d'affaire maximum est de 72 000 €</p>
+   <% end %>
 </div>
 
 
