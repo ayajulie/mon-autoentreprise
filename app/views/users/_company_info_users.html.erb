@@ -3,7 +3,7 @@
 <h2>Informations préalables</h2>
     <%= f.input :past_salaried_activity, label: "Avez-vous déjà exercé une activité non salariée", as: :select %>
     <%= f.input :exercising_mode_declaration, label: "Déclaration relative au mode d'exercice", collection: ["Entrepreneur Individuel", "Entrepreneur individuel à responsabilité limitée"] %>
-    <%= f.input :spouse_working_in_company, label: "Avez-vous un conjoint marié ou pacsé exerçant una activité régulière dans l'entreprise", as: :select %>
+    <%= f.input :spouse_working_in_company, label: "Avez-vous un conjoint marié ou pacsé exerçant une activité régulière dans l'entreprise", as: :select %>
 
 <h2>Déclaration relative à l'établissement et à l'activité</h2>
     <%= f.input :company_address, label: "Adresse de l'entreprise", collection: ["Etablissement où vous exercez votre activité", "Dans une entreprise de domiciliation", "Votre domicile personnel"] %>
@@ -11,13 +11,15 @@
     <%= f.input :company_city, label: 'Commune' %>
     <%= f.input :company_zipcode, label: 'Code postal'%>
     <%= f.input :company_country, label: 'Pays', priority: [ "France" ]  %>
+    <%= f.input :paying_agent_number, label: "Domiciliataire : Numéro unique d'identification" %>
+    <%= f.input :paying_agent, label: "Nom du domiciliataire" %>
     <%= f.input :start_activity, label: "Début de l'activité", input_html: { class: "calendar" } %>
     <%= f.input :seasonal_activity, label: "Activité permanente", as: :select  %>
     <%= f.input :itinerant_activity, label: "Activité saisonnière", as: :select  %>
     <%= f.input :main_activity_freetext, label: "Activité(s) exercée(s) dans l'établissment" %>
     <%= f.input :main_activity_choose, label: "Activité principale",
                                       collection: ["Commerce de détail en magasin", "Commerce de détail sur marché", "Commerce de détail sur Internet",
-                                                  "Commerce de gros Fabrication", "Production", "Bâtiment", "travaux publics", "Autre"] %>
+                                                  "Commerce de gros", "Fabrication, Production", "Bâtiment, travaux publics", "Autre"] %>
     <%= f.input :company_name, label: 'Nom commercial' %>
     <%= f.input :employee, label: "Effectif salarié", as: :select %>
     <%= f.input :business_origin, label: "Origine du fonds", collection: ["Création","Location - Gérance", "Achat, Partage, Licitation", "Autre"]%>
