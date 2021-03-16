@@ -14,7 +14,10 @@ module MonAutoentreprise
       generate.test_framework :test_unit, fixture: false
     end
     # Initialize configuration defaults for originally generated Rails version.
+    config.i18n.default_locale = :fr
+    config.time_zone = "Paris"
     config.load_defaults 6.0
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
