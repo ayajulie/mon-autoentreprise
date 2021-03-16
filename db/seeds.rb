@@ -10,7 +10,7 @@ Client.create(user_id: "1", client: "Astra", amout: "50")
 Client.create(user_id: "1",client: "Volvo", amout: "5")
 
 city =  ["Marseille", "Paris", "Lyon", "Saint-Etienne", "Rouen", "Strasbourg"]
-code_postal = ["69001", "75001", " 13001", " 76000", "67000"," 42000"]
+code_postal = ["69001", "75001", "13001", "76000", "67000","42000"]
 5.times do 
 
    user =  User.create!(

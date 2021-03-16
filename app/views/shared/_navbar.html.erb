@@ -8,7 +8,7 @@
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
           <li class="nav-item"><%= link_to "Créer son activité", new_user_session_path, class: "nav-link text-primary" %></li>
           <li class="nav-item"><%= link_to "Modifier son activité", new_user_session_path, class: "nav-link text-primary" %></li>
-          <li class="nav-item"><%= link_to "Créer son activité", new_user_session_path, class: "nav-link text-primary" %></li>
+          <li class="nav-item"><%= link_to "Cessez son activité", new_user_session_path, class: "nav-link text-primary" %></li>
           <li class="nav-item"><%= link_to "Articles", "#", class: "nav-link text-primary" %></li>
           <li class="nav-item"><%= link_to "cerfa", fill_path, class: "nav-link text-primary" %></li>
         </ul>
@@ -18,8 +18,9 @@
                         data-bs-toggle="dropdown" aria-expanded="false"><img class="rounded-circle"
                             src="https://via.placeholder.com/50" alt="avatar"></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><%= link_to "My Dashboard" , dashboard_path, class: "dropdown-item text-primary" %></li>
-              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item text-primary" %></li>
+              <li><%= link_to "Mon tableau de bord" , dashboard_path, class: "dropdown-item text-primary" %></li>
+              <li><%= link_to "Mes informations", my_informations_path, class: "dropdown-item text-primary" %></li>
+              <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item text-primary" %></li>
             </ul>
           <% else %>
             <%= link_to "Se Connecter", new_user_session_path, class: "nav-link btn btn-sm btn-outline-primary rounded-pill  nav-item", id:"login" %>
