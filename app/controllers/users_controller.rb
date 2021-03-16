@@ -18,9 +18,9 @@ before_action :authenticate_user!
   def update
     @user.update(user_params)
       if @user.form_user_filled? && !@user.form_company_at_least_one_filled?
-        redirect_to company_info_users_path
+        redirect_to toto_path(tab: "company_info")
       elsif @user.form_user_filled? && @user.form_company_all_filled?
-        redirect_to toto_path
+        redirect_to toto_path(tab: "cerfa")
       else
         redirect_to toto_path
       end
