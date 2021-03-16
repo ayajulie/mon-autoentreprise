@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   scope '/dashboard' do
     get '/personal_info_users', to: 'users#personal_info_users', as: 'personal_info_users'
     get '/company_info_users', to: 'users#company_info_users'
-    get '/info', to: 'users#info', as: "toto"
+    get '/my_informations', to: 'users#informations'
     resources :invoices
     resources :taxes, only: [:index]
   end
