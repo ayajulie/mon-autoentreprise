@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get '/personal_info_users', to: 'users#personal_info_users', as: 'personal_info_users'
     get '/company_info_users', to: 'users#company_info_users'
     get '/my_informations', to: 'users#informations'
+    get '/info', to: 'users#info', as: 'toto'
     resources :invoices
     resources :taxes, only: [:index]
   end
