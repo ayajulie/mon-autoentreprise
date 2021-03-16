@@ -16,16 +16,14 @@
       <% elsif @user.form_company_all_filled? == false && @user.form_user_filled? == true  %>
         <%= link_to "Renseigner les informations de votre future entreprise", company_info_users_path  %>
         <%= link_to "Continuer", company_info_users_path, class: "btn btn-primary"  %>
-        <% else %>
+      <% else %>
         <%= link_to "Renseigner les informations de votre future entreprise", company_info_users_path  %>
       <% end %>
     </li>
   </ul>
-
   <% if @user.form_user_filled? == true && @user.form_company_all_filled? == true %>
     <br>
     All done
     <hr>
-    <%= link_to "Générer votre Cerfa", toto_path, class: "btn btn-primary"  %>
   <% end %>
 </div>

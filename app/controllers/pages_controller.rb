@@ -32,7 +32,21 @@ class PagesController < ApplicationController
              'Pays_2' => @user.country,
              'non_1' => @user.spouse_working_in_company == true ? 'On' : 'Off',
              'non_2' => @user.spouse_working_in_company == true ? 'Off' : 'On',
-             CGI.unescapeHTML('RENONCIATION &#224; linsaisissabilit&#233; de droit de la r&#') => 'On' }
+             CGI.unescapeHTML('RENONCIATION &#224; linsaisissabilit&#233; de droit de la r&#') => 'On',
+             'VOTRE N DE SECURITE SOCIALE' => @user.ssn,
+             'trimestrielle' => 'On',
+             'oui_6' => @user.bic_status,
+             'OBSERVATIONS' => @user.remarks,
+             'ADRESSE de correspondance' => @user.address,
+             'Code postal_5' => @user.zipcode,
+             'Commune_8' => @user.city,
+             'DATE DE DEBUT DACTIVITE' => @user.start_activity,
+             'Permanente' => 'On',
+             CGI.unescapeHTML('RENONCIATION &#224; linsaisissabilit&#233; de droit de la r&#') => 'On',
+             CGI.unescapeHTML('Etablissement o&#249; vous exercez votre activit&#233') => 'On',
+             CGI.unescapeHTML('ADRESSE DE LETABLISSEMENT r&#233;s b&#226;t app &#233;tage n voie lieudit 2') => @user.company_address,
+             'Code postal_2' => @user.company_zipcode,
+             'Code Commune_3' => @user.company_city }
 
     pdftk.fill_form pdf_name, @file_name, data
   end

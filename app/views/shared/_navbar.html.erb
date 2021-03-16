@@ -18,8 +18,9 @@
                         data-bs-toggle="dropdown" aria-expanded="false"><img class="rounded-circle"
                             src="https://via.placeholder.com/50" alt="avatar"></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><%= link_to "My Dashboard" , dashboard_path, class: "dropdown-item text-primary" %></li>
-              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item text-primary" %></li>
+              <li><%= link_to "Mon tableau de bord" , dashboard_path, class: "dropdown-item text-primary" %></li>
+              <li><%= link_to "Mes informations", my_informations_path, class: "dropdown-item text-primary" %></li>
+              <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item text-primary" %></li>
             </ul>
           <% else %>
             <%= link_to "Se Connecter", new_user_session_path, class: "nav-link btn btn-sm btn-outline-primary rounded-pill  nav-item", id:"login" %>
