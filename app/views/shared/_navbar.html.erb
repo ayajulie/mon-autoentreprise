@@ -6,11 +6,28 @@
           <%= image_tag "logo.svg", width: 40 %>
         <% end %>
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
-          <li class="nav-item"><%= link_to "Créer son activité", new_user_session_path, class: "nav-link text-primary" %></li>
-          <li class="nav-item"><%= link_to "Modifier son activité", new_user_session_path, class: "nav-link text-primary" %></li>
-          <li class="nav-item"><%= link_to "Cesser son activité", new_user_session_path, class: "nav-link text-primary" %></li>
+          <li class="nav-item">
+            <% if user_signed_in? %>
+              <%= link_to "Créer son activité", company_registration_path(tab: "personal_info"),  class: "nav-link text-primary" %>
+            <% else  %>
+              <%= link_to "Créer son activité", new_user_registration_path, class: "nav-link text-primary" %>
+            <% end  %>
+          </li>
+          <li class="nav-item">
+            <% if user_signed_in? %>
+              <%= link_to "Modifier son activité", services_path, class: "nav-link text-primary" %>
+            <% else  %>
+              <%= link_to "Modifier son activité", new_user_registration_path, class: "nav-link text-primary" %>
+            <% end  %>
+          </li>
+          <li class="nav-item">
+            <% if user_signed_in? %>
+              <%= link_to "Cesser son activité", services_path, class: "nav-link text-primary" %>
+            <% else  %>
+              <%= link_to "Cesser son activité", new_user_registration_path, class: "nav-link text-primary" %>
+            <% end  %>
+          </li>
           <li class="nav-item"><%= link_to "Articles", "#", class: "nav-link text-primary" %></li>
-          <li class="nav-item"><%= link_to "cerfa", cerfa_informations_path, class: "nav-link text-primary" %></li>
         </ul>
         <nav class="navbar navbar-light bg-light">
           <% if user_signed_in? %>

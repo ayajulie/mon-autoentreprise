@@ -8,6 +8,10 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
+  def services
+    @user = current_user
+  end
+
   def cerfa_informations
     @user = current_user
     @file_name = "/tmp/2021_User.pdf"

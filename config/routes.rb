@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     get '/invoices/calculate', to: 'invoices#calculate'
     post '/invoices/calculate', to: 'invoices#calculate'
     get '/my_informations', to: 'users#informations'
-    get '/info', to: 'users#info', as: 'toto'
+    get '/company_registration',  to: 'users#company_registration'
+    get '/services',  to: 'pages#services'
     # get '/personal_info', to: 'users#personal_info_users'
     # get '/company_info', to: 'users#company_info_users'
     resources :invoices
