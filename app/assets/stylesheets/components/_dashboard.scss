@@ -1,17 +1,11 @@
-.dashboard-container {
-  min-height: 100vh;
-  background-color: #eeeeee;
-  position: relative;
-  width: 100%;
-  top: -6px;
-}
-
 .sidebar {
   bottom: 0;
   left: 0;
+  top: 35px;
   min-height: 100vh;
-  position: absolute;
-  width: 100%;
+  position: fixed;
+  padding-top: 20px;
+  width: 17vw;
   z-index: 1;
 }
 
@@ -20,6 +14,18 @@
   font-weight: 500;
 }
 
-table {
-  margin: 10px 0 40px 0;
+.dashboard-content {
+  padding: 7px 0 15px 225px;
+}
+.form-control {
+  border: none;
+  width: 400px;
+  margin-left: 15px;
+}
+h2 {
+  color: #167ffb;
+}
+
+.dashboard-information {
+  padding-left: 100px;
 }

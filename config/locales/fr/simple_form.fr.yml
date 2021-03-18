@@ -1,0 +1,20 @@
+simple_form:
+
+    "yes": 'Oui'
+
+    "no": 'Non'
+
+    required:
+
+      text: 'requis'
+
+      mark: '*'
+
+      html: '<abbr title="requis">**</abbr>'
+
+    error_notification:
+
+      default_message: "Merci de corriger les erreurs signalées:"
+
+# http://www.ct2c.fr/blog/starter-app-ruby-on-rails-partie-01
+# http://www.ct2c.fr/blog/starter-app-ruby-on-rails-partie-04
