@@ -10,7 +10,7 @@
           <li class="nav-item"><%= link_to "Modifier son activité", new_user_session_path, class: "nav-link text-primary" %></li>
           <li class="nav-item"><%= link_to "Cesser son activité", new_user_session_path, class: "nav-link text-primary" %></li>
           <li class="nav-item"><%= link_to "Articles", "#", class: "nav-link text-primary" %></li>
-          <li class="nav-item"><%= link_to "cerfa", fill_path, class: "nav-link text-primary" %></li>
+          <li class="nav-item"><%= link_to "cerfa", cerfa_informations_path, class: "nav-link text-primary" %></li>
         </ul>
         <nav class="navbar navbar-light bg-light">
           <% if user_signed_in? %>
