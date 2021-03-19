@@ -35,20 +35,18 @@ class InvoicesController < ApplicationController
 
   def calculate
     @invoices = Invoice.all
-     @turn_over = 0
+    @turn_over = 0
     @invoices.each do |invoice|
-    @turn_over += invoice.amount
-    @charge_sociale_service = @turn_over*0.22
-    @charge_sociale_vente = @turn_over*0.12
+      @turn_over += invoice.amount
+      @charge_sociale_service = (@turn_over*0.22).round(2)
+      @charge_sociale_vente = (@turn_over*0.12).round(2)
 
-    @taxe_chambre_consulaire_vente = @turn_over*0.0015
-    @taxe_chambre_consulaire_service = @turn_over*0.0044
-    @income_tax_revente = (@turn_over*0.7)*1.07
-    @income_tax_service = (@turn_over*0.5)
-    @tva = @turn_over*0.20
-
+      @taxe_chambre_consulaire_vente = (@turn_over*0.0015).round(2)
+      @taxe_chambre_consulaire_service = (@turn_over*0.0044).round(2)
+      @income_tax_revente = ((@turn_over*0.7)*1.07).round(2)
+      @income_tax_service = ((@turn_over*0.5)).round(2)
+      @tva = (@turn_over*0.20).round(2)
     end
-
   end
 
   def destroy
@@ -61,7 +59,7 @@ class InvoicesController < ApplicationController
   require 'date'
 
   def invoice_params
-      params.require(:invoice).permit(:object, :amount, :invoice_date, :user_id, :client_id)
+      params.require(:invoice).permit(:object, :amount, :invoice_date, :date_invoice_at, :user_id, :client_id)
   end
 
   def set_client
