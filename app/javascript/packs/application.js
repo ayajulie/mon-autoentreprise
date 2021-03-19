@@ -26,7 +26,9 @@ require("channels")
 import "bootstrap";
 import { initFlatpickr } from '../plugins/flatpickr.js';
 import { birthFlatpickr } from '../plugins/flatpickr.js';
+import { invoiceFlatpickr } from '../plugins/flatpickr.js';
 import { initSelect2 } from '../plugins/init_select2';
+// import { myChart } from '../plugins/init_chart';
 
 // [...]
 
@@ -39,5 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initFlatpickr();
   birthFlatpickr();
+  invoiceFlatpickr();
   initSelect2();
+  // myChart;
 });
