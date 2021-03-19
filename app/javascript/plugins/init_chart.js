@@ -6,10 +6,10 @@ const myChart = new Chart(ctx,
   {
         type: "bar",
     data: {
-        labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novemebre', 'Décembre'],
+        labels: [ 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novemebre', 'Décembre','Janvier', 'Février', 'Mars'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 12, 8],
+            label: "Chiffre d'affaire mensuel",
+            data: [3500, 4500, 2300, 5500, 3400, 7900, 1200, 1900, 3000, 5000, 1250, 6700],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -54,4 +54,26 @@ const myChart = new Chart(ctx,
   );
 
 
+
+const myPieChart = new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
+    data: {
+      labels: ["Cotisations sociales", "Taxes consulaires", "Impôt sur le revenu", "Chiffres d'affaire"],
+      datasets: [{
+        label: "Chiffres d'affaire de",
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
+        data: [1500,5267,7340, 45000]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: "Visualisationd de votre chiffre d'affaire et de vos côtisations"
+      }
+    }
+});
+
+
 export { myChart };
+export { myPieChart };
+
