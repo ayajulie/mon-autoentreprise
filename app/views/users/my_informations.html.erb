@@ -23,7 +23,9 @@
     </div>
     <div class="dashboard-content">
       <div class="dashboard-information">
-        <%= @data['Commune'] %>
+        <% @data.each_value do |value| %>
+          <%= puts value %>
+        <% end  %>
       </div>
     </div>
   </div>

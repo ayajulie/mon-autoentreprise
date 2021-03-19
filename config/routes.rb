@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get '/cerfa_download', to: 'pages#download'
     get '/invoices/calculate', to: 'invoices#calculate'
     post '/invoices/calculate', to: 'invoices#calculate'
-    get '/my_informations', to: 'users#informations'
+    get '/my_informations', to: 'users#my_informations'
     get '/company_registration',  to: 'users#company_registration'
     get '/services',  to: 'pages#services'
     # get '/personal_info', to: 'users#personal_info_users'

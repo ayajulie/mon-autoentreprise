@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     # utilisant current_user.form_company_filled? true = redirige vers l'étape suivante, false màj de la company
   end
 
-  def informations
+  def my_informations
   end
 
   def company_registration
