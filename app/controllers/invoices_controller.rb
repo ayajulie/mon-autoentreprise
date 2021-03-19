@@ -17,7 +17,7 @@ class InvoicesController < ApplicationController
     @invoice = Invoice.new(invoice_params)
     @invoice.user = current_user
     if @invoice.save
-        redirect_to info_path
+        redirect_to invoices_calculate_path
     else
         render "new"
     end
@@ -61,7 +61,7 @@ class InvoicesController < ApplicationController
   require 'date'
 
   def invoice_params
-      params.require(:invoice).permit(:object, :amount, :date, :user_id, :client_id)
+      params.require(:invoice).permit(:object, :amount, :invoice_date, :user_id, :client_id)
   end
 
   def set_client
