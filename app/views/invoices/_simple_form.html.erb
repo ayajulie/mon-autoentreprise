@@ -1,7 +1,7 @@
 <%= simple_form_for invoice do |f| %>
   <%= f.input :object, label: "Objet de la facture" %>
   <%= f.input :amount, label: "Montant" %>
-  <%= f.input :invoiced_at, label: "Date de la facture" %>
+  <%= f.input :invoiced_at, label: "Date de la facture", as: :date, html5: true %>
   <%= f.association :client, label_method: :client, value_method: :id, include_blank: false %>
   <%= f.submit "Générez votre facture", class: "btn btn-primary"%>
 <% end -%>
