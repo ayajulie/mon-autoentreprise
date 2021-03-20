@@ -34,6 +34,9 @@ class UsersController < ApplicationController
   def company_registration
   end
 
+  def demarches
+  end
+
   private
 
   def user_params
