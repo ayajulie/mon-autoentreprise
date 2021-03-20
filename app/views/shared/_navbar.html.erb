@@ -10,7 +10,7 @@
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
         <li class="nav-item">
           <% if user_signed_in? %>
-            <%= link_to "Créer son activité", company_registration_path(tab: "personal_info"),  class: "nav-link text-primary" %>
+            <%= link_to "Créer son activité", company_registration_path(tab: "personal_info"),  class: "nav-link" %>
           <% else  %>
             <%= link_to "Créer son activité", new_user_registration_path, class: "nav-link text-primary" %>
           <% end  %>
@@ -45,10 +45,10 @@
       </ul>
       <nav class="navbar navbar-light bg-light">
         <% if user_signed_in? %>
-          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link btn btn-sm btn-primary rounded-pill  nav-item" %>
+          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link btn btn-sm btn-warning rounded-pill  nav-item nav-btn" %>
         <% else %>
-          <%= link_to "Se Connecter", new_user_session_path, class: "nav-link btn btn-sm  rounded-pill btn-outline-primary nav-item", id:"login" %>
-          <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link btn btn-sm   btn-primary rounded-pill  nav-item" %>
+          <%= link_to "Se Connecter", new_user_session_path, class: "nav-link btn btn-sm  rounded-pill btn-warning nav-item nav-btn", id:"login" %>
+          <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link btn btn-sm   btn-warning rounded-pill  nav-item nav-btn" %>
         <% end %>
       </nav>
     </div>

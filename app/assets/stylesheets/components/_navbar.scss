@@ -22,10 +22,11 @@
   text-decoration: none;
   color: #0275d8;
 }
-.navbar > .nav-link {
-  color: #edae2f;
-}
 
 .navbar > .btn:hover {
-  color: #edae2f;
+  background-color: #edae2f !important;
+}
+
+.navbar-expand-lg:hover .navbar-nav:hover .nav-link:hover {
+  color: #edae2f !important;
 }

@@ -1,7 +1,29 @@
-#sign-in {
-  // height: 900px;
+#sign-up {
+  padding-top: 10vh;
 }
 
 .sign-up-container {
-  padding-top: 50px;
+  padding: 100px 90px 10px 90px;
+}
+
+.sign-up-container > h1 {
+  color: #edae2f;
+  padding-bottom: 5vh;
+}
+#user_email {
+  border: none;
+  width: 100%;
+}
+#user_password {
+  border: none;
+  width: 100%;
+}
+
+#user_password_confirmation {
+  border: none;
+  width: 100%;
+}
+
+#sign-up-btn {
+  width: 100%;
 }
