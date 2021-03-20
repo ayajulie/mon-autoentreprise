@@ -14,7 +14,7 @@ class PagesController < ApplicationController
 
   def cerfa_informations
     @user = current_user
-    @file_name = "/tmp/2021_User.pdf"
+    @file_name = Tempfile.new("/tmp/2021_User.pdf")
     pdftk_path = ENV['PDFTK_PATH']
     pdf_name = '/public/asset/cerfa.pdf'
     # prenom = CGI.unescapeHTML('Pr&#233;noms')

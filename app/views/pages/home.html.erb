@@ -4,7 +4,11 @@
       <h2>Mon auto-entreprise</h2>
       <br>
       <p>Le site qui vous aide à réaliser toutes les démarches administratives pour votre auto entreprise.</p>
-      <%= link_to "Je me lance", company_registration_path(tab: "personal_info"), class: "btn btn-outline-dark" %>
+      <%  if user_signed_in?  %>
+        <%= link_to "Je me lance", company_registration_path(tab: "personal_info"), class: "btn btn-outline-dark" %>
+      <% else %>
+        <%= link_to "Je me lance", new_user_registration_path(tab: "personal_info"), class: "btn btn-outline-dark" %>
+      <% end %>
     </div>
     <div class="col-sm-4" id="frame_one">
       <%= cl_image_tag("first",
