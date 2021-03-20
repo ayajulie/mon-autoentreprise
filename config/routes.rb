@@ -1,21 +1,24 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get '/info', to: 'pages#information'
-  get '/fill', to: 'pages#fill'
-  get '/download', to: 'pages#download'
 
-
-  get '/invoices/calculate', to: 'invoices#calculate'
-  post '/invoices/calculate', to: 'invoices#calculate'
 
   get'/dashboard', to: 'pages#dashboard'
   scope '/dashboard' do
-    get '/personal_info_users', to: 'users#personal_info_users', as: 'personal_info_users'
-    get '/company_info_users', to: 'users#company_info_users'
+    get '/cerfa_informations', to: 'pages#cerfa_informations'
+    get '/cerfa_download', to: 'pages#download'
+    get '/invoices/calculate', to: 'invoices#calculate'
+    post '/invoices/calculate', to: 'invoices#calculate'
     get '/my_informations', to: 'users#informations'
+<<<<<<< HEAD
     get '/demarches', to: 'users#demarches'
     get '/info', to: 'users#info', as: 'toto'
+=======
+    get '/company_registration',  to: 'users#company_registration'
+    get '/services',  to: 'pages#services'
+    # get '/personal_info', to: 'users#personal_info_users'
+    # get '/company_info', to: 'users#company_info_users'
+>>>>>>> 6b6e3c579b3989c3f1557f9ea5bed69be0ececb0
     resources :invoices
     resources :taxes, only: [:index]
   end

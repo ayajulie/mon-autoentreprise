@@ -6,12 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Client.create(user_id: "1", client: "Astra", amout: "50")
-Client.create(user_id: "1",client: "Volvo", amout: "5")
+
+
+30.times do
+ invoice =  Invoice.create!(
+    object: Faker::Construction.subcontract_category,
+    amount: [150, 1000, 250, 300, 500, 900, 400, 600].sample,
+    client_id: (1..3).to_a.sample,
+    date_invoice_at: Faker::Date.between(from: '2019-03-23', to: '2021-03-20'),
+    user_id: 1
+    )
+end
+
+=begin
+Client.create(user_id: "2", client: "Astra", amout: "50")
+Client.create(user_id: "2", client: "Volvo", amout: "5")
+Client.create(user_id: "2", client: "Dupond", amout: "50")
+Client.create(user_id: "2", client: "Martin", amout: "5")
+Client.create(user_id: "2", client: "Durand", amout: "5")
 
 city =  ["Marseille", "Paris", "Lyon", "Saint-Etienne", "Rouen", "Strasbourg"]
 code_postal = ["69001", "75001", "13001", "76000", "67000","42000"]
-5.times do 
+5.times do
 
    user =  User.create!(
 
@@ -21,12 +37,12 @@ code_postal = ["69001", "75001", "13001", "76000", "67000","42000"]
   birth_last_name: Faker::Name.last_name,
   birth_date: Faker::Date.between(from: '1950-01-01', to: '2001-01-01'),
   use_name: Faker::Book.author,
-  pseudonym: Faker::Superhero.name, 
+  pseudonym: Faker::Superhero.name,
   citizenship: Faker::Demographic.demonym,
-  gender: "M", 
+  gender: "M",
   birth_city: city.sample,
   birth_department: Faker::Number.number(digits: 2),
-  birth_country: "France", 
+  birth_country: "France",
   address: Faker::Address.street_address,
   city:  city.sample,
   zipcode: code_postal.sample,
@@ -45,12 +61,12 @@ code_postal = ["69001", "75001", "13001", "76000", "67000","42000"]
   main_activity_freetext: Faker::Company.industry,
   employee: Faker::Boolean.boolean,
   partner: Faker::Boolean.boolean,
-  individual_entrepreneur: true, 
+  individual_entrepreneur: true,
   bic_status: false
 )
-end 
+end
 
-5.times do 
+5.times do
 
   user =  User.create!(
     email: Faker::Internet.unique.email,
@@ -60,12 +76,12 @@ end
 
   birth_date: Faker::Date.between(from: '1950-01-01', to: '2001-01-01'),
   use_name: Faker::Book.author,
-  pseudonym: Faker::Superhero.name, 
+  pseudonym: Faker::Superhero.name,
   citizenship: Faker::Demographic.demonym,
-  gender: "M", 
+  gender: "M",
   birth_city:city.sample,
   birth_department: Faker::Number.number(digits: 2),
-  birth_country: "France", 
+  birth_country: "France",
   address: Faker::Address.street_address,
   city:  city.sample,
   zipcode: code_postal.sample,
@@ -84,7 +100,8 @@ end
   main_activity_freetext: Faker::Company.industry,
   employee: Faker::Boolean.boolean,
   partner: Faker::Boolean.boolean,
-  individual_entrepreneur: true, 
+  individual_entrepreneur: true,
   bic_status: false
 )
-end 
+end
+=end

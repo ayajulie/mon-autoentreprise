@@ -33,5 +33,18 @@ const birthFlatpickr = () => {
   });
 };
 
+const invoiceFlatpickr = () => {
+  const calendars = document.querySelectorAll(".invoice-calendar")
+  calendars.forEach((calendar) => {
+    flatpickr(".invoice-calendar", {
+      altInput: true,
+      altFormat: "j F Y",
+      dateFormat: "dmY",
+      "locale": French,
+    });
+  });
+};
+
 export { initFlatpickr };
 export { birthFlatpickr };
+export { invoiceFlatpickr }

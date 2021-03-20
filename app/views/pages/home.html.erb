@@ -1,16 +1,16 @@
 <div class="container-fluid" id="frame">
- <div class="row">
-  <div class="col-sm-7" id ="frame_one">
-   <h2>Mon auto-entreprise</h2>
-   <br>
-   <p>Le site qui vous aide à réaliser toutes les démarches administratives pour votre auto entreprise.</p>
-   <%= link_to "Je me lance", toto_path(tab: "personal_info"), class: "btn btn-outline-dark" %>
-  </div>
-  <div class="col-sm-4" id="frame_one">
-  <%= cl_image_tag("first",
+  <div class="row">
+    <div class="col-sm-7" id ="frame_one">
+      <h2>Mon auto-entreprise</h2>
+      <br>
+      <p>Le site qui vous aide à réaliser toutes les démarches administratives pour votre auto entreprise.</p>
+      <%= link_to "Je me lance", company_registration_path(tab: "personal_info"), class: "btn btn-outline-dark" %>
+    </div>
+    <div class="col-sm-4" id="frame_one">
+      <%= cl_image_tag("first",
       width: 400, height: 300, crop: :fill) %>
+    </div>
   </div>
- </div>
 </div>
 <div class="container-fluid" id="pub">
   <h4 id= "h4">Pourquoi nous rejoindre?</h4>
@@ -19,74 +19,72 @@
 </div>
 <div class="container-fluid" id="frame_fluid">
   <div class="row row-cols-1 row-cols-md-3 g-4">
-   <div class="col">
-    <div class="card">
-      <%= cl_image_tag("création", class: "card-img", height: 150) %>
-       <div class="card-body">
-       <h5 class="card-title">Créer son activité</h5>
-      <p class="card-text"> VOus avez la phobie administrative ? <br> Créer votre auto-entreprise avec ce site </p>
+    <div class="col">
+      <div class="card">
+        <%= cl_image_tag("création", class: "card-img", height: 150) %>
+        <div class="card-body">
+          <h5 class="card-title">Créer son activité</h5>
+          <p class="card-text"> VOus avez la phobie administrative ? <br>
+            Créer votre auto-entreprise avec ce site </p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card">
-       <%= cl_image_tag("transformation",
+    <div class="col">
+      <div class="card">
+        <%= cl_image_tag("transformation",
        class: "card-img", height: 150) %>
         <div class="card-body">
-        <h5 class="card-title">Modifier son activité</h5>
-        <p class="card-text"> Le site qui vous propose une modification de votre activité rapide et sans souci.</p>
+          <h5 class="card-title">Modifier son activité</h5>
+          <p class="card-text"> Le site qui vous propose une modification de votre activité rapide et sans souci.</p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card">
-     <%= cl_image_tag("stop",
+    <div class="col">
+      <div class="card">
+        <%= cl_image_tag("stop",
       class: "card-img", height: 150) %>
-      <div class="card-body">
-        <h5 class="card-title">Cesser son activité</h5>
-        <p class="card-text">Vous pouvez cesser votre activité en un seul clic.<br> C'est simple</p>
-      </div>
-    </div>
-  </div>
-</div>
-  <br>
-  <br>
-  <br>
- <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-7" id="dashboard">
-      <h2>Profitez de votre dashboard</h2>
-      <br>
-      <p>Cet outil vous permettra de connaître tous les éléments de votre facturation et juridique de votre micro-entreprise</p>
-          <%= link_to "Je vois mon dashboard", "#", class: "btn btn-outline-dark" =%>
-        </div>
-        <div class="col-sm-4">
-          <div class="card" style="width: 18rem;">
-            <%= cl_image_tag("dashboard", class: "card-img", height: 190, crop: :fill) %>
-           </div>
-         </div>
-        <br>
-         <br>
+        <div class="card-body">
+          <h5 class="card-title">Cesser son activité</h5>
+          <p class="card-text">Vous pouvez cesser votre activité en un seul clic.<br>
+            C'est simple</p>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <br>
+  <br>
+  <br>
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-7" id="New_letter">
-       <h2>Inscrivez-vous à notre News-letter</h2>
-      <br>
-      <p>Suivez toute l'information de la Micro-entreprise</p>
-      <%= link_to "Inscrivez-vous", "#", class: "btn btn-outline-dark" %>
+      <div class="col-sm-7" id="dashboard">
+        <h2>Profitez de votre dashboard</h2>
+        <br>
+        <p>Cet outil vous permettra de connaître tous les éléments de votre facturation et juridique de votre micro-entreprise</p>
+        <%= link_to "Je vois mon dashboard", "#", class: "btn btn-outline-dark" =%>
       </div>
-     <div class="col-sm-4">
-    <div class="card" style="width: 18rem;">
-     <%= cl_image_tag("newsletter",
-     width: 400, height: 190, crop: :fill) %>
-   </div>
+      <div class="col-sm-4">
+        <div class="card" style="width: 18rem;">
+          <%= cl_image_tag("dashboard", class: "card-img", height: 190, crop: :fill) %>
+        </div>
+      </div>
+      <br>
+      <br>
+    </div>
   </div>
 </div>
-
-
-
-
+</div>
+</div>
+<div class="row">
+  <div class="col-sm-7" id="New_letter">
+    <h2>Inscrivez-vous à notre News-letter</h2>
+    <br>
+    <p>Suivez toute l'information de la Micro-entreprise</p>
+    <%= link_to "Inscrivez-vous", "#", class: "btn btn-outline-dark" %>
+  </div>
+  <div class="col-sm-4">
+    <div class="card" style="width: 18rem;">
+      <%= cl_image_tag("newsletter",
+     width: 400, height: 190, crop: :fill) %>
+    </div>
+  </div>
+</div>
