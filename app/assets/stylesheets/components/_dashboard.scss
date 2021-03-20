@@ -12,8 +12,13 @@
 .sidebar-link {
   font-family: "Mulish", sans-serif;
   font-weight: 500;
+  font-size: 1.02rem;
+  color: #e5e5e5;
 }
 
+.sidebar > .nav-link {
+  border-bottom: solid 1px #e5e5e5;
+}
 .dashboard-content {
   padding: 7px 0 15px 0;
   margin-left: 350px;
