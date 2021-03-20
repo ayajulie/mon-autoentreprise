@@ -32,6 +32,8 @@ before_action :authenticate_user!
   def informations
   end
 
+  def demarches
+  end
 
   private
 
