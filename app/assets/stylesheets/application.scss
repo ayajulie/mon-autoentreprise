@@ -7,14 +7,12 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import 'select2/dist/css/select2';
-@import 'flatpickr/dist/flatpickr';
+@import "select2/dist/css/select2";
+@import "flatpickr/dist/flatpickr";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/sign_up";
 
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;1,400&display=swap");
-
-
-

@@ -43,7 +43,7 @@
           <% end %>
         </li>
       </ul>
-      <nav class="navbar navbar-light bg-light">
+      <nav class="navbar navbar-light bg-light fixed-top">
         <% if user_signed_in? %>
           <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link btn btn-sm btn-primary rounded-pill  nav-item" %></li>
         <% else %>

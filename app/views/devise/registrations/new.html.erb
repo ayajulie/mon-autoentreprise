@@ -1,25 +1,52 @@
-<div class="container ta-center pb-5">
-  <h2>Sign up</h2>
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
-    <div class="form-inputs">
-      <%= f.input :email,
+<section id="sign-up">
+  <div class="row h-800">
+    <div class="col-lg-6  bg-primary">
+      <div class="p-4"> <%= image_tag "signup.svg", width: 900 %></div>
+    </div>
+    <div class="col-lg-6 bg-secondary">
+      <div class="container sign-up-container">
+        <div class="mb-3 input-group">
+          <input class="form-control" type="email" placeholder="name@email.com">
+          <span class="input-group-text">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="mb-3 input-group">
+          <input class="form-control" type="password" placeholder="Enter your password">
+          <div class="input-group-text">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis eaque quibusdam asperiores dicta quas at cum repudiandae quae aliquid blanditiis pariatur fugit vel impedit distinctio sed vitae quaerat ullam, excepturi ex reiciendis nulla. Magnam, voluptas beatae? Eveniet, voluptas quaerat! Illo culpa magni facere nisi optio nam aperiam minima quidem blanditiis!</p>
+    </div>
+  </div>
+</section>
+<h2>Sign up</h2>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :email,
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
+    <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
+    <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
-    </div>
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up", class: 'btn btn-primary' %>
-    </div>
-  <% end %>
-  <%= render "devise/shared/links" %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+<%= render "devise/shared/links" %>
 </div>
 <div class="container-fluid" id="container_presentation">
   <div class="row">
