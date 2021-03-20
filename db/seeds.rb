@@ -1,7 +1,8 @@
 puts "destroy_all"
+Invoice.destroy_all
 Client.destroy_all
 User.destroy_all
-Invoice.destroy_all
+
 
 city =  ["Marseille", "Paris", "Lyon", "Saint-Etienne", "Rouen", "Strasbourg"]
 code_postal = ["69001", "75001", "13001", "76000", "67000","42000"]
@@ -88,9 +89,17 @@ Invoice.create!(
   user: User.first,
   client: astra,
   amount: 100,
+  invoiced_at: DateTime.new(2020, 12, 5),
+  object: "travaux construction",
+)
 
-
-  )
+Invoice.create!(
+  user: User.first,
+  client: volvo,
+  amount: 1000,
+  invoiced_at: DateTime.new(2020, 10, 10),
+  object: "nettoyage",
+)
 
 puts "#{User.count} users created"
 puts "#{Client.count} clients created"
