@@ -1,13 +1,23 @@
 .title {
   font-family: "Mulish", sans-serif;
   font-weight: 500;
-  color: #e5e5e5;
+  color: #edae2f;
 }
 .row {
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
-.text-footer{
-  color: #e5e5e5;
+.text-footer {
+  color: #edae2f;
+}
+
+.footer-brand > .nav-brand {
+  color: #edae2f;
+  font-family: "Pacifico", cursive;
+  font-size: 1.5rem;
+}
+
+footer {
+  padding: 1rem 8rem;
 }

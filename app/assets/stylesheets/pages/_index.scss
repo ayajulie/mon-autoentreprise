@@ -1,2 +1,12 @@
 // Import page-specific CSS files here.
-@import "home";
+
+html,
+body {
+  font-size: 15px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  margin: 0;
+  overflow-x: hidden;
+  top: 0;
+  left: 0;
+}
