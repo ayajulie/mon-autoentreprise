@@ -1,29 +1,38 @@
 <div class="col  sidebar bg-primary  mt-5 fixed-top">
   <div class="nav-link py-3">
-    <%= link_to services_path, class: "nav-link sidebar-link" do  %>
-      <i class="fas fa-concierge-bell pr-1"></i>
-      Services
+    <%= link_to invoices_calculate_path, class: "nav-link sidebar-link" do  %>
+      <i class="fas fa-chart-line pr-2"></i>
+      Dashboard
     <% end %>
   </div>
   <div class="nav-link py-3">
-    <%= link_to services_path, class: "nav-link sidebar-link" do  %>
-      <i class="fa fa-calculator pr-2"></i>
-      Charges
+    <%=  link_to invoices_calculate_path,class: "nav-link sidebar-link" do  %>
+      <i class="fas fa-calculator pr-2"></i>
+      Calculer mes charges
     <% end %>
   </div>
-  <div class="nav-link py-4">
-    <a class="sidebar-link py-3" href="#"> <i class="fas fa-address-card pr-2"></i>Mes Informations</a>
+  <div class="nav-link py-3">
+    <%= link_to new_invoice_path, class: "nav-link sidebar-link" do  %>
+      <i class="fas fa-file-invoice pr-2"></i>
+      Générer une facture
+    <% end %>
   </div>
-  <div class="nav-link  py-4">
-    <a class="sidebar-link" href="#"> <i class="fa fa-calculator pr-2"></i>Mes Charges</a>
+  <div class="nav-link py-3">
+    <%= link_to my_informations_path, class: "nav-link sidebar-link" do  %>
+      <i class="fas fa-address-card pr-2"></i>
+      Mes informations
+    <% end %>
   </div>
-  <div class="nav-link py-4">
-    <a class="sidebar-link" href="#"> <i class="fas fa-file-invoice pr-2"></i> Générer une Facture</a>
+  <div class="nav-link py-3">
+    <%= link_to my_informations_path, class: "nav-link sidebar-link" do  %>
+      <i class="fas fa-history pr-2"></i>
+      Mes démarches
+    <% end %>
   </div>
-  <div class="nav-link  py-4">
-    <a class="sidebar-link" href="#"><i class="fas fa-history pr-2"></i>Mes Démarches</a>
-  </div>
-  <div class="nav-link  py-4">
-    <a class="sidebar-link" href="#"> <i class="fas fa-bell pr-2"></i>Mes Notifications</a>
+  <div class="nav-link py-3">
+    <%= link_to my_informations_path, class: "nav-link sidebar-link" do  %>
+      <i class="fas fa-bell pr-2"></i>
+      Mes notifications
+    <% end %>
   </div>
 </div>

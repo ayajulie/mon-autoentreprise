@@ -27,7 +27,13 @@
               <%= link_to "Cesser son activité", new_user_registration_path, class: "nav-link text-primary" %>
             <% end  %>
           </li>
-          <li class="nav-item"><%= link_to "Articles", "#", class: "nav-link text-primary" %></li>
+          <li class="nav-item">
+            <% if user_signed_in? %>
+              <%= link_to "Dashboard", invoices_calculate_path, class: "nav-link text-primary" %>
+            <% else %>
+              <%= link_to "Dashboard",  new_user_registration_path, class: "nav-link text-primary" %>
+            <% end %>
+          </li>
         </ul>
         <nav class="navbar navbar-light bg-light">
           <% if user_signed_in? %>
