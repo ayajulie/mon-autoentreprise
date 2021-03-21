@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <%= link_to "Mon Auto-Entreprise", "/",  class: "nav-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -46,8 +46,8 @@
         </ul>
         <nav class="navbar-light bg-light">
           <ul class="navbar-nav mx-auto ">
-            <%= link_to "Se Connecter", new_user_session_path, class: " nav-link btn btn-sm btn-outline-warning rounded-pill nav-item ", id:"login" %>
-            <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link btn btn-sm  btn-warning rounded-pill  nav-item " %>
+            <%= link_to "Se Connecter", new_user_session_path, class: " nav-link btn btn-sm btn-outline-warning rounded-pill nav-item text-secondary", id:"login" %>
+            <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link btn btn-sm  btn-warning rounded-pill  nav-item text-white" %>
           </ul>
         </nav>
       <% end %>

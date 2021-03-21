@@ -1,11 +1,14 @@
-<div class="container">
-  <h1>Modifier une nouvelle facture</h1>
-  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-  <hr>
-  <%= render "simple_form", invoice: @invoice  %>
-  <hr>
-  <p> L'ajout de factures permettra de calculer votre chiffre d'affaires.</p>
-  <hr>
-  <%= link_to "Back to index", root_path %>
+<%= render 'shared/navbar' %>
+<%= render '/pages/sidebar' %>
+<div class="dashboard-content">
+  <div class="container">
+    <h1>Modifier une nouvelle facture</h1>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <hr>
+    <%= render "simple_form", invoice: @invoice  %>
+    <hr>
+    <p> L'ajout de factures permettra de calculer votre chiffre d'affaires.</p>
+    <hr>
+    <%= link_to "Back to index", root_path %>
+  </div>
 </div>
-
