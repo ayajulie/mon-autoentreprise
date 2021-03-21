@@ -1,8 +1,10 @@
-<div class="container">
-
-<% @invoices each do |invoice|%>
-@turn_over += invoice
-<p> Votre chiffre d'affaires est égal à <%= @turn_over %>
-
+<%= render 'shared/navbar' %>
+<%= render '/pages/sidebar' %>
+<div class="dashboard-content">
+  <div class="container">
+    <% @invoices each do |invoice|%>
+      @turn_over += invoice
+      <p> Votre chiffre d'affaires est égal à <%= @turn_over %> </p>
+    <% end %>
+  </div>
 </div>
-

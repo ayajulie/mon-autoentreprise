@@ -10,6 +10,7 @@
   padding: 3rem 8rem;
   height: 0;
   min-height: 10vh;
+  margin-bottom: 10vh;
 }
 
 .navbar > .nav-brand {
@@ -29,4 +30,9 @@
 
 .navbar-expand-lg:hover .navbar-nav:hover .nav-link:hover {
   color: #edae2f !important;
+}
+
+#navbar {
+  position: fixed;
+  transition: top 0.6s;
 }
