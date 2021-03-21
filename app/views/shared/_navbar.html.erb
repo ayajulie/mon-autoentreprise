@@ -1,56 +1,56 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light ">
-  <div class="container">
-    <%= link_to "/" , class: "navbar-brand" do %>
-      <%= image_tag "logo.svg", width: 40 %>
-    <% end %>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar">
+    <%= link_to "Mon Auto-Entreprise", "/",  class: "nav-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
-        <li class="nav-item">
-          <% if user_signed_in? %>
-            <%= link_to "Créer son activité", company_registration_path(tab: "personal_info"),  class: "nav-link" %>
-          <% else  %>
-            <%= link_to "Créer son activité", new_user_registration_path, class: "nav-link text-primary" %>
-          <% end  %>
-        </li>
-        <li class="nav-item">
-          <% if user_signed_in? %>
-            <%= link_to "Modifier son activité", services_path, class: "nav-link text-primary" %>
-          <% else  %>
-            <%= link_to "Modifier son activité", new_user_registration_path, class: "nav-link text-primary" %>
-          <% end  %>
-        </li>
-        <li class="nav-item">
-          <% if user_signed_in? %>
-            <%= link_to "Cesser son activité", services_path, class: "nav-link text-primary" %>
-          <% else  %>
-            <%= link_to "Cesser son activité", new_user_registration_path, class: "nav-link text-primary" %>
-          <% end  %>
-        </li>
-        <li class="nav-item dropdown">
-          <% if user_signed_in? %>
-            <%= link_to "Tableau de bord", invoices_calculate_path, class: "nav-link dropdown-toggle text-primary", id: "navbarDropdown", role: "button",  :"data-toggle"=> "dropdown", :"aria-haspopup"=> "true",  :"aria-expanded"=> "false" %>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+      <% if user_signed_in? %>
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+          <li class="nav-item">
+            <%= link_to "Créer son activité", company_registration_path(tab: "personal_info"),  class: "nav-link text-primary links" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Modifier son activité", services_path, class: "nav-link text-primary links" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Cesser son activité", services_path, class: "nav-link text-primary links" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= link_to "Mes services", invoices_calculate_path, class: "nav-link dropdown-toggle text-primary", id: "navbarDropdown", role: "button",  :"data-toggle"=> "dropdown", :"aria-haspopup"=> "true",  :"aria-expanded"=> "false" %>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "Tableau de bord", invoices_calculate_path, class: "dropdown-item text-primary" %>
+              <%= link_to "Tableau de bord", invoices_calculate_path, class: "dropdown-item text-primary links" %>
               <a class="dropdown-item" href="#">Another action</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
-          <% else %>
-            <%= link_to "Dashboard",  new_user_registration_path, class: "nav-link text-primary" %>
-          <% end %>
-        </li>
-      </ul>
-      <nav class="navbar navbar-light bg-light">
-        <% if user_signed_in? %>
-          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link btn btn-sm btn-warning rounded-pill  nav-item nav-btn" %>
-        <% else %>
-          <%= link_to "Se Connecter", new_user_session_path, class: "nav-link btn btn-sm  rounded-pill btn-warning nav-item nav-btn", id:"login" %>
-          <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link btn btn-sm   btn-warning rounded-pill  nav-item nav-btn" %>
-        <% end %>
-      </nav>
+          </li>
+        </ul>
+        <nav class="navbar-light bg-light">
+          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link btn btn-sm btn-primary rounded-pill links " %>
+        </nav>
+      <% else  %>
+        <ul class="navbar-nav mx-auto ">
+          <li class="nav-item">
+            <%= link_to "Créer son activité", new_user_registration_path, class: "nav-link text-primary links" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Modifier son activité", new_user_registration_path, class: "nav-link text-primary links" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Cesser son activité", new_user_registration_path, class: "nav-link text-primary links " %>
+          </li>
+          <li class="nav-item">
+            <li><%= link_to "Dashboard",  new_user_registration_path, class: "nav-link text-primary links" %></li>
+          </li>
+        </ul>
+        <nav class="navbar-light bg-light">
+          <ul class="navbar-nav mx-auto ">
+            <%= link_to "Se Connecter", new_user_session_path, class: " nav-link btn btn-sm btn-outline-warning rounded-pill nav-item ", id:"login" %>
+            <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link btn btn-sm  btn-warning rounded-pill  nav-item " %>
+          </ul>
+        </nav>
+      <% end %>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
