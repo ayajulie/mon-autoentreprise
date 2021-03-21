@@ -1,27 +1,9 @@
-.sidebar {
-  bottom: 0;
-  left: 0;
-  top: 35px;
-  min-height: 100vh;
-  position: fixed;
-  padding-top: 20px;
-  width: 25vw;
-  z-index: 1;
-}
-
-.sidebar-link {
-  font-family: "Mulish", sans-serif;
-  font-weight: 500;
-  font-size: 1.02rem;
-  color: #e5e5e5;
-}
-
-.sidebar > .nav-link {
-  border-bottom: solid 1px #e5e5e5;
-}
 .dashboard-content {
   padding: 15vh 0 15px 0;
   margin-left: 350px;
+}
+.dashboard-information {
+  padding-left: 100px;
 }
 .form-control {
   border: none;
@@ -30,8 +12,4 @@
 }
 h2 {
   color: #167ffb;
-}
-
-.dashboard-information {
-  padding-left: 100px;
 }
