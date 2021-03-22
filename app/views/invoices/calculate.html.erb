@@ -1,44 +1,69 @@
 <%= render 'shared/navbar' %>
 <%= render '/pages/sidebar' %>
-<div class="dashboard-content">
-  <div class="container">
-    <p> Votre chiffre d'affaires est égal à <%= @turn_over %> €</p>
-    <b>Cotisations sociales</b><br />
-    <% if current_user.main_activity_choose == "commerce de détail" %>
-      <p> Vos cotisations Sociales sont égales à <%= @charge_sociale_vente %> €</p>
-    <% else %>
-      <p> Vos cotisations Sociales sont égales à <%= @charge_sociale_service %> €</p>
-    <% end %>
-    <p>
-      <b>Taxe consulaire</b><br />
-    </p>
-    <br>
-    <% if current_user.main_activity_choose == "commerce de détail" %>
-      <p> Vos cotisations Sociales sont égales à <%= @taxe_chambre_consulaire_service %> €</p>
-    <% else %>
-      <p> Votre taxe consulaire est égale à <%= @taxe_chambre_consulaire_service %> €</p>
-    <% end %>
-    <p>
-      <% if current_user.main_activity_choose == "commerce de détail" %>
-        <p> Votre impôt sur le revenu à déclarer est égal <%= @income_tax_revente %> €</p>
-      <% else %>
-        <p> Votre impôt sur le revenu à déclarer est égal <%= @income_tax_service %> €</p>
-      <% end %>
-      <p> Si vous avez choisi d'être assujeti à la TVA, vous devez déclarer le chiffre <%= @tva %>€ </p>
-      <% if current_user.main_activity_choose == "commerce de détail" %>
-        <p> Il vous reste à facturer <%= @restant_a_facture_commerce %> €</p>
-      <% else %>
-        <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
-      <% end %>
-      <hr>
-      <canvas id="myChart" width="400" height="400" aria-label="Hello ARIA World">
-        <p>Hello Fallback World</p>
-      </canvas>
-      <hr>
-      <canvas id="pie-chart" width="400" height="400" aria-label="Hello ARIA World">
-        <p>Hello Fallback World</p>
-      </canvas>
-      <hr>
+<div class="dashboard-content" style="margin-left: 250px">
+    <div class="row pt-4">
+        <div class="col-xs-12 col-sm-7 dashboard-chart-card">
+          <canvas id="myChart2" height="200" aria-label="Hello ARIA World">
+            <p>Hello Fallback World</p>
+          </canvas>
+        </div>
+        <div class="col-xs-12 col-sm-4 dashboard-chart-card">
+          <canvas id="pie-chart" height="200" aria-label="Hello ARIA World" style="display: center">
+            <p>Hello Fallback World</p>
+          </canvas>
+        </div>
     </div>
-  </div>
+    <div class="row py-1">
+        <div class="col-xs-12 col-sm-7 dashboard-chart-card">
+          <canvas id="myChart" height="200" aria-label="Hello ARIA World">
+            <p>Hello Fallback World</p>
+          </canvas>
+        </div>
+        <div class="col-xs-12 col-sm-4 dashboard-chart-card">
+          <canvas id="doughnut-chart" height="200" aria-label="Hello ARIA World">
+            <p>Hello Fallback World</p>
+          </canvas>
+        </div>
+    </div>
+    <div class="dashboard-chart-card" height="200">
+      <p> Votre chiffre d'affaires est égal à <%= @turn_over %> €</p>
+      <b>Cotisations sociales</b><br />
+      <% if current_user.main_activity_choose == "commerce de détail" %>
+        <p> Vos cotisations Sociales sont égales à <%= @charge_sociale_vente %> €</p>
+      <% else %>
+        <p> Vos cotisations Sociales sont égales à <%= @charge_sociale_service %> €</p>
+      <% end %>
+      <p>
+        <b>Taxe consulaire</b><br />
+      </p>
+      <br>
+      <% if current_user.main_activity_choose == "commerce de détail" %>
+        <p> Vos cotisations Sociales sont égales à <%= @taxe_chambre_consulaire_service %> €</p>
+      <% else %>
+        <p> Votre taxe consulaire est égale à <%= @taxe_chambre_consulaire_service %> €</p>
+      <% end %>
+      <p>
+        <% if current_user.main_activity_choose == "commerce de détail" %>
+          <p> Votre impôt sur le revenu à déclarer est égal <%= @income_tax_revente %> €</p>
+        <% else %>
+          <p> Votre impôt sur le revenu à déclarer est égal <%= @income_tax_service %> €</p>
+        <% end %>
+        <p> Si vous avez choisi d'être assujeti à la TVA, vous devez déclarer le chiffre <%= @tva %>€ </p>
+        <% if current_user.main_activity_choose == "commerce de détail" %>
+          <p> Il vous reste à facturer <%= @restant_a_facture_commerce %> €</p>
+        <% else %>
+          <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
+        <% end %>
+      <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
+      <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
+      <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
+      <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
+      <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
+       <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
+      <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
+      <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
+      <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
+      <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
+    </div>
 </div>
+

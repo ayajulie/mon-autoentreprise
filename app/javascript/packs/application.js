@@ -30,6 +30,9 @@ import { birthFlatpickr } from '../plugins/flatpickr.js';
 import { initSelect2 } from '../plugins/init_select2';
 import { myChart } from '../plugins/init_chart';
 import { myPieChart } from '../plugins/init_chart';
+import { myDoughnutChart } from '../plugins/init_chart';
+import { myChart2 } from '../plugins/init_chart';
+
 
 // [...]
 
@@ -47,6 +50,8 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById("myChart") != null) {
     myChart();
     myPieChart();
+    myChart2();
+    myDoughnutChart();
   }
 
 });
