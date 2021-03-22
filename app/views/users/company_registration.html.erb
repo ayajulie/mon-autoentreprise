@@ -39,7 +39,7 @@
     <hr>
     <% if params[:tab] == "personal_info" %>
       <div class="dashboard-information">
-        <%= render '/users/personal_info', locals: { user: @user } %>
+        <%= render '/users/personal_info', locals: { user: @user }%>
       </div>
     <% end %>
     <% if params[:tab] == "company_info" %>
