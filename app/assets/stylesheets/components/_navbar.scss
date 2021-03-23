@@ -24,10 +24,23 @@
   color: #0275d8;
 }
 
-.navbar > .btn:hover {
-  background-color: #edae2f !important;
+#login-btn {
+  color: #0275d8;
+  border: 2px solid #0275d8;
 }
-
+#login-btn:hover {
+  background-color: #0275d8;
+  border: 2px solid #0275d8;
+}
+#signup-btn {
+  color: #6c757d;
+  border: 2px solid #f4ce82;
+}
+#signup-btn:hover {
+  color: #0275d8 !important;
+  background-color: #f4ce82 !important;
+  border: 2px solid #edae2f;
+}
 .navbar-expand-lg:hover .navbar-nav:hover .nav-link:hover {
   color: #edae2f !important;
 }
