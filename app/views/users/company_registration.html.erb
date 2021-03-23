@@ -51,12 +51,12 @@
       <div class="dashboard-information">
         <% if @user.form_user_filled? == true && @user.form_company_all_filled? == true %>
           <p>Votre CERFA est prêt à être téléchargé</p>
-          <%# <%= link_to "Générer votre Cerfa", company_registration_path, class: "btn btn-primary ml-4"  %> %>
+          <%# <%= link_to "Générer votre Cerfa", company_registration_path, class: "btn btn-primary ml-4"  %>
           <%= render '/pages/cerfa_informations', locals: { user: @user }  %>
         <% else %>
           <p>Il manque des informations pour générer votre CERFA</p>
           <%= render '/pages/cerfa_informations', locals: { user: @user }  %>
-          <%# <%= link_to "Générer votre Cerfa", company_registration_path, class: "btn btn-secondary ml-4"  %> %>
+          <%# <%= link_to "Générer votre Cerfa", company_registration_path, class: "btn btn-secondary ml-4"  %>
         <% end %>
       </div>
     <% end %>
