@@ -1,10 +1,10 @@
-.dashboard-chart-card {
-
-
-
-   position: relative;
+.dashboard-upper-part-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
-    //margin: 0.5em;
+    margin: 0.5em;
     color: #282846;
     background-color: rgb(255, 255, 255);
     border-radius: 0.5em;
@@ -15,6 +15,4 @@
     font-family: "Work Sans", "Helvetica", "sans-serif";
     font-weight: 600;
     font-size: 1.3rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,.1);
-
 }
