@@ -1,0 +1,38 @@
+tr {
+  text-align: left;
+}
+ a {
+  color: #282846;
+ }
+
+a:hover {
+  color: #282846;
+  opacity: 0.7;
+}
+
+.date-italics {
+  font-size : 0.8em;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.btn-ghost {
+  color: #282846;
+  border: 1px solid #282846;
+  padding: 2px 6px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  font-size: 0.4em;
+  margin-left: 4px;
+
+}
+
+.btn-ghost.active {
+    border: 2px solid black;
+  }
+
+.btn-ghost:hover {
+  opacity: 0.8;
+}

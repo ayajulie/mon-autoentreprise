@@ -24,6 +24,11 @@ require("channels")
 
 // External imports
 import "bootstrap";
+// [...]
+
+
+// Internal imports, e.g:
+// import { initSelect2 } from '../components/init_select2';
 import { initFlatpickr } from '../plugins/flatpickr.js';
 import { birthFlatpickr } from '../plugins/flatpickr.js';
 // import { invoiceFlatpickr } from '../plugins/flatpickr.js';
@@ -32,13 +37,8 @@ import { myChart } from '../plugins/init_chart';
 import { myPieChart } from '../plugins/init_chart';
 import { myDoughnutChart } from '../plugins/init_chart';
 import { myChart2 } from '../plugins/init_chart';
-
-
-// [...]
-
-
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { monthTurnover, yearTurnover, exerciseTurnover } from '../plugins/chosenTurnoverDisplay';
+import { monthNewClients, yearNewClients, exerciseNewClients } from '../plugins/chosenNewClientsDisplay';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -55,3 +55,14 @@ document.addEventListener('turbolinks:load', () => {
   }
 
 });
+
+monthTurnover();
+yearTurnover();
+exerciseTurnover();
+
+monthNewClients();
+yearNewClients();
+exerciseNewClients();
+
+
+

@@ -10,16 +10,46 @@
       <div class="dashboard-upper-part col-xs-12 col-sm-7">
         <div class="dashboard-upper-part-card" style="width: 15%">
           <div><i class="fas fa-chart-line"></i> CA</div>
-          <div><%= @turn_over %> <i class="fas fa-euro-sign"></i></div>
+          <div id="turnover">
+            <span id="monthly-turnover"><%= @turn_over %> </span>
+            <span id="yearly-turnover" class="d-none"><%= @turn_over * 12 %> </span>
+            <span id="exercise-turnover" class="d-none"><%= @turn_over * 4 %> </span>
+            <i class="fas fa-euro-sign"></i>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div>
+              <button class="btn btn-ghost active" id="btn-monthly-turnover" >Mois</button>
+            </div>
+            <div>
+              <button class="btn btn-ghost" id="btn-yearly-turnover" >12 Mois</button>
+            </div>
+            <div>
+              <button class="btn btn-ghost" id="btn-exercise-turnover" >Exercice</button>
+            </div>
+          </div>
         </div>
          <div class="dashboard-upper-part-card" style="width: 15%">
-          <div><i class="fas fa-users"></i>Nouveaux clients</div>
-          <div>+120</div>
+          <div><i class="fas fa-users"></i> Nouveaux clients</div>
+            <span id="past-month-new-clients">+ 9</span>
+            <span id="past-year-new-clients" class="d-none">+ 126</span>
+            <span id="this-exercise-new-clients" class="d-none">+ 53</span>
+          <div class="d-flex justify-content-center">
+            <div>
+              <button class="btn btn-ghost active" id="btn-month-new-clients" >Mois</button>
+            </div>
+            <div>
+              <button class="btn btn-ghost" id="btn-year-new-clients"  >12 Mois</button>
+            </div>
+            <div>
+              <button class="btn btn-ghost" id="btn-exercise-new-clients" >Exercice</button>
+            </div>
+          </div>
+
         </div>
       </div>
       <div class="dashboard-upper-part-card col-xs-12 col-sm-4" style="width: 30%">
         <div>Les échéances du mois</div>
-        <div>+120</div>
+        <div></div>
       </div>
 
 
