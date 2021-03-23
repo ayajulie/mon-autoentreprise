@@ -29,7 +29,7 @@
         <%= cl_image_tag("création", class: "card-img", height: 150) %>
         <div class="card-body">
           <h5 class="card-title">Créer son activité</h5>
-          <p class="card-text"> VOus avez la phobie administrative ? <br>
+          <p class="card-text" id="text"> VOus avez la phobie administrative ? <br>
             Créer votre auto-entreprise avec ce site </p>
         </div>
       </div>
@@ -40,7 +40,7 @@
        class: "card-img", height: 150) %>
         <div class="card-body">
           <h5 class="card-title">Modifier son activité</h5>
-          <p class="card-text"> Le site qui vous propose une modification de votre activité rapide et sans souci.</p>
+          <p class="card-text" id="text"> Le site qui vous propose une modification de votre activité rapide et sans souci.</p>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
       class: "card-img", height: 150) %>
         <div class="card-body">
           <h5 class="card-title">Cesser son activité</h5>
-          <p class="card-text">Vous pouvez cesser votre activité en un seul clic.<br>
+          <p class="card-text" id="text">Vous pouvez cesser votre activité en un seul clic.<br>
             C'est simple</p>
         </div>
       </div>
@@ -69,7 +69,7 @@
       </div>
       <div class="col-sm-4">
         <div class="card" style="width: 18rem;">
-          <%= cl_image_tag("dashboard", class: "card-img", height: 190, crop: :fill) %>
+          <%= cl_image_tag("dashboard", width: 400, height: 190, crop: :fill) %>
         </div>
       </div>
       <br>
@@ -86,7 +86,7 @@
     <p>Suivez toute l'information de la Micro-entreprise</p>
     <%= link_to "Inscrivez-vous", "#", class: "btn btn-outline-dark" %>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-4" id="newsletter">
     <div class="card" style="width: 18rem;">
       <%= cl_image_tag("newsletter",
      width: 400, height: 190, crop: :fill) %>
