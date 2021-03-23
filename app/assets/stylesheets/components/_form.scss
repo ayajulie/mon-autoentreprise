@@ -3,3 +3,25 @@
   width: 600px;
   margin-left: 15px;
 }
+
+.form-title {
+  border-bottom: 3px solid #6c757d;
+}
+
+.table > .form-control {
+  border-radius: 24rem;
+}
+.form-col {
+  width: 250px;
+  max-width: 250px;
+}
+
+#next-btn {
+  width: 100%;
+  margin-top: 20px;
+  font-size: larger;
+}
+#next-btn:hover {
+  background-color: #edae2f;
+  border-color: #f4ce82;
+}

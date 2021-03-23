@@ -1,26 +1,34 @@
-<h1>Création d'entreprise</h1>
+<h1 class="text-warning">Création d'entreprise</h1>
+<h3>Envoyer votre cerfa à l'adresse suivante: </h3>
 <p>Merci de vérifier les informations renseignées</p>
-<table>
-  <tr>
-    <td>Nom</td>
-    <td><%= current_user.birth_last_name %></td>
-  </tr>
-  <tr>
-    <td>Prénom</td>
-    <td><%= current_user.first_name %></td>
-  </tr>
-  <tr>
+<%= link_to "Corriger vos informations", company_registration_path(tab: "personal_info") %>
+<table class="table table-sm table-striped">
+  <thead>
+    <tr class="bg-warning text-secondary">
+      <th colspan="2">Informations Renseignées</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
-      <td>Nom d'usage</td>
+      <td class="font-weight-bold">Nom</td>
+      <td><%= current_user.birth_last_name %></td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold">Prénom</td>
+      <td><%= current_user.first_name %></td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold">Nom d'usage</td>
       <td><%= current_user.use_name %></td>
     </tr>
     <tr>
-      <td>Nationalité</td>
+      <td class="font-weight-bold">Nationalité</td>
       <td><%= current_user.citizenship %></td>
     </tr>
     <tr>
-      <td>Pseudonyme</td>
+      <td class="font-weight-bold">Pseudonyme</td>
       <td><%= current_user.pseudonym %></td>
     </tr>
-  </table>
-  <%= link_to "Téléchargez votre cerfa", cerfa_download_path %>
+  </tbody>
+</table>
+<%= link_to "Téléchargez votre cerfa", cerfa_download_path %>
