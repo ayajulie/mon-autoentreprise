@@ -47,9 +47,9 @@ document.addEventListener('turbolinks:load', () => {
   birthFlatpickr();
   //invoiceFlatpickr();
   initSelect2();
-  if (document.getElementById("myChart") != null) {
-    myChart();
-    myPieChart();
+  if (document.getElementById("myChart2") != null) {
+  //  myChart();
+  //  myPieChart();
     myChart2();
     myDoughnutChart();
   }
