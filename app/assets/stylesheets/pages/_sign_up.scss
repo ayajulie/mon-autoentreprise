@@ -4,17 +4,30 @@
 
 #svg {
   padding-top: 10vh;
-  padding-right: 10px;
+  // padding-left: 50px;
 }
 
+#login-container {
+  padding-bottom: 0px;
+  // min-height: 82vh;
+}
 #sign-container {
   padding-bottom: 0px;
+  min-height: 82vh;
 }
 .sign-up-container {
-  padding: 100px 90px 0px 90px;
+  padding: 8vh 90px 0px 90px;
 }
 
 .sign-up-container > h1 {
+  color: #edae2f;
+  padding-bottom: 5vh;
+}
+.login-container {
+  padding: 8vh 90px 0px 90px;
+}
+
+.login-container > h1 {
   color: #edae2f;
   padding-bottom: 5vh;
 }

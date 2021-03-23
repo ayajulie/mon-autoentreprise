@@ -19,15 +19,15 @@
           <li class="nav-item dropdown">
             <%= link_to "Mes services", invoices_calculate_path, class: "nav-link dropdown-toggle text-primary", id: "navbarDropdown", role: "button",  :"data-toggle"=> "dropdown", :"aria-haspopup"=> "true",  :"aria-expanded"=> "false" %>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "Tableau de bord", invoices_calculate_path, class: "dropdown-item text-primary links" %>
-              <a class="dropdown-item" href="#">Another action</a>
+              <%= link_to "Tableau de bord", invoices_calculate_path, class: "dropdown-item text-warning links" %>
+              <a class="dropdown-item" href="#">Mes informations</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="#">Mes écheances</a>
             </div>
           </li>
         </ul>
         <nav class="navbar-light bg-light">
-          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link btn btn-sm btn-primary rounded-pill links " %>
+          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link btn btn-sm rounded-pill links", id: "login-btn" %>
         </nav>
       <% else  %>
         <ul class="navbar-nav mx-auto ">
@@ -46,8 +46,8 @@
         </ul>
         <nav class="navbar-light bg-light">
           <ul class="navbar-nav mx-auto ">
-            <%= link_to "Se Connecter", new_user_session_path, class: " nav-link btn btn-sm btn-outline-warning rounded-pill nav-item text-secondary", id:"login" %>
-            <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link btn btn-sm  btn-warning rounded-pill  nav-item text-white" %>
+            <%= link_to "Se Connecter", new_user_session_path, class: " nav-link btn btn-sm btn-outline-warning rounded-pill nav-item ", id:"login-btn" %>
+            <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link btn btn-sm  btn-warning rounded-pill  nav-item ml-1", id: "signup-btn" %>
           </ul>
         </nav>
       <% end %>
