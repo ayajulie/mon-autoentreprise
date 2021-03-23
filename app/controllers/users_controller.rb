@@ -3,15 +3,9 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def personal_info_users
-    # if @user.form_user_filled?
-    #  redirect_to company_info_users_path
-    # end
   end
 
   def company_info_users
-    # if @user.form_company_all_filled?
-    #  redirect_to company_registration_path
-    # end
   end
 
   def update
@@ -22,10 +16,6 @@ class UsersController < ApplicationController
       @user.update(user_params) && @user.form_user_filled?
       redirect_to company_registration_path(tab: "company_info")
     end
-
-    # met à jour mon utilisateur avec les données de mon user
-    # en fonction de l'état de remplissage je redirige vers une page différente personal_info ou
-    # utilisant current_user.form_company_filled? true = redirige vers l'étape suivante, false màj de la company
   end
 
   def informations

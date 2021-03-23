@@ -48,8 +48,8 @@ document.addEventListener('turbolinks:load', () => {
   //invoiceFlatpickr();
   initSelect2();
   if (document.getElementById("myChart2") != null) {
-  //  myChart();
-  //  myPieChart();
+    //  myChart();
+    //  myPieChart();
     myChart2();
     myDoughnutChart();
   }
