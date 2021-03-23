@@ -13,7 +13,7 @@
           <div><%= @turn_over %> <i class="fas fa-euro-sign"></i></div>
         </div>
          <div class="dashboard-upper-part-card" style="width: 15%">
-          <div><i class="fas fa-users"></i>Nouveaux clients</div>
+          <div><i class="fas fa-users"></i> Nouveaux clients</div>
           <div>+120</div>
         </div>
       </div>
@@ -21,17 +21,9 @@
         <div>Les échéances du mois</div>
         <div>+120</div>
       </div>
-
-
     </div>
+
     <div class="row pt-4 d-flex justify-content-around my-0 py-0">
-<!--=======
-<div class="dashboard-content">
-  <div class="container">
-    <div class="chart-container">
-      <div class="row ">
->>>>>>> master
--->
         <div class="col-xs-12 col-sm-7 dashboard-chart-card">
           Chiffre d'affaire sur 12 mois glissants
           <canvas id="myChart2" height="200" aria-label="Hello ARIA World">
@@ -39,7 +31,7 @@
           </canvas>
         </div>
         <div class="col-xs-12 col-sm-4 dashboard-chart-card">
-          <div class='mb-2'>Activités sur l'exercice fiscal</div>
+          <div class='mb-2'>Chiffre d'affaire sur l'exercice fiscal</div>
           <div class='mt-6 py-2'>
             <canvas id="doughnut-chart" height="200" aria-label="Hello ARIA World" class="pt-6">
               <p>Hello Fallback World</p>
@@ -49,106 +41,106 @@
             CA max 72000 <i class="fas fa-euro-sign"></i>
           </div>
         </div>
-
     </div>
-<!--
-    <div class="row py-1">
-=======
-      </div>
-      <div class="row py-1">
->>>>>>> master
-        <div class="col-xs-12 col-sm-7 dashboard-chart-card">
-          <canvas id="myChart" height="200" aria-label="Hello ARIA World">
-            <p>Hello Fallback World</p>
-          </canvas>
-        </div>
-
-        <div class="col-xs-12 col-sm-4 dashboard-chart-card">
-          <canvas id="pie-chart" height="200" aria-label="Hello ARIA World" style="display: center">
-            <p>Hello Fallback World</p>
-          </canvas>
-        </div>
-<<<<<<< HEAD
-    </div>
--->
 
     <div class="row pt-4 d-flex justify-content-around my-0 py-0">
       <div class="col-xs-12 col-sm-5 dashboard-chart-card">
-        Vos factures
+        <div class='mb-2'>Factures en attente de paiement</div>
+        <div class='mt-6 py-2'>
+          <div class="dashboard-upper-part-card px-0" style="width: 95%">
+            <table class="table">
+            <tbody>
+              <tr><td style="border-top: 0px">Total</td><td style="border-top: 0px">2700€</td><td style="border-top: 0px"><%= link_to root_path do %><i class="fas fa-info-circle"></i><% end %></td></tr>
+              <tr><td>Aujourd'hui</td><td>400€</td><td><%= link_to root_path do %><i class="fas fa-info-circle"></i><% end %></td></tr>
+              <tr><td>Cette semaine</td><td>1200€</td><td><%= link_to root_path do %><i class="fas fa-info-circle"></i><% end %></td></tr>
+              <tr><td>Ce mois</td><td>2400€</td><td><%= link_to root_path do %><i class="fas fa-info-circle"></i><% end %></td></tr>
+            </tbody>
+            <!--
+            <thead>
+              <tr>
+                <th>Client</th>
+                <th>Echéance</th>
+                <th>Montant</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Mr Durand</td><td style='font-size : 0.8em; font-weight: 400;'>15/04/2021</td><td>300€</td></tr>
+              <tr><td>Mr Dupond</td><td style='font-size : 0.8em; font-weight: 400;'>10/04/2021</td><td>600€</td></tr>
+              <tr><td>Mme Martin</td><td style='font-size : 0.8em; font-weight: 400;'>09/04/2021</td><td>400€</td></tr>
+              <tr><td>Mr Durand</td><td style='font-size : 0.8em; font-weight: 400;'>11/04/2021</td><td>700€</td></tr>
+            </tbody>
+            -->
+          </table>
+          </div>
+        </div>
       </div>
-
-
-        <div class="col-xs-12 col-sm-3 dashboard-chart-card">
-          <div class='mb-2'>Déclarations</div>
-          <div class='mt-6 py-2'>
-            <div class="dashboard-upper-part-card px-0" style="width: 85%">
-              <div>Impôt sur le revenu</div>
-              <div>
-                <% if current_user.main_activity_choose == "commerce de détail" %>
-                  <%= @income_tax_revente %>
-                <% else %>
-                  <%= @income_tax_service %>
-                <% end %>
-                <i class="fas fa-euro-sign"></i>
-              </div>
-
-              <div style='font-size : 0.8em; font-weight: 400;'><em>30/05/2021</em></div>
+      <div class="col-xs-12 col-sm-3 dashboard-chart-card">
+        <div class='mb-2'>À déclarer</div>
+        <div class='mt-6 py-2'>
+          <div class="dashboard-upper-part-card px-0" style="width: 85%">
+            <div>Impôt sur le revenu</div>
+            <div>
+              <% if current_user.main_activity_choose == "commerce de détail" %>
+                <%= @income_tax_revente %>
+              <% else %>
+                <%= @income_tax_service %>
+              <% end %>
+              <i class="fas fa-euro-sign"></i>
             </div>
-            <div class="dashboard-upper-part-card px-0" style="width: 85%">
-              <div>TVA</div>
-              <div>
-                <%= @tva %>
-                <i class="fas fa-euro-sign"></i>
-              </div>
-              <div style='font-size : 0.8em; font-weight: 400;'><em>30/03/2021</em></div>
+            <div class= "date-italics">30/05/2021</div>
+          </div>
+          <div class="dashboard-upper-part-card px-0" style="width: 85%">
+            <div>TVA</div>
+            <div>
+              <%= @tva %>
+              <i class="fas fa-euro-sign"></i>
             </div>
-            <div class="dashboard-upper-part-card px-0" style="width: 85%">
-              <div>XXXX</div>
-              <div>410 <i class="fas fa-euro-sign"></i></div>
+            <div class= "date-italics">30/03/2021</div>
+          </div>
+          <div class="dashboard-upper-part-card px-0" style="width: 85%">
+            <div>XXXX</div>
+            <div>410 <i class="fas fa-euro-sign"></i></div>
 
-              <div style='font-size : 0.8em; font-weight: 400;'><em>30/09/2021</em></div>
-            </div>
+            <div class= "date-italics">30/09/2021</div>
           </div>
         </div>
-
-        <div class="col-xs-12 col-sm-3 dashboard-chart-card">
-          <div class='mb-2'>Échéances</div>
-          <div class='mt-6 py-2'>
-            <div class="dashboard-upper-part-card px-0" style="width: 85%">
-              <div>Côtisations sociales</div>
-              <div>
-                <% if current_user.main_activity_choose == "commerce de détail" %>
-                  <%= @charge_sociale_vente %>
-                <% else %>
-                  <%= @charge_sociale_service %>
-                <% end %>
-                <i class="fas fa-euro-sign"></i>
-              </div>
-              <div style='font-size : 0.8em; font-weight: 400;'><em>31/03/2021</em></div>
+      </div>
+      <div class="col-xs-12 col-sm-3 dashboard-chart-card">
+        <div class='mb-2'>À payer</div>
+        <div class='mt-6 py-2'>
+          <div class="dashboard-upper-part-card px-0" style="width: 85%">
+            <div>Côtisations sociales</div>
+            <div>
+              <% if current_user.main_activity_choose == "commerce de détail" %>
+                <%= @charge_sociale_vente %>
+              <% else %>
+                <%= @charge_sociale_service %>
+              <% end %>
+              <i class="fas fa-euro-sign"></i>
             </div>
-            <div class="dashboard-upper-part-card px-0" style="width: 85%">
-              <div>CFE</div>
-              <div>120 <i class="fas fa-euro-sign"></i></div>
+            <div class= "date-italics">31/03/2021</div>
+          </div>
+          <div class="dashboard-upper-part-card px-0" style="width: 85%">
+            <div>CFE</div>
+            <div>120 <i class="fas fa-euro-sign"></i></div>
 
-              <div style='font-size : 0.8em; font-weight: 400;'><em>30/04/2021</em></div>
+            <div class= "date-italics">30/04/2021</div>
+          </div>
+          <div class="dashboard-upper-part-card px-0" style="width: 85%">
+            <div>Taxes consulaires</div>
+            <div>
+              <% if current_user.main_activity_choose == "commerce de détail" %>
+                <%= @taxe_chambre_consulaire_service %>
+              <% else %>
+                <%= @taxe_chambre_consulaire_service %>
+              <% end %>
+              <i class="fas fa-euro-sign"></i>
             </div>
-            <div class="dashboard-upper-part-card px-0" style="width: 85%">
-              <div>Taxes consulaires</div>
-              <div>
-                <% if current_user.main_activity_choose == "commerce de détail" %>
-                  <%= @taxe_chambre_consulaire_service %>
-                <% else %>
-                  <%= @taxe_chambre_consulaire_service %>
-                <% end %>
-                <i class="fas fa-euro-sign"></i>
-              </div>
-
-              <div style='font-size : 0.8em; font-weight: 400;'><em>30/09/2021</em></div>
-            </div>
+            <div class= "date-italics">30/09/2021</div>
           </div>
         </div>
+      </div>
     </div>
-
 </div>
 <hr>
 
