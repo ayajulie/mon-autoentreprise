@@ -16,13 +16,13 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
-    if @user.form_user_filled? && !@user.form_company_at_least_one_filled?
-      redirect_to company_registration_path(tab: "company_info")
-    elsif @user.form_user_filled? && @user.form_company_all_filled?
-      redirect_to company_registration_path(tab: "cerfa")
+    if @user.update(user_params) && @user.form_company_at_least_one_filled?
+      redirect_to company_registration_path(tab: "cerfa_informations")
     else
-      redirect_to company_registration_path
+      @user.update(user_params) && @user.form_user_filled?
+      redirect_to company_registration_path(tab: "company_info")
     end
+
     # met à jour mon utilisateur avec les données de mon user
     # en fonction de l'état de remplissage je redirige vers une page différente personal_info ou
     # utilisant current_user.form_company_filled? true = redirige vers l'étape suivante, false màj de la company
