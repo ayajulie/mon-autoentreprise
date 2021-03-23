@@ -5,16 +5,16 @@
   <table class="table table-sm table-striped">
     <tbody>
       <tr>
+        <td class=" text-primary"> <%= f.label :first_name, "Prénoms" %></td>
+        <td> <%= f.input_field :first_name,  class: "form-control" %></td>
+      </tr>
+      <tr>
         <td class="text-primary "> <%= f.label :birth_last_name,label: "Nom de naissance" %></td>
         <td> <%= f.input_field :birth_last_name, class: "form-control" %></td>
       </tr>
       <tr>
         <td class=" text-primary"> <%= f.label :use_name, "Nom d'usage" %></td>
         <td> <%= f.input_field :use_name, class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td class=" text-primary"> <%= f.label :first_name, "Prénoms" %></td>
-        <td> <%= f.input_field :first_name,  class: "form-control" %></td>
       </tr>
       <tr>
         <td class=" text-primary"> <%= f.label :pseudonym, "Pseudonyme" %></td>
@@ -30,7 +30,7 @@
       </tr>
       <tr>
         <td class=" text-primary"> <%= f.label :birth_date, "Date de naissance"%></td>
-        <td> <%= f.input_field :birth_date, class: "birth-calendar form-control"   %></td>
+        <td> <%= f.input_field :birth_date,  class: "form-control calendar" , input_html:{class: "birth-calendar form-control calendar"}  %></td>
       </tr>
       <tr>
         <td class=" text-primary"> <%= f.label :birth_department, "Département de naissance"%></td>
