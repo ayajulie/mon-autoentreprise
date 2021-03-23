@@ -1,4 +1,7 @@
 <%= simple_form_for invoice do |f| %>
+<div class="form-title py-3" style ="width:620px; ">
+    <h2 class="text-warning">Créer une facture</h2>
+  </div>
   <table class="table table-sm table-striped" style= "width: 600px; ">
     <tbody>
       <tr>
@@ -15,7 +18,7 @@
       </tr>
   </tbody>
 </table>
-  <%= f.submit "Générez votre facture", class: "btn btn-primary"%>
+  <%= f.submit "Générez votre facture", class: "btn btn-warning"%>
 <% end -%>
 
 
