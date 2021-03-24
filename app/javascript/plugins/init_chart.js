@@ -216,8 +216,8 @@ const myChart = () => {
 }
 */
 
-export { myChart };
+//export { myChart };
 export { myChart2 };
-export { myPieChart };
+//export { myPieChart };
 export { myDoughnutChart };
 // if window.location.pathname ='/dfv/vf'

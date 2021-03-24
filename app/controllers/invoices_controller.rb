@@ -61,9 +61,12 @@ class InvoicesController < ApplicationController
 
     @tva = (@turn_over*0.20).round(2)
 
-# Tableaux CA mensuel les 12 derniers mois et les 12 mois précédents
+# Tableaux CA mensuel les 12 derniers mois et les 12 mois précédents pour le graph en barres
     @monthly_past_12_months_turnover = Invoice.group_by_month(:invoiced_at).sum(:amount).values.last(12)
     @monthly_previous_past_12_months_turnover = Invoice.group_by_month(:invoiced_at).sum(:amount).values[-24..-13]
+
+
+
 # Calcul CA 12 mois glissants
     @past_12_months_turnover = @monthly_past_12_months_turnover.sum
 
@@ -116,6 +119,9 @@ class InvoicesController < ApplicationController
 
 # Calcul pour l'année n-2
     @previous_past_year_turnover = Invoice.group_by_year(:invoiced_at).sum(:amount).values[-3]
+
+# Tableau avec CA exercice et taxe de l'exercice pour le graph doughnut
+    @current_year_data = [@current_year_turnover, @current_year_total_taxes_vente, (72000 - @current_year_turnover - @current_year_total_taxes_vente) ]
 
   end
 
