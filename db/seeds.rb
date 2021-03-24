@@ -101,18 +101,18 @@ Invoice.create!(
   object: "nettoyage",
 )
 
-martin = Client.create!(user: User.first, client: "Martin", amout: "5")
-durand = Client.create!(user: User.first, client: "Durand", amout: "5")
-dupond = Client.create!(user: User.first, client: "Dupond", amout: "5")
-targe = Client.create!(user: User.first, client: "Targe", amout: "5")
-marc = Client.create!(user: User.first, client: "Marc", amout: "5")
-tara = Client.create!(user: User.first, client: "Tara", amout: "5")
-martinez = Client.create!(user: User.first, client: "Martinez", amout: "5")
-cortes = Client.create!(user: User.first, client: "Cortes", amout: "5")
-kumi = Client.create!(user: User.first, client: "Kumi", amout: "5")
-smith = Client.create!(user: User.first, client: "Smith", amout: "5")
+martin = Client.create!(user: User.first, client: "Alain Martin", amout: "5")
+durand = Client.create!(user: User.first, client: "Isabelle Durand", amout: "5")
+dupond = Client.create!(user: User.first, client: "Sonia Dupond", amout: "5")
+targe = Client.create!(user: User.first, client: "Sergio Targe", amout: "5")
+marc = Client.create!(user: User.first, client: "Gilbert Marc", amout: "5")
+tara = Client.create!(user: User.first, client: "Mia Tara", amout: "5")
+martinez = Client.create!(user: User.first, client: "Alex Martinez", amout: "5")
+cortes = Client.create!(user: User.first, client: "Coco Cortes", amout: "5")
+kumi = Client.create!(user: User.first, client: "Mayumi Kumi", amout: "5")
+smith = Client.create!(user: User.first, client: "John Smith", amout: "5")
 
-150.times do
+200.times do
   Invoice.create!(
   user: User.first,
   client: [astra, volvo, martin, durand, dupond, targe, marc, tara, martinez, cortes, kumi, smith].sample,
