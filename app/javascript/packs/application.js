@@ -53,16 +53,18 @@ document.addEventListener('turbolinks:load', () => {
     myChart2();
     myDoughnutChart();
   }
+  if (document.getElementById('btn-month-new-clients') != null) {
+    monthTurnover();
+    yearTurnover();
+    exerciseTurnover();
+    monthNewClients();
+    yearNewClients();
+    exerciseNewClients();
+  }
 
 });
 
-monthTurnover();
-yearTurnover();
-exerciseTurnover();
 
-monthNewClients();
-yearNewClients();
-exerciseNewClients();
 
 
 

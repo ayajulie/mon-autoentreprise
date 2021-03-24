@@ -27,7 +27,7 @@ const birthFlatpickr = () => {
       altFormat: "j F Y",
       dateFormat: "dmY",
       "locale": French,
-      defaultDate: "01011990",
+      //defaultDate: "01011990",
       maxDate: "01012005"
     });
   });

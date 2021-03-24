@@ -11,9 +11,9 @@
         <div class="dashboard-upper-part-card" style="width: 15%">
           <div><i class="fas fa-chart-line"></i> CA</div>
           <div id="turnover">
-            <span id="monthly-turnover"><%= @turn_over %> </span>
-            <span id="yearly-turnover" class="d-none"><%= @turn_over * 12 %> </span>
-            <span id="exercise-turnover" class="d-none"><%= @turn_over * 4 %> </span>
+            <span id="monthly-turnover"><%= @current_month_turnover %> </span>
+            <span id="yearly-turnover" class="d-none"><%= @past_12_months_turnover %> </span>
+            <span id="exercise-turnover" class="d-none"><%= @current_year_turnover %> </span>
             <i class="fas fa-euro-sign"></i>
           </div>
           <div class="d-flex justify-content-center">
@@ -55,7 +55,8 @@
     <div class="row pt-4 d-flex justify-content-around my-0 py-0">
         <div class="col-xs-12 col-sm-7 dashboard-chart-card">
           Chiffre d'affaire sur 12 mois glissants
-          <canvas id="myChart2" height="200" aria-label="Hello ARIA World">
+          <canvas id="myChart2" data-monthly-turnover-previous-year= "[3500, 10500, 2300, 5500, 3400, 7900, 1200, 1900, 3000, 5000, 1250, 6700]".to_json
+           height="200" aria-label="Hello ARIA World" >
             <p>Hello Fallback World</p>
           </canvas>
         </div>
@@ -173,7 +174,25 @@
 </div>
 <hr>
 
-<div class="dashboard-chart-card" height="200">
+<div class="dashboard-chart-card" height="200" style="margin-left: 250px;">
+            Tableau des CA mensuels des 12 derniers mois : <%= @monthly_past_12_months_turnover %>
+            <hr>
+            Tableau des CA mensuels des 12 mois précédents : <%= @monthly_previous_past_12_months_turnover %>
+            <hr>
+            CA de l'exercice / année en cours : <%= @current_year_turnover %>
+            <hr>
+            CA de l'année n-1 : <%= @past_year_turnover %>
+            <hr>
+            CA de l'année n-2 : <%= @previous_past_year_turnover %>
+            <hr>
+            Taxes de l'année en cours (si vente) : <%= @current_year_total_taxes_vente  %>
+            <hr>
+            Taxes de l'année en cours (si service) : <%= @current_year_total_taxes_service  %>
+            <hr>
+
+
+
+
             <p> Votre chiffre d'affaires est égal à <%= @turn_over %> €</p>
             <b>Cotisations sociales</b><br />
             <% if current_user.main_activity_choose == "commerce de détail" %>
