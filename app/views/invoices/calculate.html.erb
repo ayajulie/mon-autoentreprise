@@ -111,9 +111,9 @@
             <div>Impôt sur le revenu</div>
             <div>
               <% if current_user.main_activity_choose == "commerce de détail" %>
-                <%= @income_tax_revente %>
+                <%= @past_year_income_tax_revente %>
               <% else %>
-                <%= @income_tax_service %>
+                <%= @past_year_income_tax_service %>
               <% end %>
               <i class="fas fa-euro-sign"></i>
             </div>
@@ -122,16 +122,16 @@
           <div class="dashboard-upper-part-card px-0" style="width: 85%">
             <div>TVA</div>
             <div>
-              <%= @tva %>
+              <%= @past_year_tva  %>
               <i class="fas fa-euro-sign"></i>
             </div>
-            <div class= "date-italics">30/03/2021</div>
+            <div class= "date-italics">02/05/2021</div>
           </div>
           <div class="dashboard-upper-part-card px-0" style="width: 85%">
-            <div>XXXX</div>
-            <div>410 <i class="fas fa-euro-sign"></i></div>
+            <div>Chiffres d'affaire du mois</div>
+            <div> <%= @current_month_turnover  %><i class="fas fa-euro-sign"></i></div>
 
-            <div class= "date-italics">30/09/2021</div>
+            <div class= "date-italics">30/03/2021</div>
           </div>
         </div>
       </div>
@@ -152,7 +152,7 @@
           </div>
           <div class="dashboard-upper-part-card px-0" style="width: 85%">
             <div>CFE</div>
-            <div>120 <i class="fas fa-euro-sign"></i></div>
+            <div>823,05 <i class="fas fa-euro-sign"></i></div>
 
             <div class= "date-italics">30/04/2021</div>
           </div>
