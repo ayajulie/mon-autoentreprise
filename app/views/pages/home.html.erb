@@ -4,11 +4,12 @@
     <div class="col-sm-7" id ="frame_one">
       <h2>Mon auto-entreprise</h2>
       <br>
-      <p>Le site qui vous aide à réaliser toutes les démarches administratives pour votre auto entreprise.</p>
+      <p>Le site qui vous aide à réaliser toutes les démarches administratives pour votre auto entreprise.<br> Il préremplit vos Cerfa et vous simplifie la vie.</p>
+
       <%  if user_signed_in?  %>
-        <%= link_to "Je me lance", company_registration_path(tab: "personal_info"), class: "btn btn-outline-dark" %>
+        <%= link_to "Je me lance", company_registration_path(tab: "personal_info"), class: "btn btn-warning" %>
       <% else %>
-        <%= link_to "Je me lance", new_user_registration_path(tab: "personal_info"), class: "btn btn-outline-dark" %>
+        <%= link_to "Je me lance", new_user_registration_path(tab: "personal_info"), class: "btn btn-warning" %>
       <% end %>
     </div>
     <div class="col-sm-4" id="frame_one">
@@ -20,13 +21,14 @@
 <div class="container-fluid" id="pub">
   <h4 id= "h4">Pourquoi nous rejoindre?</h4>
   <p class="presentation" id="h4">L'équipe de Mon auto-entreprise vous accompagne dans les démarches administratives et la gestion de votre société.</p>
-  <p class="presentation" id="h4"> Nous nous tenons à disposition pour toutes informations complémentaires</p>
+ <p class="presentation" id="h4"> Nous prérempplissons vos Cerfa de Création d'activité et nous suivons la gestion.</p>
+  <p class="presentation" id="h4"> Nous nous tenons à disposition pour toutes informations complémentaires.</p>
 </div>
 <div class="container-fluid" id="frame_fluid">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
       <div class="card">
-        <%= cl_image_tag("création", class: "card-img", height: 150) %>
+        <%= cl_image_tag("création", class: "card-img", height: 250) %>
         <div class="card-body">
           <h5 class="card-title">Créer son activité</h5>
           <p class="card-text" id="text"> VOus avez la phobie administrative ? <br>
@@ -37,7 +39,7 @@
     <div class="col">
       <div class="card">
         <%= cl_image_tag("transformation",
-       class: "card-img", height: 150) %>
+       class: "card-img", height: 250) %>
         <div class="card-body">
           <h5 class="card-title">Modifier son activité</h5>
           <p class="card-text" id="text"> Le site qui vous propose une modification de votre activité rapide et sans souci.</p>
@@ -47,7 +49,7 @@
     <div class="col">
       <div class="card">
         <%= cl_image_tag("stop",
-      class: "card-img", height: 150) %>
+      class: "card-img", height: 250) %>
         <div class="card-body">
           <h5 class="card-title">Cesser son activité</h5>
           <p class="card-text" id="text">Vous pouvez cesser votre activité en un seul clic.<br>
@@ -65,7 +67,7 @@
         <h2>Profitez de votre dashboard</h2>
         <br>
         <p>Cet outil vous permettra de connaître tous les éléments de votre facturation et juridique de votre micro-entreprise</p>
-        <%= link_to "Je vois mon dashboard", "#", class: "btn btn-outline-dark" =%>
+        <%= link_to "Je vois mon dashboard", "#", class: "btn btn-warning" =%>
       </div>
       <div class="col-sm-4">
         <div class="card" style="width: 18rem;">
@@ -84,7 +86,7 @@
     <h2>Inscrivez-vous à notre News-letter</h2>
     <br>
     <p>Suivez toute l'information de la Micro-entreprise</p>
-    <%= link_to "Inscrivez-vous", "#", class: "btn btn-outline-dark" %>
+    <%= link_to "Inscrivez-vous", "#", class: "btn btn-warning" %>
   </div>
   <div class="col-sm-4" id="newsletter">
     <div class="card" style="width: 18rem;">
