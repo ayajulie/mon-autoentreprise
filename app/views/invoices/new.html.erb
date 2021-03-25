@@ -2,8 +2,7 @@
 <%= render '/pages/sidebar' %>
 <div class="dashboard-content">
   <div class="container">
-    <h1>Créer une nouvelle facture</h1>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+
     <hr>
     <%= render "simple_form", invoice: @invoice  %>
     <hr>

@@ -1,7 +1,28 @@
 <%= simple_form_for invoice do |f| %>
-  <%= f.input :object, label: "Objet de la facture" %>
-  <%= f.input :amount, label: "Montant" %>
-  <%= f.input :invoiced_at, label: "Date de la facture", as: :date, html5: true %>
-  <%= f.association :client, label_method: :client, value_method: :id, include_blank: false %>
-  <%= f.submit "Générez votre facture", class: "btn btn-primary"%>
+
+<div class="form-title py-3" style ="width:620px; ">
+    <h2 class="text-warning">Créer une facture</h2>
+  </div>
+
+  <table class="table table-sm table-striped" style= "width: 600px; ">
+    <tbody>
+      <tr>
+         <td>  <%= f.input :object, label: "Objet de la facture", class:"form-control" %></td>
+      </tr>
+       <tr>
+         <td> <%= f.input :amount, label: "Montant", class:"form-control" %></td>
+      </tr>
+       <tr>
+         <td> <%= f.input :invoiced_at, label: "Date de la facture", as: :date, html5: true, class:"form-control" %></td>
+       </tr>
+       <tr>
+        <td><%= f.association :client, label_method: :client, value_method: :id, include_blank: false, class:"form-control"  %></td>
+      </tr>
+  </tbody>
+</table>
+
+  <%= f.submit "Générez votre facture", class: "btn btn-warning"%>
+
 <% end -%>
+
+
