@@ -7,7 +7,7 @@
 }
 
 .navbar {
-  padding: 3rem 8rem;
+  padding: 3rem 4rem;
   height: 0;
   min-height: 10vh;
   margin-bottom: 10vh;
@@ -23,7 +23,10 @@
   text-decoration: none;
   color: #0275d8;
 }
-
+.nav-link {
+  margin-left: 2px;
+  margin-right: 2px;
+}
 #login-btn {
   color: #0275d8;
   border: 2px solid #0275d8;
