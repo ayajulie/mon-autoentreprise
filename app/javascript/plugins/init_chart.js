@@ -17,6 +17,100 @@ Chart.pluginService.register({
     }
 });
 
+console.log(document.getElementById("myChart2").dataset.monthlyTurnoverPreviousYear);
+
+const myChart2 = () => {
+  new Chart(document.getElementById("myChart2"), {
+      type: 'bar',
+      data: {
+        labels: [ 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre','Janvier', 'Février', 'Mars'],
+        datasets: [
+          {
+            label: "Année précédente",
+            backgroundColor: "#0061f2",
+            data: JSON.parse(document.getElementById("myChart2").dataset.monthlyTurnoverPreviousYear)
+          }, {
+            label: "Année courante",
+            backgroundColor: "#edae2f",
+            data: JSON.parse(document.getElementById("myChart2").dataset.monthlyTurnoverPastYear)
+          }
+        ]
+      },
+      options: {
+        elements: {
+            center: {
+            text: '',
+            sidePadding: 60
+            }
+        },
+        title: {
+          display: false,
+          text: "Chiffre d'affaires en euros"
+        }
+      }
+  });
+}
+
+const myDoughnutChart = () => {
+  new Chart(document.getElementById("doughnut-chart"), {
+    type: 'doughnut',
+    data: {
+      labels: ["CA net", "Taxes", ""],
+      datasets: [{
+        label: "Chiffres d'affaire de",
+        backgroundColor: ["#edae2f", "#6c757d","#edeef7"],
+        data: JSON.parse(document.getElementById("doughnut-chart").dataset.currentYear)
+      }]
+    },
+    options: {
+      elements: {
+            center: {
+            text: '56%',
+            sidePadding: 60
+            }
+        },
+      title: {
+        display: false,
+        text: "Activité réalisée cette année / max"
+      },
+      cutoutPercentage: 60,
+      legend: {
+        display: false
+    }
+    }
+});
+}
+
+/*
+
+const myPieChart = () => {
+  new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
+    data: {
+      labels: ["Cotisations sociales", "Taxes consulaires", "Impôt sur le revenu", "Chiffres d'affaire"],
+      datasets: [{
+        label: "Chiffres d'affaire de",
+        backgroundColor: ["#3e95cd","#e8c3b9","#3cba9f", "#8e5ea2"],
+        data: [1500,5267,7340, 45000]
+      }]
+    },
+    options: {
+      elements: {
+            center: {
+            text: '',
+            sidePadding: 60
+            }
+        },
+      title: {
+        display: false,
+        text: "Visualisation de votre chiffre d'affaire et de vos côtisations"
+      },
+      legend: {
+        display: false
+    }
+    }
+});
+}
 
 const myChart = () => {
   new Chart(document.getElementById("myChart"), {
@@ -120,156 +214,10 @@ const myChart = () => {
   }
 });
 }
-
-const myChart2 = () => {
-  new Chart(document.getElementById("myChart2"), {
-      type: 'bar',
-      data: {
-        labels: [ 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novemebre', 'Décembre','Janvier', 'Février', 'Mars'],
-        datasets: [
-          {
-            label: "Année précédente",
-            backgroundColor: "#3e95cd",
-            data: [3500, 4500, 2300, 5500, 3400, 7900, 1200, 1900, 3000, 5000, 1250, 6700]
-          }, {
-            label: "Année courante",
-            backgroundColor: "#8e5ea2",
-            data: [4500, 3500, 3300, 4500, 5400, 3900, 4200, 2900, 2000, 5500, 3500, 5700]
-          }
-        ]
-      },
-      options: {
-        elements: {
-            center: {
-            text: '',
-            sidePadding: 60
-            }
-        },
-        title: {
-          display: false,
-          text: "Chiffre d'affaires en euros"
-        }
-      }
-  });
-}
-
-/*const myChart = () => {
-  new Chart(document.getElementById('myChart'),
-  {
-        type: "bar",
-    data: {
-        labels: [ 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novemebre', 'Décembre','Janvier', 'Février', 'Mars'],
-        datasets: [{
-            label: "Chiffre d'affaire mensuel",
-            data: [3500, 4500, 2300, 5500, 3400, 7900, 1200, 1900, 3000, 5000, 1250, 6700],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-            xAxes: [{
-                stacked: true
-            }],
-             yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-    }
-  }
-  );
-}
 */
 
-const myPieChart = () => {
-  new Chart(document.getElementById("pie-chart"), {
-    type: 'pie',
-    data: {
-      labels: ["Cotisations sociales", "Taxes consulaires", "Impôt sur le revenu", "Chiffres d'affaire"],
-      datasets: [{
-        label: "Chiffres d'affaire de",
-        backgroundColor: ["#3e95cd","#e8c3b9","#3cba9f", "#8e5ea2"],
-        data: [1500,5267,7340, 45000]
-      }]
-    },
-    options: {
-      elements: {
-            center: {
-            text: '',
-            sidePadding: 60
-            }
-        },
-      title: {
-        display: false,
-        text: "Visualisation de votre chiffre d'affaire et de vos côtisations"
-      },
-      legend: {
-        display: false
-    }
-    }
-});
-}
-
-const myDoughnutChart = () => {
-  new Chart(document.getElementById("doughnut-chart"), {
-    type: 'doughnut',
-    data: {
-      labels: ["CA net", "Taxes", ""],
-      datasets: [{
-        label: "Chiffres d'affaire de",
-        backgroundColor: ["#8e5ea2", "#3c415c","#edeef7"],
-        data: [32000, 6000, 34000]
-      }]
-    },
-    options: {
-      elements: {
-            center: {
-            text: '56%',
-            sidePadding: 60
-            }
-        },
-      title: {
-        display: false,
-        text: "Activité réalisée cette année / max"
-      },
-      cutoutPercentage: 60,
-      legend: {
-        display: false
-    }
-    }
-});
-}
-
-
-export { myChart };
+//export { myChart };
 export { myChart2 };
-export { myPieChart };
+//export { myPieChart };
 export { myDoughnutChart };
 // if window.location.pathname ='/dfv/vf'

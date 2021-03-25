@@ -33,11 +33,11 @@ import { initFlatpickr } from '../plugins/flatpickr.js';
 import { birthFlatpickr } from '../plugins/flatpickr.js';
 // import { invoiceFlatpickr } from '../plugins/flatpickr.js';
 import { initSelect2 } from '../plugins/init_select2';
-import { myChart } from '../plugins/init_chart';
-import { myPieChart } from '../plugins/init_chart';
+//import { myChart } from '../plugins/init_chart';
+//import { myPieChart } from '../plugins/init_chart';
 import { myDoughnutChart } from '../plugins/init_chart';
 import { myChart2 } from '../plugins/init_chart';
-import { prevScrollpos } from '../components/navbar';
+// import { windowOnscroll } from '../components/navbar';
 
 // [...]
 
@@ -54,23 +54,25 @@ document.addEventListener('turbolinks:load', () => {
   birthFlatpickr();
   //invoiceFlatpickr();
   initSelect2();
-  prevScrollpos();
+  //windowOnscroll();
   if (document.getElementById("myChart2") != null) {
     //  myChart();
     //  myPieChart();
     myChart2();
     myDoughnutChart();
   }
+  if (document.getElementById('btn-month-new-clients') != null) {
+    monthTurnover();
+    yearTurnover();
+    exerciseTurnover();
+    monthNewClients();
+    yearNewClients();
+    exerciseNewClients();
+  }
 
 });
 
-monthTurnover();
-yearTurnover();
-exerciseTurnover();
 
-monthNewClients();
-yearNewClients();
-exerciseNewClients();
 
 
 
