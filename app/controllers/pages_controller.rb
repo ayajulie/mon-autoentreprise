@@ -28,7 +28,7 @@ class PagesController < ApplicationController
               'M' => @user.gender == 'M' ? 'On' : 'Off',
               'M' => @user.gender == 'F' ? 'On' : 'Off',
               'Pseudonyme' => @user.pseudonym,
-              CGI.unescapeHTML('Nationalit&#233;') => @user.citizenship,
+              CGI.unescapeHTML('Nationalit&#233;') => 'France',
               CGI.unescapeHTML('N&#233;e le') => @user.birth_date,
               CGI.unescapeHTML('D&#233;pt') => @user.birth_department,
               'Commune' => @user.birth_city,

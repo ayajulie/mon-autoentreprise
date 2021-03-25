@@ -37,6 +37,13 @@ import { myChart } from '../plugins/init_chart';
 import { myPieChart } from '../plugins/init_chart';
 import { myDoughnutChart } from '../plugins/init_chart';
 import { myChart2 } from '../plugins/init_chart';
+import { prevScrollpos } from '../components/navbar';
+
+// [...]
+
+
+// Internal imports, e.g:
+// import { initSelect2 } from '../components/init_select2';
 import { monthTurnover, yearTurnover, exerciseTurnover } from '../plugins/chosenTurnoverDisplay';
 import { monthNewClients, yearNewClients, exerciseNewClients } from '../plugins/chosenNewClientsDisplay';
 
@@ -47,9 +54,10 @@ document.addEventListener('turbolinks:load', () => {
   birthFlatpickr();
   //invoiceFlatpickr();
   initSelect2();
+  prevScrollpos();
   if (document.getElementById("myChart2") != null) {
-  //  myChart();
-  //  myPieChart();
+    //  myChart();
+    //  myPieChart();
     myChart2();
     myDoughnutChart();
   }
