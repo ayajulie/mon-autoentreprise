@@ -1,34 +1,54 @@
-<h1 class="text-warning">Création d'entreprise</h1>
-<h3>Envoyer votre cerfa à l'adresse suivante: </h3>
-<p>Merci de vérifier les informations renseignées</p>
-<%= link_to "Corriger vos informations", company_registration_path(tab: "personal_info") %>
+<div class="row form-title py-3">
+  <div class="col ">
+    <h2 class="text-warning">Votre dossier est prêt à être envoyé</h2>
+  </div>
+</div>
+<p class="py-3">Les informations ci-dessous sont correctes,  <%= link_to "téléchargez votre cerfa", cerfa_download_path, class: "buttonDownload" %> ou <%= link_to "corrigez vos informations", company_registration_path(tab: "personal_info") %></p>
+<h4>Adresse d'envoi du cerfa : <br>
+  Chambre de Commerce et d' Industrie de Lyon
+  Palais du Commerce Place de la Bourse, 21 Rue de la République, 69289 Lyon</h4>
 <table class="table table-sm table-striped">
   <thead>
-    <tr class="bg-warning text-secondary">
+    <tr >
       <th colspan="2">Informations Renseignées</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="font-weight-bold">Nom</td>
-      <td><%= current_user.birth_last_name %></td>
+      <td>Nom</td>
+      <td class="font-weight-bold"><%= current_user.birth_last_name %></td>
     </tr>
     <tr>
-      <td class="font-weight-bold">Prénom</td>
-      <td><%= current_user.first_name %></td>
+      <td>Prénoms</td>
+      <td class="font-weight-bold"><%= current_user.first_name %></td>
     </tr>
     <tr>
-      <td class="font-weight-bold">Nom d'usage</td>
-      <td><%= current_user.use_name %></td>
+      <td>Nom d'usage</td>
+      <td class="font-weight-bold"><%= current_user.use_name %></td>
     </tr>
     <tr>
-      <td class="font-weight-bold">Nationalité</td>
-      <td><%= current_user.citizenship %></td>
+      <td>Nationalité</td>
+      <td class="font-weight-bold">Française</td>
     </tr>
     <tr>
-      <td class="font-weight-bold">Pseudonyme</td>
-      <td><%= current_user.pseudonym %></td>
+      <td>Pseudonyme</td>
+      <td class="font-weight-bold"><%= current_user.pseudonym %></td>
+    </tr>
+    <tr>
+      <td>Adresse</td>
+      <td class="font-weight-bold"><%= current_user.address %></td>
+    </tr>
+    <tr>
+      <td>Code Postal</td>
+      <td class="font-weight-bold"><%= current_user.zipcode %></td>
+    </tr>
+    <tr>
+      <td>Code Postal</td>
+      <td class="font-weight-bold"><%= current_user.zipcode %></td>
+    </tr>
+    <tr>
+      <td>Ville</td>
+      <td class="font-weight-bold"><%= current_user.city %></td>
     </tr>
   </tbody>
 </table>
-<%= link_to "Téléchargez votre cerfa", cerfa_download_path %>

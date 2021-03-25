@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-
   get'/dashboard', to: 'pages#dashboard'
   scope '/dashboard' do
     get '/cerfa_informations', to: 'pages#cerfa_informations'
