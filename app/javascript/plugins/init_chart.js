@@ -17,22 +17,22 @@ Chart.pluginService.register({
     }
 });
 
-
+console.log(document.getElementById("myChart2").dataset.monthlyTurnoverPreviousYear);
 
 const myChart2 = () => {
   new Chart(document.getElementById("myChart2"), {
       type: 'bar',
       data: {
-        labels: [ 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novemebre', 'Décembre','Janvier', 'Février', 'Mars'],
+        labels: [ 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre','Janvier', 'Février', 'Mars'],
         datasets: [
           {
             label: "Année précédente",
-            backgroundColor: "#3e95cd",
+            backgroundColor: "#0061f2",
             data: JSON.parse(document.getElementById("myChart2").dataset.monthlyTurnoverPreviousYear)
           }, {
             label: "Année courante",
-            backgroundColor: "#8e5ea2",
-            data: [4500, 3500, 3300, 4500, 5400, 3900, 4200, 2900, 3000, 5500, 3500, 5700]
+            backgroundColor: "#edae2f",
+            data: JSON.parse(document.getElementById("myChart2").dataset.monthlyTurnoverPastYear)
           }
         ]
       },
@@ -58,8 +58,8 @@ const myDoughnutChart = () => {
       labels: ["CA net", "Taxes", ""],
       datasets: [{
         label: "Chiffres d'affaire de",
-        backgroundColor: ["#8e5ea2", "#3c415c","#edeef7"],
-        data: [32000, 6000, 34000]
+        backgroundColor: ["#edae2f", "#6c757d","#edeef7"],
+        data: JSON.parse(document.getElementById("doughnut-chart").dataset.currentYear)
       }]
     },
     options: {

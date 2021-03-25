@@ -100,12 +100,12 @@ class InvoicesController < ApplicationController
     @past_year_charge_sociale_vente = (@past_year_turnover * 0.12).round(2)
     @past_year_taxe_chambre_consulaire_vente = (@past_year_turnover * 0.0015).round(2)
     @past_year_income_tax_revente = ((@past_year_turnover * 0.7) * 1.07).round(2)
-    @past_year_income_tax_revente_to_pay = (@past_year_turnover * 0.01).round(2)
+    @past_year_income_tax_revente_to_pay = (@past_year_turnover * 0.2).round(2)
 
     @past_year_charge_sociale_service = (@past_year_turnover * 0.22).round(2)
     @past_year_taxe_chambre_consulaire_service = (@past_year_turnover * 0.0044).round(2)
     @past_year_income_tax_service = ((@past_year_turnover* 0.5)).round(2)
-    @past_year_income_tax_service_to_pay = (@past_year_turnover* 0.017).round(2)
+    @past_year_income_tax_service_to_pay = (@past_year_turnover* 0.25).round(2)
 
     @past_year_tva = (@past_year_turnover * 0.20).round(2)
 
