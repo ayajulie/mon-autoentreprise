@@ -32,7 +32,7 @@ import { myChart } from '../plugins/init_chart';
 import { myPieChart } from '../plugins/init_chart';
 import { myDoughnutChart } from '../plugins/init_chart';
 import { myChart2 } from '../plugins/init_chart';
-
+import { prevScrollpos } from '../components/navbar';
 
 // [...]
 
