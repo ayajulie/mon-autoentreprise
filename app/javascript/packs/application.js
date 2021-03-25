@@ -37,7 +37,7 @@ import { initSelect2 } from '../plugins/init_select2';
 //import { myPieChart } from '../plugins/init_chart';
 import { myDoughnutChart } from '../plugins/init_chart';
 import { myChart2 } from '../plugins/init_chart';
-import { prevScrollpos } from '../components/navbar';
+// import { windowOnscroll } from '../components/navbar';
 
 // [...]
 
@@ -54,7 +54,7 @@ document.addEventListener('turbolinks:load', () => {
   birthFlatpickr();
   //invoiceFlatpickr();
   initSelect2();
-  prevScrollpos();
+  //windowOnscroll();
   if (document.getElementById("myChart2") != null) {
     //  myChart();
     //  myPieChart();
