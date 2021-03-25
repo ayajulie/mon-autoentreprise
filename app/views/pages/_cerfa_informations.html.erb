@@ -3,52 +3,67 @@
     <h2 class="text-warning">Votre dossier est prêt à être envoyé</h2>
   </div>
 </div>
-<p class="py-3">Les informations ci-dessous sont correctes,  <%= link_to "téléchargez votre cerfa", cerfa_download_path, class: "buttonDownload" %> ou <%= link_to "corrigez vos informations", company_registration_path(tab: "personal_info") %></p>
-<h4>Adresse d'envoi du cerfa : <br>
-  Chambre de Commerce et d' Industrie de Lyon
-  Palais du Commerce Place de la Bourse, 21 Rue de la République, 69289 Lyon</h4>
-<table class="table table-sm table-striped">
-  <thead>
-    <tr >
-      <th colspan="2">Informations Renseignées</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Nom</td>
-      <td class="font-weight-bold"><%= current_user.birth_last_name %></td>
-    </tr>
-    <tr>
-      <td>Prénoms</td>
-      <td class="font-weight-bold"><%= current_user.first_name %></td>
-    </tr>
-    <tr>
-      <td>Nom d'usage</td>
-      <td class="font-weight-bold"><%= current_user.use_name %></td>
-    </tr>
-    <tr>
-      <td>Nationalité</td>
-      <td class="font-weight-bold">Française</td>
-    </tr>
-    <tr>
-      <td>Pseudonyme</td>
-      <td class="font-weight-bold"><%= current_user.pseudonym %></td>
-    </tr>
-    <tr>
-      <td>Adresse</td>
-      <td class="font-weight-bold"><%= current_user.address %></td>
-    </tr>
-    <tr>
-      <td>Code Postal</td>
-      <td class="font-weight-bold"><%= current_user.zipcode %></td>
-    </tr>
-    <tr>
-      <td>Code Postal</td>
-      <td class="font-weight-bold"><%= current_user.zipcode %></td>
-    </tr>
-    <tr>
-      <td>Ville</td>
-      <td class="font-weight-bold"><%= current_user.city %></td>
-    </tr>
-  </tbody>
-</table>
+<p class="pt-3 pb-2 font-weight-bold font-italic ">Les informations ci-dessous sont correctes, vous pouvez télécharger votre CERFA et l'envoyer à l'adresse indiquée ci-dessous ou corriger les informations.</p>
+<div class="pb-4 text-center">
+  <%= link_to "Téléchargez votre CERFA",  cerfa_download_path,  class: "btn  btn-warning text-white rounded-pill" %>
+</div>
+<div class="mb-10 text-center">
+  <h4 class="font-weight-bold pb-2"> Adresse d'envoi :</h4>
+  <p class="font-weight-bold mb-1"> CCI de  Lyon</p>
+  <p class="mb-0">Palais du Commerce  Place de la Bourse</p>
+  <p class="mb-0">21 Rue de la République, 69289 Lyon</p>
+</div>
+<div class="row mt-5">
+  <div class="col-9">
+    <table class="table table-sm table-striped">
+      <thead>
+        <tr >
+          <th colspan="2">Informations Renseignées</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nom</td>
+          <td class="font-weight-bold"><%= current_user.birth_last_name %></td>
+        </tr>
+        <tr>
+          <td>Prénoms</td>
+          <td class="font-weight-bold"><%= current_user.first_name %></td>
+        </tr>
+        <tr>
+          <td>Nom d'usage</td>
+          <td class="font-weight-bold"><%= current_user.use_name %></td>
+        </tr>
+        <tr>
+          <td>Pseudonyme</td>
+          <td class="font-weight-bold"><%= current_user.pseudonym %></td>
+        </tr>
+        <tr>
+          <td>Nationalité</td>
+          <td class="font-weight-bold">Française</td>
+        </tr>
+        <tr>
+          <td>Adresse</td>
+          <td class="font-weight-bold"><%= current_user.address %></td>
+        </tr>
+        <tr>
+          <td>Code Postal</td>
+          <td class="font-weight-bold"><%= current_user.zipcode %></td>
+        </tr>
+        <tr>
+          <td>Code Postal</td>
+          <td class="font-weight-bold"><%= current_user.zipcode %></td>
+        </tr>
+        <tr>
+          <td>Ville</td>
+          <td class="font-weight-bold"><%= current_user.city %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-3">
+    <div class="mb-3">
+      <%= link_to "Corrigez Vos informations",   company_registration_path(tab: "personal_info") ,   class: "btn btn-primary rounded-pill" %>
+    </div>
+  </div>
+</div>
