@@ -47,6 +47,7 @@ document.addEventListener('turbolinks:load', () => {
   birthFlatpickr();
   //invoiceFlatpickr();
   initSelect2();
+  prevScrollpos();
   if (document.getElementById("myChart2") != null) {
     //  myChart();
     //  myPieChart();
