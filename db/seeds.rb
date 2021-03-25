@@ -101,6 +101,28 @@ Invoice.create!(
   object: "nettoyage",
 )
 
+martin = Client.create!(user: User.first, client: "Alain Martin", amout: "5")
+durand = Client.create!(user: User.first, client: "Isabelle Durand", amout: "5")
+dupond = Client.create!(user: User.first, client: "Sonia Dupond", amout: "5")
+targe = Client.create!(user: User.first, client: "Sergio Targe", amout: "5")
+marc = Client.create!(user: User.first, client: "Gilbert Marc", amout: "5")
+tara = Client.create!(user: User.first, client: "Mia Tara", amout: "5")
+martinez = Client.create!(user: User.first, client: "Alex Martinez", amout: "5")
+cortes = Client.create!(user: User.first, client: "Coco Cortes", amout: "5")
+kumi = Client.create!(user: User.first, client: "Mayumi Kumi", amout: "5")
+smith = Client.create!(user: User.first, client: "John Smith", amout: "5")
+
+200.times do
+  Invoice.create!(
+  user: User.first,
+  client: [astra, volvo, martin, durand, dupond, targe, marc, tara, martinez, cortes, kumi, smith].sample,
+  amount: (200..900).to_a.sample,
+  invoiced_at: Faker::Date.backward(days: 700),
+  object: ["Divers", "Forfait nettoyage intégral", "Fournitures menuiserie", "Fournitures électriques", "Forfait", "Acheminement benne", "Intervention grue"].sample,
+  )
+end
+
+
 puts "#{User.count} users created"
 puts "#{Client.count} clients created"
 puts "#{Invoice.count} invoices created"
