@@ -6,15 +6,14 @@
 <div class="dashboard-content" style="margin-left: 250px; margin-right: 30px">
 
 
-    <div class="row pt-4 d-flex justify-content-around my-0 py-0">
+    <div class="row pt-4 d-flex justify-content-between my-0 py-0">
       <div class="dashboard-upper-part col-xs-12 col-sm-7">
         <div class="dashboard-upper-part-card" style="width: 15%">
           <div><i class="fas fa-chart-line"></i> CA</div>
-          <div id="turnover">
-            <span id="monthly-turnover"><%= @current_month_turnover %> </span>
-            <span id="yearly-turnover" class="d-none"><%= @past_12_months_turnover %> </span>
-            <span id="exercise-turnover" class="d-none"><%= @current_year_turnover %> </span>
-            <i class="fas fa-euro-sign"></i>
+          <div id="turnover" style="font-size: 1.6rem">
+            <span id="monthly-turnover"><%= @current_month_turnover %> <i class="fas fa-euro-sign"></i> <span class='date-italics'>(<%= @previous_year_month_variation_rate  %>%) <%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Variation par rapport au même chiffre année n-1"></i><% end %></span></span>
+            <span id="yearly-turnover" class="d-none"><%= @past_12_months_turnover %> <i class="fas fa-euro-sign"></i> <span class='date-italics'>(<%= @previous_year_past_12_month_variation_rate  %>%) <%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Variation par rapport au même chiffre année n-1"></i><% end %></span></span>
+            <span id="exercise-turnover" class="d-none"><%= @current_year_turnover %> <i class="fas fa-euro-sign"></i> <span class='date-italics'>(<%= @previous_year_same_month_exercise_variation_rate  %>%) <%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Variation par rapport au même chiffre année n-1"></i><% end %></span></span>
           </div>
           <div class="d-flex justify-content-center">
             <div>
@@ -28,11 +27,13 @@
             </div>
           </div>
         </div>
-         <div class="dashboard-upper-part-card" style="width: 15%">
+        <div class="dashboard-upper-part-card" style="width: 15%">
           <div><i class="fas fa-users"></i> Nouveaux clients</div>
+          <div style="font-size: 1.6rem">
             <span id="past-month-new-clients">+ 9</span>
             <span id="past-year-new-clients" class="d-none">+ 126</span>
             <span id="this-exercise-new-clients" class="d-none">+ 23</span>
+          </div>
           <div class="d-flex justify-content-center">
             <div>
               <button class="btn btn-ghost active" id="btn-month-new-clients" >Mois</button>
@@ -46,7 +47,7 @@
           </div>
         </div>
       </div>
-      <div class="dashboard-upper-part-card col-xs-12 col-sm-4" style="width: 30%">
+      <div class="dashboard-upper-part-card col-xs-12 col-sm-4 pr-0 mr-0" style="width: 30%">
         <div>Les échéances du mois</div>
         <div></div>
       </div>
@@ -61,9 +62,10 @@
           </canvas>
         </div>
         <div class="col-xs-12 col-sm-4 dashboard-chart-card">
-          <div class='mb-2'>Chiffre d'affaire de l'année en cours</div>
+          <div class='mb-0'>Chiffre d'affaire de l'année</div>
+          <div class= 'date-italics'>(Évolution en % par rapport à l'année précédente)</div>
           <div class='mt-6 py-2'>
-            <canvas id="doughnut-chart" data-current-year= "<%= @current_year_data_service %>" height="200" aria-label="Hello ARIA World" class="pt-6">
+            <canvas id="doughnut-chart" data-current-year= "<%= @current_year_data_service %>" data-variation-rate= "<%= @previous_year_same_month_exercise_variation_rate %>" height="200" aria-label="Hello ARIA World" class="pt-6">
               <p>Hello Fallback World</p>
             </canvas>
           </div>
@@ -76,7 +78,7 @@
               </div>
           </div>
           <div class="pb-2 date-italics">
-            Dont <%= @current_year_total_taxes_service %> <i class="fas fa-euro-sign"></i> de taxes
+            Estimation des taxes : <%= @current_year_total_taxes_service %> <i class="fas fa-euro-sign"></i>
           </div>
           <div class="d-flex justify-content-center py-2">
             <div>
@@ -184,7 +186,12 @@
     </div>
 </div>
 
+
+
 <!--
+
+
+
 <div style="margin-left: 250px">
       <div class="col-xs-12 col-sm-3 dashboard-chart-card">
         <div class='mb-2'>À déclarer</div>
@@ -274,6 +281,14 @@
             Taxes de l'année en cours (si service) : <%= @current_year_total_taxes_service  %>
             <hr>
             Données graph doughnut : <%= @current_year_data %>
+            <hr>
+              Augmentation mensuelle année précédente<%= @previous_year_month_variation_rate %>, <%= @previous_year_month_variation_rate_1  %>
+            <hr>
+            Augn 12 mois glissants  <%=   @previous_year_past_12_month_variation_rate %>, <%= @previous_year_past_12_month_variation_rate_1 %>
+            <hr>
+            Aug exercice <%= @previous_year_same_month_exercise_variation_rate  %>
+            <hr>
+            <%= Invoice.group_by_month(:invoiced_at).sum(:amount).values %>
 
 
 
