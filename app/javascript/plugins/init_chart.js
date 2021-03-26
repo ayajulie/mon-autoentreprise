@@ -12,12 +12,13 @@ Chart.pluginService.register({
         const text = chart.config.options.elements.center.text,
             textX = Math.round((width - ctx.measureText(text).width) / 2),
             textY = height / 2;
-        ctx.fillText(text, textX, textY + 10);
+        ctx.fillText(text, textX, textY + 15);
         ctx.save();
     }
 });
 
 console.log(document.getElementById("myChart2").dataset.monthlyTurnoverPreviousYear);
+console.log(document.getElementById("doughnut-chart").dataset.currentYear);
 
 const myChart2 = () => {
   new Chart(document.getElementById("myChart2"), {
@@ -55,7 +56,7 @@ const myDoughnutChart = () => {
   new Chart(document.getElementById("doughnut-chart"), {
     type: 'doughnut',
     data: {
-      labels: ["CA net", "Taxes", ""],
+      labels: ["CA net", "Taxes", "CA max"],
       datasets: [{
         label: "Chiffres d'affaire de",
         backgroundColor: ["#edae2f", "#6c757d","#edeef7"],
@@ -65,7 +66,7 @@ const myDoughnutChart = () => {
     options: {
       elements: {
             center: {
-            text: '56%',
+            text: JSON.parse(document.getElementById("doughnut-chart").dataset.variationRate),
             sidePadding: 60
             }
         },
@@ -75,7 +76,7 @@ const myDoughnutChart = () => {
       },
       cutoutPercentage: 60,
       legend: {
-        display: false
+        display: true
     }
     }
 });
