@@ -32,7 +32,7 @@
           <div><i class="fas fa-users"></i> Nouveaux clients</div>
             <span id="past-month-new-clients">+ 9</span>
             <span id="past-year-new-clients" class="d-none">+ 126</span>
-            <span id="this-exercise-new-clients" class="d-none">+ 53</span>
+            <span id="this-exercise-new-clients" class="d-none">+ 23</span>
           <div class="d-flex justify-content-center">
             <div>
               <button class="btn btn-ghost active" id="btn-month-new-clients" >Mois</button>
@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <div class="row pt-4 d-flex justify-content-around my-0 py-0">
+    <div class="row pt-4 d-flex justify-content-between my-0 py-0">
         <div class="col-xs-12 col-sm-7 dashboard-chart-card">
           Chiffre d'affaire sur 12 mois glissants
           <canvas id="myChart2" data-monthly-turnover-previous-year= "<%= @monthly_previous_past_12_months_turnover %>"
@@ -61,49 +61,131 @@
           </canvas>
         </div>
         <div class="col-xs-12 col-sm-4 dashboard-chart-card">
-          <div class='mb-2'>Chiffre d'affaire sur l'exercice fiscal</div>
+          <div class='mb-2'>Chiffre d'affaire de l'année en cours</div>
           <div class='mt-6 py-2'>
-            <canvas id="doughnut-chart" data-current-year= "<%= @current_year_data %>" height="200" aria-label="Hello ARIA World" class="pt-6">
+            <canvas id="doughnut-chart" data-current-year= "<%= @current_year_data_service %>" height="200" aria-label="Hello ARIA World" class="pt-6">
               <p>Hello Fallback World</p>
             </canvas>
           </div>
-          <div>
-            CA max 72000 <i class="fas fa-euro-sign"></i>
+          <div class="py-2 d-flex justify-content-around" style="font-size: 1.2rem">
+              <div style="margin-left: 60px">
+                <%= @current_year_turnover %> <i class="fas fa-euro-sign"></i> / 72000 <i class="fas fa-euro-sign"></i>
+              </div>
+              <div>
+                 <%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="72000€ coorespond au CA max pour votre activité" ></i><% end %>
+              </div>
+          </div>
+          <div class="pb-2 date-italics">
+            Dont <%= @current_year_total_taxes_service %> <i class="fas fa-euro-sign"></i> de taxes
+          </div>
+          <div class="d-flex justify-content-center py-2">
+            <div>
+              <button class="btn btn-ghost" id="btn-monthly-turnover" style="width: 32px" >2019</button>
+            </div>
+            <div>
+              <button class="btn btn-ghost" id="btn-yearly-turnover" style="width: 32px" >2020</button>
+            </div>
+            <div>
+              <button class="btn btn-ghost active" id="btn-exercise-turnover" style="width: 32px" >2021</button>
+            </div>
           </div>
         </div>
     </div>
 
-    <div class="row pt-4 d-flex justify-content-around my-0 py-0">
-      <div class="col-xs-12 col-sm-5 dashboard-chart-card">
-        <div class='mb-2'>Factures en attente de paiement</div>
+    <div class="row pt-4 d-flex justify-content-between my-0 py-0">
+      <div class="col-12 dashboard-chart-card">
+        <div class='mb-2' style="font-size: 1.5rem">VOS PROCHAINES ÉCHÉANCES</div>
         <div class='mt-6 py-2'>
           <div class="dashboard-upper-part-card px-0" style="width: 95%">
             <table class="table">
             <tbody>
-              <tr><td style="border-top: 0px">Total</td><td style="border-top: 0px">2700€</td><td style="border-top: 0px"><%= link_to root_path do %><i class="fas fa-info-circle"></i><% end %></td></tr>
-              <tr><td>Aujourd'hui</td><td>400€</td><td><%= link_to root_path do %><i class="fas fa-info-circle"></i><% end %></td></tr>
-              <tr><td>Cette semaine</td><td>1200€</td><td><%= link_to root_path do %><i class="fas fa-info-circle"></i><% end %></td></tr>
-              <tr><td>Ce mois</td><td>2400€</td><td><%= link_to root_path do %><i class="fas fa-info-circle"></i><% end %></td></tr>
-            </tbody>
-            <!--
-            <thead>
               <tr>
-                <th>Client</th>
-                <th>Echéance</th>
-                <th>Montant</th>
+                <td style="border-top: 0px; font-size: 1.2rem">Chiffres d'affaire de février 2021</td>
+                <td style="border-top: 0px; opacity: 0.6"><%= @current_month_turnover  %> <i class="fas fa-euro-sign"></i></td>
+                <td class= "date-italics" style="border-top: 0px">31/03/2021</td>
+                <td style="border-top: 0px"><span class="badge badge-secondary" style= "background-color: #edae2f">À déclarer</span></td>
+                <td style="border-top: 0px"><%= link_to root_path do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="À déclarer à l'URSAFF"></i><% end %></td>
               </tr>
-            </thead>
-            <tbody>
-              <tr><td>Mr Durand</td><td style='font-size : 0.8em; font-weight: 400;'>15/04/2021</td><td>300€</td></tr>
-              <tr><td>Mr Dupond</td><td style='font-size : 0.8em; font-weight: 400;'>10/04/2021</td><td>600€</td></tr>
-              <tr><td>Mme Martin</td><td style='font-size : 0.8em; font-weight: 400;'>09/04/2021</td><td>400€</td></tr>
-              <tr><td>Mr Durand</td><td style='font-size : 0.8em; font-weight: 400;'>11/04/2021</td><td>700€</td></tr>
+              <tr>
+                <td style="font-size: 1.2rem">Cotisations sociales de février 2021</td>
+                <td style="opacity: 0.6" >
+                  <% if current_user.main_activity_choose == "commerce de détail" %>
+                    <%= @past_month_charge_sociale_vente %>
+                  <% else %>
+                  <%= @past_month_charge_sociale_service %>
+                  <% end %>
+                   <i class="fas fa-euro-sign"></i>
+                </td>
+                <td class= "date-italics">31/03/2021</td>
+                <td><span class="badge badge-secondary" style= "background-color: #0061f2"> À payer </span></td>
+                <td><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="À payer à l'URSAFF, calculé sur le CA de février 2021" ></i><% end %></td>
+              </tr>
+              <tr>
+                <td style="font-size: 1.2rem">Impôt sur le revenu mensualisé</td>
+                <td style="opacity: 0.6" >
+                  <% if current_user.main_activity_choose == "commerce de détail" %>
+                    <%= @monthly_income_tax_revente_to_pay  %>
+                  <% else %>
+                    <%= @monthly_income_tax_service_to_pay %>
+                  <% end %>
+                  <i class="fas fa-euro-sign"></i>
+                </td>
+                <td class= "date-italics">31/03/2021</td>
+                <td><span class="badge badge-secondary" style= "background-color: #0061f2">À payer</span></td>
+                <td><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Calculé sur vos revenus 2019"></i><% end %></td>
+              </tr>
+                <tr>
+                <td style="font-size: 1.2rem">TVA année 2020</td>
+                <td style="opacity: 0.6"><%= @past_year_tva %> <i class="fas fa-euro-sign"></i></td>
+                <td class= "date-italics">02/05/2021 </td>
+                <td><span class="badge badge-secondary" style= "background-color: #edae2f">À déclarer</span></td>
+                <td><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Calculé sur le CA de 2020"></i><% end %></td>
+              </tr>
+              <tr>
+                <td style="font-size: 1.2rem">Déclaration impôt sur le revenu année 2020 </td>
+                <td style="opacity: 0.6" >
+                  <% if current_user.main_activity_choose == "commerce de détail" %>
+                    <%= @past_year_income_tax_revente %>
+                  <% else %>
+                    <%= @past_year_income_tax_service %>
+                  <% end %>
+                   <i class="fas fa-euro-sign"></i>
+                </td>
+                <td class= "date-italics">30/05/2021</td>
+                <td><span class="badge badge-secondary" style= "background-color: #edae2f">À déclarer</span></td>
+                <td ><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Montant à déclarer pour l'activité de votre micro-entreprise"></i><% end %></td>
+              </tr>
+              <tr>
+                <td style="font-size: 1.2rem">CFE</td>
+                <td style="opacity: 0.6">823 <i class="fas fa-euro-sign"></i></td>
+                <td class= "date-italics">15/09/2021</td>
+                <td><span class="badge badge-secondary" style= "background-color: #0061f2">À payer</span></td>
+                <td><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Calculé sur la valeur locative des biens immobiliers de 2019"></i><% end %></td>
+              </tr>
+              <tr>
+                <td style="font-size: 1.2rem">Taxes consulaires</td>
+                <td style="opacity: 0.6">
+                  <% if current_user.main_activity_choose == "commerce de détail" %>
+                    <%= @past_year_taxe_chambre_consulaire_vente %>
+                  <% else %>
+                    <%= @past_year_taxe_chambre_consulaire_service %>
+                  <% end %>
+                   <i class="fas fa-euro-sign"></i>
+                </td>
+                <td class= "date-italics">30/09/2021</td>
+                <td><span class="badge badge-secondary" style= "background-color: #0061f2">À payer</span></td>
+                <td><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="" ></i><% end %></td>
+              </tr>
             </tbody>
-            -->
           </table>
           </div>
         </div>
       </div>
+    </div>
+</div>
+
+<!--
+<div style="margin-left: 250px">
       <div class="col-xs-12 col-sm-3 dashboard-chart-card">
         <div class='mb-2'>À déclarer</div>
         <div class='mt-6 py-2'>
@@ -119,7 +201,8 @@
             </div>
             <div class= "date-italics">30/05/2021</div>
           </div>
-          <div class="dashboard-upper-part-card px-0" style="width: 85%">
+
+         <div class="dashboard-upper-part-card px-0" style="width: 85%">
             <div>TVA</div>
             <div>
               <%= @past_year_tva  %>
@@ -133,7 +216,9 @@
 
             <div class= "date-italics">30/03/2021</div>
           </div>
-        </div>
+
+
+       </div>
       </div>
       <div class="col-xs-12 col-sm-3 dashboard-chart-card">
         <div class='mb-2'>À payer</div>
@@ -152,7 +237,7 @@
           </div>
           <div class="dashboard-upper-part-card px-0" style="width: 85%">
             <div>CFE</div>
-            <div>823,05 <i class="fas fa-euro-sign"></i></div>
+            <div>823.05 <i class="fas fa-euro-sign"></i></div>
 
             <div class= "date-italics">15/09/2021</div>
           </div>
@@ -170,9 +255,8 @@
           </div>
         </div>
       </div>
-    </div>
+
 </div>
-<hr>
 
 <div class="dashboard-chart-card" height="200" style="margin-left: 250px;">
             Tableau des CA mensuels des 12 derniers mois : <%= @monthly_past_12_months_turnover %>
@@ -225,5 +309,14 @@
                 <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
               <% end %>
             <p> Votre chiffre d'affaire maximum est de 72 000 €</p>
+            Tableau : <%= @current_year_data_service  %>
           </div>
+ -->
+              <!-- <tr>
+                <td style="border-top: 0px">Objet</td>
+                <td style="border-top: 0px">Montant</td>
+                <td style="border-top: 0px"class= "date-italics">Échéances</td>
+                <td style="border-top: 0px"><span class="badge badge-secondary">New</span></td>
+                <td style="border-top: 0px"><%= link_to root_path do %><i class="fas fa-info-circle"></i><% end %></td>
+              </tr> -->
 
