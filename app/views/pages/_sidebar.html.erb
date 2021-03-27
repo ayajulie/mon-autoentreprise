@@ -1,38 +1,50 @@
-<div class="col-2  sidebar bg-secondary  mt-4 fixed-top">
-  <div class="row side-bar-title-container align-items-center justify-content-center">
-    <div class="col-2 sidebar-icon">
-      <i class="fas fa-tachometer-alt  dashboard-icon fa-2x"></i>
+<div class="col-2 sidebar sidebar-col fixed-top">
+  <div class="row side-bar-title-container align-items-center justify-content-between">
+    <div class="row  container-fluid mx-0 py-4 sidebar-row  <%='sidebar-row-bg' if current_page?(invoices_calculate_path)  %>">
+      <div class="col-2 sidebar-icon">
+        <i class="fas fa-tachometer-alt dashboard-icon fa-2x"></i>
+      </div>
+      <div class="col-10 mr-auto sidebar-title h5">
+        <%= link_to "Dashboard", invoices_calculate_path, class: "nav-link sidebar-link" %>
+      </div>
+      <div class="w-100 "> </div>
     </div>
-    <div class="col-10  mr-auto sidebar-title h5">
-      <%=  link_to "Dashboard",  invoices_calculate_path, class: "nav-link sidebar-link"  %>
+    <div class="row container-fluid mx-0 py-4 sidebar-row  <%='sidebar-row-bg' if current_page?(new_invoice_path)  %> ">
+      <div class="col-2 sidebar-icon">
+        <i class="fas fa-file-invoice dashboard-icon fa-2x"></i>
+      </div>
+      <div class="col-10 mr-auto sidebar-title h5 ">
+        <%= link_to("Facturation",new_invoice_path, class: "nav-link sidebar-link ")%>
+      </div>
     </div>
-    <div class="w-100 "> <hr></div>
-    <div class="col-2 sidebar-icon">
-      <i class="fas fa-file-invoice dashboard-icon fa-2x"></i>
+    <div class="w-100 "> </div>
+    <div class= "row container-fluid py-4 mx-0 sidebar-row">
+      <div class="col-2 sidebar-icon">
+        <i class="fas fa-address-card dashboard-icon fa-2x"></i>
+      </div>
+      <div class="col-10 mr-auto sidebar-title h5">
+        <%= link_to "Informations", my_informations_path, class: "nav-link sidebar-link" %>
+      </div>
     </div>
-    <div class="col-10 sidebar-title h5">
-      <%=  link_to "Facturation",  new_invoice_path, class: "nav-link sidebar-link" %>
+    <div class="w-100 "></div>
+    <div class= "row container-fluid py-4 mx-0 sidebar-row ">
+      <div class="col-2 sidebar-icon">
+        <i class="fas fa-history dashboard-icon fa-2x"></i>
+      </div>
+      <div class="col-10 mr-auto sidebar-title h5">
+        <%= link_to "Démarches", my_informations_path, class: "nav-link sidebar-link" %>
+      </div>
     </div>
-    <div class="w-100"> <hr></div>
-    <div class="col-2 sidebar-icon">
-      <i class="fas fa-address-card dashboard-icon  fa-2x"></i>
+    <div class="w-100 "></div>
+    <%# stop %>
+    <div class= "row container-fluid py-4 mx-0 sidebar-row ">
+      <div class="col-2 sidebar-icon">
+        <i class="fas fa-bell dashboard-icon fa-2x"></i>
+      </div>
+      <div class="col-10 mr-auto sidebar-title h5">
+        <%= link_to "Notifications", my_informations_path, class: "nav-link sidebar-link" %>
+      </div>
     </div>
-    <div class="col-10 sidebar-title h5">
-      <%= link_to "Informations",  my_informations_path, class: "nav-link sidebar-link" %>
-    </div>
-    <div class="w-100 "><hr></div>
-    <div class="col-2 sidebar-icon">
-      <i class="fas fa-history dashboard-icon  fa-2x"></i>
-    </div>
-    <div class="col-10 sidebar-title h5">
-      <%= link_to "Démarches", my_informations_path,  class: "nav-link sidebar-link" %>
-    </div>
-    <div class="w-100 "><hr></div>
-    <div class="col-2 sidebar-icon">
-      <i class="fas fa-bell dashboard-icon  fa-2x"></i>
-    </div>
-    <div class="col-10 sidebar-title h5">
-      <%= link_to "Notifications",  my_informations_path, class: "nav-link sidebar-link" %>
-    </div>
+    <div class="w-100 "></div>
   </div>
 </div>
