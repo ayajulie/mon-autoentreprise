@@ -17,8 +17,8 @@ Chart.pluginService.register({
     }
 });
 
-console.log(document.getElementById("myChart2").dataset.monthlyTurnoverPreviousYear);
-console.log(document.getElementById("doughnut-chart").dataset.currentYear);
+// console.log(document.getElementById("myChart2").dataset.monthlyTurnoverPreviousYear);
+// console.log(document.getElementById("doughnut-chart").dataset.currentYear);
 
 const myChart2 = () => {
   new Chart(document.getElementById("myChart2"), {
