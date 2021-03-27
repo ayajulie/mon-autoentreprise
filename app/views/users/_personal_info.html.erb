@@ -30,7 +30,7 @@
       </tr>
       <tr>
         <td class=" text-primary"> <%= f.label :birth_date, "Date de naissance"%></td>
-        <td> <%= f.input_field :birth_date,  class: "form-control birth-calendar" , input_html:{class: "birth-calendar  form-control"}   %></td>
+        <td> <%= f.input_field :birth_date, as: :date, html5: true, class:"form-control" %></td>
       </tr>
       <tr>
         <td class=" text-primary"> <%= f.label :birth_department, "Département de naissance"%></td>
