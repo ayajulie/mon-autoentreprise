@@ -67,7 +67,7 @@ class InvoicesController < ApplicationController
 
 
 
-# Calcul CA 12 mois glissants
+# Calcul CA 12 mois glissant
     @past_12_months_turnover = @monthly_past_12_months_turnover.sum
     @previous_past_12_months_turnover = @monthly_previous_past_12_months_turnover.sum
 
