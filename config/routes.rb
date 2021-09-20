@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'pages#home'
   get '/actualites',  to: 'pages#actualites'
+  devise_for :users
+  devise_scope :user do
+   get '/users/sign_out', to: 'devise/sessions#destroy'
+end
+  root to: 'pages#home'
+
 
   get'/dashboard', to: 'pages#dashboard'
   scope '/dashboard' do
@@ -21,4 +25,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:update] # Pas propre car current_user donc pas besoin d'id mais choisi par Joseph pour faciliter les simple forms
    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
 end
