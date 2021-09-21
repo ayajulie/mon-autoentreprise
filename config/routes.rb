@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get '/actualites',  to: 'pages#actualites'
   devise_for :users
   devise_scope :user do
-   get '/users/sign_out', to: 'devise/sessions#destroy'
+  get '/users/sign_out', to: 'devise/sessions#destroy'
 end
   root to: 'pages#home'
 
