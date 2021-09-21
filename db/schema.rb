@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_20_104844) do
+ActiveRecord::Schema.define(version: 2021_09_21_175656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,29 @@ ActiveRecord::Schema.define(version: 2021_03_20_104844) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_clients_on_user_id"
+  end
+
+  create_table "compta", force: :cascade do |t|
+    t.bigint "users_id", null: false
+    t.integer "immobilisations"
+    t.integer "valeur_credit_bail"
+    t.integer "charges_repartir"
+    t.integer "primes_remboursement"
+    t.integer "stocks"
+    t.integer "avances"
+    t.integer "creance"
+    t.integer "effets_escomptes"
+    t.integer "valeur_mobilieres"
+    t.integer "disponibilites"
+    t.integer "capitaux_propres"
+    t.integer "dettes_financieres"
+    t.integer "emprunt_credit_bail"
+    t.integer "dettes_exploitations"
+    t.integer "dettes_fiscales"
+    t.integer "tresorerie_passive"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["users_id"], name: "index_compta_on_users_id"
   end
 
   create_table "invoices", force: :cascade do |t|
@@ -118,6 +141,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_104844) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "clients", "users"
+  add_foreign_key "compta", "users", column: "users_id"
   add_foreign_key "invoices", "clients"
   add_foreign_key "invoices", "users"
 end
