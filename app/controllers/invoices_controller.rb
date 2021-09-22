@@ -1,7 +1,5 @@
 class InvoicesController < ApplicationController
 
-  before_action :set_client, only: [:edit, :upadate, :destroy]
-
 
   def new
     @invoice = Invoice.new
@@ -69,7 +67,7 @@ class InvoicesController < ApplicationController
 
 # Calcul CA 12 mois glissant
     @past_12_months_turnover = @monthly_past_12_months_turnover.sum
-    @previous_past_12_months_turnover = @monthly_previous_past_12_months_turnover.sum
+
 
 # Calcul pour le mois en cours
     @current_month_turnover = Invoice.group_by_month(:invoiced_at).sum(:amount).values.last
@@ -152,12 +150,9 @@ class InvoicesController < ApplicationController
   require 'date'
 
   def invoice_params
-      params.require(:invoice).permit(:object, :amount, :invoiced_at, :user_id, :client_id)
+      params.require(:invoice).permit(:object, :amount, :invoiced_at, :user_id)
   end
 
-  def set_client
-      @client = Client.find(params[:id])
-  end
 
   def variation_percentage(a, b)
     (((b.to_f - a.to_f) * 100) / a).round(1)

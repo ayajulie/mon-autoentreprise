@@ -1,18 +1,18 @@
 class ComptaController < ApplicationController
 
     def new
-    @compta = Invoice.new
+    @compta = Compta.new
   end
 
   def show
-    @compta=Invoice.find(params[:id])
-    @invoices = Invoice.all
+    @compta=Compta.find(params[:id])
+    @comptas = Compta.all
   end
 
 
   def create
-    @compta = Invoice.new(invoice_params)
-    @invoice.user = current_user
+    @compta = Compta.new(compta_params)
+    @compta.user = current_user
     if @invoice.save
         redirect_to invoices_calculate_path
     else
