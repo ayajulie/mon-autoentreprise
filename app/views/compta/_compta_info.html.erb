@@ -1,114 +1,75 @@
-<%= simple_form_for(@user, remote: true) do |f| %>
+<%= simple_form_for(@compta, remote: true) do |f| %>
   <div class="form-title py-3">
     <h2 class="text-warning">Informations préalables</h2>
   </div>
   <table class="table table-sm table-striped">
     <tbody>
       <tr>
-        <td class="text-primary form-col"> <%= f.label :past_salaried_activity,label: "Avez-vous déja exercé une activité non salariée?" %></td>
-        <td> <%= f.input_field :past_salaried_activity, class: "form-control",  as: :select %></td>
+        <td class="text-primary form-col"> <%= f.label :immobilisations,label: "Quels sont vos niveaux d'immobilisations?" %></td>
+        <td> <%= f.input_field :immobilisations, class: "form-control" %></td>
       </tr>
       <tr>
-        <td class=" text-primary"> <%= f.label :exercising_mode_declaration, "Déclaration relative au mode d'exercice" %></td>
-        <td> <%= f.input_field :exercising_mode_declaration, collection: ["Entrepreneur Individuel", "Entrepreneur individuel à responsabilité limitée"],  class: "form-control" %></td>
+        <td class=" text-primary"> <%= f.label :valeur_credit_bail, "Valeur du crédit bail" %></td>
+        <td> <%= f.input_field :valeur_credit_bail, class: "form-control" %></td>
       </tr>
       <tr>
-        <td class=" text-primary"> <%= f.label :spouse_working_in_company, "Avez-vous un conjoint marié ou pacsé exerçant une activité régulière dans l'entreprise" %></td>
-        <td> <%= f.input_field :spouse_working_in_company,  class: "form-control", as: :select %></td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="form-title py-3">
-    <h2 class="text-warning">Déclaration relative à l'établissement et à l'activité </h2>
-  </div>
-  <table class="table table-sm table-striped">
-    <tbody>
-      <tr>
-        <td class="text-primary form-col"> <%= f.label :company_address,label: "Adresse de l'entreprise" %></td>
-        <td> <%= f.input_field :company_address,   collection: ["Etablissement où vous exercez votre activité", "Dans une entreprise de domiciliation", "Votre domicile personnel"],  class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td class="text-primary form-col"> <%= f.label :establishment_address,label: "Adresse de l'établissement" %></td>
-        <td> <%= f.input_field :establishment_address,  placeholder: "rés, bât, n°, voie, lieu-dit", class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td class="text-primary"> <%= f.label :company_zipcode,label: "Code Postal" %></td>
-        <td> <%= f.input_field :company_zipcode, class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td class="text-primary"> <%= f.label :company_city,label: "Commune" %></td>
-        <td> <%= f.input_field :company_city, class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td class="text-primary"> <%= f.label :company_country,label: "Pays" %></td>
-        <td> <%= f.input_field :company_country, class: "form-control",  as: :country, priority: [ "France" ] %></td>
-      </tr>
-      <tr>
-        <td class="text-primary"> <%= f.label :paying_agent_number,label: "Domiciliataire : Numéro unique d'identification" %></td>
-        <td> <%= f.input_field :paying_agent_number, class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td class="text-primary"> <%= f.label :paying_agent,label: "Nom du domiciliataire" %></td>
-        <td> <%= f.input_field :paying_agent, class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td class="text-primary"> <%= f.label :start_activity,label: "Début de l'activité" %></td>
-        <td> <%= f.input_field :start_activity, as: :date, html5: true, class:"form-control" %></td>
-      </tr>
-      <tr>
-        <td class="text-primary"> <%= f.label :seasonal_activity,label: "Activité permanente" %></td>
-        <td> <%= f.input_field :seasonal_activity, class: "form-control", as: :select %></td>
-      </tr>
-      <tr>
-        <td class="text-primary"> <%= f.label :itinerant_activity,label: "Activité saisonnière" %></td>
-        <td> <%= f.input_field :itinerant_activity, class: "form-control", as: :select %></td>
-      </tr>
-      <tr>
-        <td class="text-primary"> <%= f.label :main_activity_freetext, label: "Activité(s) exercée(s) dans l'établissement" %></td>
-        <td> <%= f.input_field :main_activity_freetext, class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td class="text-primary"> <%= f.label :main_activity_choose,label: "Activité principale" %></td>
-        <td> <%= f.input_field :main_activity_choose, class: "form-control", collection: ["Commerce de détail en magasin", "Commerce de détail sur marché", "Commerce de détail sur Internet",
-                                                  "Commerce de gros", "Fabrication, Production", "Bâtiment, travaux publics", "Autre"] %></td>
-      </tr>
-      <tr>
-        <td class="text-primary"> <%= f.label :company_name, label: "Nom commercial" %></td>
-        <td> <%= f.input_field :company_name, class: "form-control" %></td>
-      </tr>
-      <tr>
-        <td class="text-primary"> <%= f.label :employee, label: "Effectif salarie" %></td>
-        <td> <%= f.input_field :employee, class: "form-control", as: :select %></td>
-      </tr>
-      <tr>
-        <td class="text-primary"> <%= f.label :business_origin, label: "Origine du fond" %></td>
-        <td> <%= f.input_field :business_origin, class: "form-control",  collection: ["Création","Location - Gérance", "Achat, Partage, Licitation", "Autre"] %></td>
+        <td class=" text-primary"> <%= f.label :charges_repartir, "Avez-vous des charges ?" %></td>
+        <td> <%= f.input_field :charges_repartir,  class: "form-control" %></td>
       </tr>
     </tbody>
   </table>
   <div class="form-title py-3">
-    <h2 class="text-warning">Déclaration sociale</h2>
+    <h2 class="text-warning">Déclaration à l'actif circulant</h2>
   </div>
   <table class="table table-sm table-striped">
     <tbody>
       <tr>
-        <td class="text-primary  form-col"> <%= f.label :other_activity,label: "Exercice simultanée d'une autre acivité" %></td>
-        <td> <%= f.input_field :other_activity,   class: "form-control", as: :select %></td>
+        <td class="text-primary form-col"> <%= f.label :stocks,label: "Déclaration du stock" %></td>
+        <td> <%= f.input_field :stocks,  class: "form-control" %></td>
       </tr>
       <tr>
-        <td class="text-primary"> <%= f.label :contribution_periodicity,label: "Vous êtes au régime micro-social simplifié : périodicité du versement des cotisations" %></td>
-        <td> <%= f.input_field :contribution_periodicity, class: "form-control",  collection: ["Mensuelle", "Trimestrielle"] %></td>
+        <td class="text-primary form-col"> <%= f.label :avances,label: "Avances" %></td>
+        <td> <%= f.input_field :avances, class: "form-control" %></td>
       </tr>
-    </tbody>
-  </table>
-  <div class="form-title py-3">
-    <h2 class="text-warning">Options fiscales hors EIRL</h2>
-  </div>
-  <table class="table table-sm table-striped">
-    <tbody>
       <tr>
-        <td class="text-primary  form-col"> <%= f.label :income_tax_lump_payment,label: "Vous relevez du régime microfiscal - Bénéfices Industriels et Commerciaux (BIC) : Option pour le versement libératoire de l’impôt sur le revenu" %></td>
-        <td> <%= f.input_field :income_tax_lump_payment,   class: "form-control", as: :select %></td>
+        <td class="text-primary"> <%= f.label :creance, label: "Créances" %></td>
+        <td> <%= f.input_field :creance, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :effets_escomptes,label: "Effets escomptés" %></td>
+        <td> <%= f.input_field :effets_escomptes, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :valeur_mobiliere,label: "Valeurs mobilières" %></td>
+        <td> <%= f.input_field :valeur_mobilieres, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :disponibilites,label: "Disponibilités" %></td>
+        <td> <%= f.input_field :disponibilites, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :capitaux_propres,label: "Montant des capitaux propres" %></td>
+        <td> <%= f.input_field :capitaux_propres, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :dettes_financieres, label: "Dettes_financieres" %></td>
+        <td> <%= f.input_field :dettes_financieres, class:"form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :emprunt_credit_bail,label: "Emprunt Crédit Bail" %></td>
+        <td> <%= f.input_field :emprunt_credit_bail, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :dettes_exploitations,label: "Dettes d'exploitation " %></td>
+        <td> <%= f.input_field :dettes_exploitations, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :dettes_fiscales, label: "Dettes fiscales" %></td>
+        <td> <%= f.input_field :dettes_fiscales, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :tresorerie_passive,label: "Trésorerie passive" %></td>
+        <td> <%= f.input_field :tresorerie_passive, class: "form-control" %></td>
       </tr>
     </tbody>
   </table>

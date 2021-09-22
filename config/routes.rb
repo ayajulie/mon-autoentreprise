@@ -23,7 +23,7 @@ end
     # get '/company_info', to: 'users#company_info_users'
     resources :invoices
     resources :taxes, only: [:index]
-
+    resources :compta
 
   end
   resources :users, only: [:update] # Pas propre car current_user donc pas besoin d'id mais choisi par Joseph pour faciliter les simple forms

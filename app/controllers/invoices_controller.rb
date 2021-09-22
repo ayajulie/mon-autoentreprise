@@ -91,33 +91,32 @@ class InvoicesController < ApplicationController
     @current_year_total_taxes_service = (@current_year_charge_sociale_service + @current_year_taxe_chambre_consulaire_service + @current_year_income_tax_service_to_pay)
 
 # Calcul pour l'année n-1
-    @past_year_turnover = Invoice.group_by_year(:invoiced_at).sum(:amount).values[-2]
-    @past_year_charge_sociale_vente = (@past_year_turnover * 0.12).round
-    @past_year_taxe_chambre_consulaire_vente = (@past_year_turnover * 0.0015).round
-    @past_year_income_tax_revente = ((@past_year_turnover * 0.7) * 1.07).round
-    @past_year_income_tax_revente_to_pay = (@past_year_turnover * 0.2).round
+     @past_year_turnover = Invoice.group_by_year(:invoiced_at).sum(:amount).values[-2]
+     @past_year_charge_sociale_vente = (@past_year_turnover * 0.12).round
+     @past_year_taxe_chambre_consulaire_vente = (@past_year_turnover * 0.0015).round
+     @past_year_income_tax_revente = ((@past_year_turnover * 0.7) * 1.07).round
+   ##
+   ##
+     @past_year_taxe_chambre_consulaire_service = (@past_year_turnover * 0.0044).round
+     @past_year_income_tax_service = ((@past_year_turnover * 0.5)).round
+     @past_year_income_tax_service_to_pay = (@past_year_turnover * 0.25).round
 
-    @past_year_charge_sociale_service = (@past_year_turnover * 0.22).round
-    @past_year_taxe_chambre_consulaire_service = (@past_year_turnover * 0.0044).round
-    @past_year_income_tax_service = ((@past_year_turnover * 0.5)).round
-    @past_year_income_tax_service_to_pay = (@past_year_turnover * 0.25).round
+     @past_year_tva = (@past_year_turnover * 0.20).round
 
-    @past_year_tva = (@past_year_turnover * 0.20).round
+    # @past_year_total_taxes_vente = (@past_year_charge_sociale_vente + @past_year_taxe_chambre_consulaire_vente + @past_year_income_tax_revente_to_pay)
 
-    @past_year_total_taxes_vente = (@past_year_charge_sociale_vente + @past_year_taxe_chambre_consulaire_vente + @past_year_income_tax_revente_to_pay)
-
-    @past_year_total_taxes_service = (@current_year_charge_sociale_service + @past_year_taxe_chambre_consulaire_service + @past_year_income_tax_service_to_pay)
+     @past_year_total_taxes_service = (@current_year_charge_sociale_service + @past_year_taxe_chambre_consulaire_service + @past_year_income_tax_service_to_pay)
 
 # Calcul pour l'année n-2
-    @previous_past_year_turnover = Invoice.group_by_year(:invoiced_at).sum(:amount).values[-3]
+     @previous_past_year_turnover = Invoice.group_by_year(:invoiced_at).sum(:amount).values[-3]
 
-    @previous_past_year_income_tax_revente = ((@previous_past_year_turnover * 0.7) * 1.07).round
-    @previous_past_year_income_tax_revente_to_pay = (@previous_past_year_turnover * 0.2).round
-    @monthly_income_tax_revente_to_pay = @previous_past_year_income_tax_revente_to_pay / 12
+     @previous_past_year_income_tax_revente = ((@previous_past_year_turnover * 0.7) * 1.07).round
+     @previous_past_year_income_tax_revente_to_pay = (@previous_past_year_turnover * 0.2).round
+     @monthly_income_tax_revente_to_pay = @previous_past_year_income_tax_revente_to_pay / 12
 
-    @previous_past_year_income_tax_service = ((@previous_past_year_turnover * 0.5)).round
-    @previous_past_year_income_tax_service_to_pay = (@previous_past_year_turnover * 0.25).round
-    @monthly_income_tax_service_to_pay = @previous_past_year_income_tax_service_to_pay / 12
+     @previous_past_year_income_tax_service = ((@previous_past_year_turnover * 0.5)).round
+     @previous_past_year_income_tax_service_to_pay = (@previous_past_year_turnover * 0.25).round
+     @monthly_income_tax_service_to_pay = @previous_past_year_income_tax_service_to_pay / 12
 
 # Tableau avec CA exercice et taxe de l'exercice pour le graph doughnut
     @current_year_data_vente = [(@current_year_turnover - @current_year_total_taxes_vente), @current_year_total_taxes_vente, (72000 - @current_year_turnover - @current_year_total_taxes_vente) ]
@@ -131,12 +130,12 @@ class InvoicesController < ApplicationController
 
 # Calcul augmentation par rapport à l'année précédente
     @one_year_before_month_turnover = Invoice.group_by_month(:invoiced_at).sum(:amount).values[-13]
-    @previous_year_month_variation_rate = variation_percentage(@one_year_before_month_turnover, @current_month_turnover)
+   # @previous_year_month_variation_rate = variation_percentage(@one_year_before_month_turnover, @current_month_turnover)
 
-    @previous_year_past_12_month_variation_rate = variation_percentage(@previous_past_12_months_turnover, @past_12_months_turnover)
+   # @previous_year_past_12_month_variation_rate = variation_percentage(@previous_past_12_months_turnover, @past_12_months_turnover)
 
-    @previous_year_same_month_exercise = Invoice.group_by_month(:invoiced_at).sum(:amount).values[-15..-13].sum
-    @previous_year_same_month_exercise_variation_rate = variation_percentage(@previous_year_same_month_exercise, @current_year_turnover)
+   # @previous_year_same_month_exercise = Invoice.group_by_month(:invoiced_at).sum(:amount).values[-15..-13].sum
+   # @previous_year_same_month_exercise_variation_rate = variation_percentage(@previous_year_same_month_exercise, @current_year_turnover)
 
   end
 
