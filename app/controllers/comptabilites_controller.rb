@@ -1,0 +1,2 @@
+class ComptabilitesController < ApplicationController
+end

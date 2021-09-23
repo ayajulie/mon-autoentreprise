@@ -17,11 +17,14 @@ end
     get '/company_registration',  to: 'users#company_registration'
     get '/services',  to: 'pages#services'
     get '/demarches',  to: 'users#demarches'
+    get '/comptabilites/calculate', to: 'comptabilites#calculate'
+    post '/comptabilites/calculate', to: 'comptabilites#calculate'
 
     # get '/personal_info', to: 'users#personal_info_users'
     # get '/company_info', to: 'users#company_info_users'
     resources :invoices
     resources :taxes, only: [:index]
+    resources :comptabilites
   end
   resources :users, only: [:update] # Pas propre car current_user donc pas besoin d'id mais choisi par Joseph pour faciliter les simple forms
    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
