@@ -1,18 +1,18 @@
 class ComptabilitesController < ApplicationController
    def new
-    @comptum = Comptum.new
+    @compta = Comptabilite.new
   end
 
   def show
-    @comptum=Comptum.find(params[:id])
-    @comptas = Comptum.all
+    @compta=Comptabilite.find(params[:id])
+    @comptas = Comptabilite.all
   end
 
 
   def create
-    @comptum = Comptum.new(compta_params)
-    @comptum.users_id = current_user
-    if @comptum.save
+    @compta = Comptabilite.new(compta_params)
+    @compta.users_id = current_user
+    if @compta.save
         redirect_to invoices_calculate_path
     else
         render "new"
@@ -139,8 +139,8 @@ class ComptabilitesController < ApplicationController
   end
 
   def destroy
-    @invoice = Invoice.find(params[:id])
-    @invoice.destroy
+    @comptabilite = Comptabilite.find(params[:id])
+    @comptabilite.destroy
     redirect_to root
   end
 
@@ -148,7 +148,7 @@ class ComptabilitesController < ApplicationController
   require 'date'
 
   def compta_params
-      params.require(:comptum).permit(:immobilisations, :valeur_credit_bail, :charges_repartir, :primes_remboursement, :stocks, :avances, :creance, :effets_escomptes, :valeur_mobilieres, :disponibilites, :capitaux_propres, :dettes_financieres, :emprunt_credit_bail, :dettes_exploitations, :dettes_fiscales, :tresorerie_passive)
+      params.require(:compta).permit(:immobilisations, :valeur_credit_bail, :charges_repartir, :primes_remboursement, :stocks, :avances, :creance, :effets_escomptes, :valeur_mobilieres, :disponibilites, :capitaux_propres, :dettes_financieres, :emprunt_credit_bail, :dettes_exploitations, :dettes_fiscales, :tresorerie_passive)
   end
 
   def set_client
