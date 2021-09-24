@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_24_144535) do
+ActiveRecord::Schema.define(version: 2021_09_24_161811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2021_09_24_144535) do
     t.string "name"
     t.string "reference_devis"
     t.integer "amount"
-    t.datetime "date"
+    t.datetime "devis_at"
     t.string "object"
     t.string "interet"
     t.datetime "created_at", precision: 6, null: false

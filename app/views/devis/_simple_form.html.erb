@@ -1,0 +1,30 @@
+%= simple_form_for devi do |f| %>
+
+<div class="form-title py-3" style ="width:620px; ">
+    <h2 class="text-warning">Créer une facture</h2>
+  </div>
+
+  <table class="table table-sm table-striped" style= "width: 600px; ">
+    <tbody>
+      <tr>
+         <td>  <%= f.input :object, label: "Objet de la facture", class:"form-control" %></td>
+      </tr>
+       <tr>
+         <td> <%= f.input :amount, label: "Montant", class:"form-control" %></td>
+      </tr>
+      <tr>
+         <td> <%= f.input :object, label: "Objet", class:"form-control" %></td>
+      </tr>
+       <tr>
+         <td> <%= f.input :devis_at, label: "Date du devis", as: :date, html5: true, class:"form-control" %></td>
+       </tr>
+       <tr>
+        <td><%= f.association :client, label_method: :client, value_method: :id, include_blank: false, class:"form-control"  %></td>
+      </tr>
+  </tbody>
+</table>
+
+  <%= f.submit "Générez votre facture", class: "btn btn-warning"%>
+
+<% end -%>
+

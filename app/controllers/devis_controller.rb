@@ -1,0 +1,2 @@
+class DevisController < ApplicationController
+end
