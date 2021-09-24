@@ -1,4 +1,4 @@
-<%= simple_form_for(@comptum, remote: true) do |f| %>
+<%= simple_form_for(@compta, remote: true) do |f| %>
   <div class="form-title py-3">
     <h2 class="text-warning">Informations préalables</h2>
   </div>
@@ -15,6 +15,10 @@
       <tr>
         <td class=" text-primary"> <%= f.label :charges_repartir, "Avez-vous des charges ?" %></td>
         <td> <%= f.input_field :charges_repartir,  class: "form-control" %></td>
+      </tr>
+      <tr>
+       <td class=" text-primary"> <%= f.label :primes_remboursement, "Avez-vous des primes?" %></td>
+        <td> <%= f.input_field :primes_remboursement,  class: "form-control" %></td>
       </tr>
     </tbody>
   </table>
