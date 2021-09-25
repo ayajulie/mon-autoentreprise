@@ -33,7 +33,8 @@ class ComptabilitesController < ApplicationController
   def calculate
 
     @bfr = (Comptabilite(:stocks)+Comptabilite(:creance))-Comptabilite(:dettes_exploitations)+Comptabilite(:dettes_fiscales))
-    @caf =
+    @caf = (Comptabilite(:resultats) -+Comptabilite(:charges_repartir)) - (Comptabilite(:produits))
+    @marge = (Comptabilite(:vente_marchandise)-Comptabilite(:achats_marchandises))
 
   end
 
