@@ -11,7 +11,7 @@ class ComptabilitesController < ApplicationController
 
 
   def create
-    @compta = Comptabilite.new()
+    @compta = Comptabilite.new(comptabilite_params)
     @compta.user_id = current_user
     if @compta.save
         redirect_to rooth_path
@@ -26,11 +26,14 @@ class ComptabilitesController < ApplicationController
 
   def update
     @compta = Comptabilite.find(params[:id])
-    @compta.update!()
+    @compta.update!(comptabilite_params)
     redirect_to invoice
   end
 
   def calculate
+
+    @bfr = (Comptabilite(:stocks)+Comptabilite(:creance))-Comptabilite(:dettes_exploitations)+Comptabilite(:dettes_fiscales))
+    @caf =
 
   end
 
