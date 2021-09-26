@@ -1,39 +1,41 @@
 class ComptabilitesController < ApplicationController
 
-   def new
-    @compta = Comptabilite.new
+  skip_before_action :verify_authenticity_token
+
+  def new
+    @comptabilite= Comptabilite.new
   end
 
   def show
-    @compta=Comptabilite.find(params[:id])
-    @comptas = Comptabilite.all
+    @comptabilite=Comptabilite.find(params[:id])
+    @comptabilites = Comptabilite.all
   end
 
 
   def create
-    @compta = Comptabilite.new(comptabilite_params)
-    @compta.user_id = current_user
-    if @compta.save
-        redirect_to rooth_path
+    @comptabilite = Comptabilite.new(comptabilite_params)
+    @comptabilite.user = current_user
+    if @comptabilite.save
+        redirect_to root_path
     else
         render "new"
     end
   end
 
   def edit
-     @compta = Comptabilite.find(params[:id])
+     @comptabilite = Comptabilite.find(params[:id])
   end
 
   def update
-    @compta = Comptabilite.find(params[:id])
-    @compta.update!(comptabilite_params)
-    redirect_to invoice
+    @comptabilite = Comptabilite.find(params[:id])
+    @comptabilite.update!(comptabilite_params)
+    redirect_to root_path
   end
 
   def calculate
 
-    @bfr = (Comptabilite(:stocks)+Comptabilite(:creance))-Comptabilite(:dettes_exploitations)+Comptabilite(:dettes_fiscales))
-    @caf = (Comptabilite(:resultats) -+Comptabilite(:charges_repartir)) - (Comptabilite(:produits))
+    @bfr = (Comptabilite(:stocks)+Comptabilite(:creance))-(Comptabilite(:dettes_exploitations)+Comptabilite(:dettes_fiscales))
+    @caf = (Comptabilite(:resultats)+Comptabilite(:charges_repartir)) - (Comptabilite(:produits))
     @marge = (Comptabilite(:vente_marchandise)-Comptabilite(:achats_marchandises))
 
   end
@@ -46,9 +48,10 @@ class ComptabilitesController < ApplicationController
 
   private
 
-
   def comptabilite_params
-      params.require(:comptablite).permit!(:immobilisations, :valeur_credit_bail, :primes_remboursement, :charges_repartir, :stocks, :avances, :creance, :effets_escomptes, :valeur_mobilieres, :disponibilites, :capitaux_propres, :dettes_financieres, :emprunt_credit_bail, :dettes_exploitations, :dettes_fiscales, :tresorerie_passive)
+      params.require(:comptabilite).permit(:immobilisations, :valeur_credit_bail, :charges_repartir, :primes_remboursement, :stocks, :avances, :creance, :effets_escomptes, :valeur_mobilieres,
+       :disponibilites, :capitaux_propres, :dettes_financieres, :emprunt_credit_bail,
+       :dettes_exploitations, :dettes_fiscales, :tresorerie_passive)
   end
 
 end
