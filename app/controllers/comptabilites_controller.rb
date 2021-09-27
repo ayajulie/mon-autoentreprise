@@ -1,6 +1,7 @@
 class ComptabilitesController < ApplicationController
 
   skip_before_action :verify_authenticity_token
+  before_action : set_user [:only calculate]
 
   def new
     @comptabilite= Comptabilite.new
@@ -34,7 +35,7 @@ class ComptabilitesController < ApplicationController
 
   def calculate
 
-    @comptabilite = Comptabilite.where("user = current_user")
+    @comptabilite = Comptabilite.find_by(params[:user])
 
     @bfr = (Comptabilite(:stocks)+Comptabilite(:creance))-(Comptabilite(:dettes_exploitations)+Comptabilite(:dettes_fiscales))
     @caf = (Comptabilite(:resultats)+Comptabilite(:charges_repartir)) - (Comptabilite(:produits))
@@ -51,6 +52,11 @@ class ComptabilitesController < ApplicationController
   end
 
   private
+
+  def set_name
+
+    @compta.name = current_user
+  end
 
   def comptabilite_params
       params.require(:comptabilite).permit(:immobilisations, :valeur_credit_bail, :charges_repartir, :primes_remboursement, :stocks, :avances, :creance, :effets_escomptes, :valeur_mobilieres,
