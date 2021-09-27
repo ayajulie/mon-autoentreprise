@@ -37,6 +37,8 @@ class ComptabilitesController < ApplicationController
     @bfr = (Comptabilite(:stocks)+Comptabilite(:creance))-(Comptabilite(:dettes_exploitations)+Comptabilite(:dettes_fiscales))
     @caf = (Comptabilite(:resultats)+Comptabilite(:charges_repartir)) - (Comptabilite(:produits))
     @marge = (Comptabilite(:vente_marchandise)-Comptabilite(:achats_marchandises))
+    @taux_marge = @marge/Comptabilite(:vente_marchandise)
+    @seuil_rentabilite = Comptabilite(:charges_repartir)/Comptabilite(:chiffre_affaire)
 
   end
 
