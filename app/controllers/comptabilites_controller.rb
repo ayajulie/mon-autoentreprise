@@ -34,6 +34,8 @@ class ComptabilitesController < ApplicationController
 
   def calculate
 
+    @comptabilite = Comptabilite.where("user = current_user")
+
     @bfr = (Comptabilite(:stocks)+Comptabilite(:creance))-(Comptabilite(:dettes_exploitations)+Comptabilite(:dettes_fiscales))
     @caf = (Comptabilite(:resultats)+Comptabilite(:charges_repartir)) - (Comptabilite(:produits))
     @marge = (Comptabilite(:vente_marchandise)-Comptabilite(:achats_marchandises))
