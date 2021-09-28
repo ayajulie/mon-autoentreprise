@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_24_161811) do
+ActiveRecord::Schema.define(version: 2021_09_28_093109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,11 @@ ActiveRecord::Schema.define(version: 2021_09_24_161811) do
     t.integer "tresorerie_passive"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "resultats"
+    t.integer "achats_marchandises"
+    t.integer "ventes_marchandises"
+    t.integer "chiffre_affaire"
+    t.string "name"
     t.index ["user_id"], name: "index_comptabilites_on_user_id"
   end
 
@@ -80,6 +85,7 @@ ActiveRecord::Schema.define(version: 2021_09_24_161811) do
     t.string "interet"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "success"
     t.index ["client_id"], name: "index_devis_on_client_id"
     t.index ["user_id"], name: "index_devis_on_user_id"
   end
