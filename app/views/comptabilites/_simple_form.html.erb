@@ -5,6 +5,10 @@
   <table class="table table-sm table-striped">
     <tbody>
       <tr>
+        <td class="text-primary form-col"> <%= f.label :name, label: "Quel est le nom de votre entreprise ?" %></td>
+        <td> <%= f.input_field :name, class: "form-control" %></td>
+      </tr>
+      <tr>
         <td class="text-primary form-col"> <%= f.label :immobilisations,label: "Quels sont vos niveaux d'immobilisations?" %></td>
         <td> <%= f.input_field :immobilisations, class: "form-control" %></td>
       </tr>
@@ -74,6 +78,14 @@
       <tr>
         <td class="text-primary"> <%= f.label :tresorerie_passive,label: "Trésorerie passive" %></td>
         <td> <%= f.input_field :tresorerie_passive, class: "form-control" %></td>
+      </tr>
+       <tr>
+        <td class="text-primary"> <%= f.label :resultats,label: "Trésorerie passive" %></td>
+        <td> <%= f.input_field :resultats, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :chats_marchandises,label: "Trésorerie passive" %></td>
+        <td> <%= f.input_field :chats_marchandises, class: "form-control" %></td>
       </tr>
     </tbody>
   </table>
