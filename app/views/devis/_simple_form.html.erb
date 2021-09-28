@@ -18,6 +18,9 @@
        <tr>
          <td> <%= f.input :devis_at, label: "Date du devis", as: :date, html5: true, class:"form-control" %></td>
        </tr>
+       tr>
+         <td> <%= f.input :success, label: "Succès du devis", as: :date, html5: true, class:"form-control" %></td>
+       </tr>
        <tr>
         <td><%= f.association :client, label_method: :client, value_method: :id, include_blank: false, class:"form-control"  %></td>
       </tr>
