@@ -1,7 +1,7 @@
 class ComptabilitesController < ApplicationController
 
   skip_before_action :verify_authenticity_token
-  before_action : set_user [:only calculate]
+
 
   def new
     @comptabilite= Comptabilite.new
