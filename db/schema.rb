@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_09_27_164036) do
+=======
+ActiveRecord::Schema.define(version: 2021_09_28_093109) do
+>>>>>>> devis
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +89,10 @@ ActiveRecord::Schema.define(version: 2021_09_27_164036) do
     t.string "interet"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+<<<<<<< HEAD
+=======
+    t.boolean "success"
+>>>>>>> devis
     t.index ["client_id"], name: "index_devis_on_client_id"
     t.index ["user_id"], name: "index_devis_on_user_id"
   end
