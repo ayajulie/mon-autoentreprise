@@ -7,7 +7,7 @@
     <div class="row pt-4 d-flex justify-content-between my-0 py-0">
       <div class="dashboard-upper-part col-xs-12 col-sm-7">
         <div class="dashboard-upper-part-card" style="width: 15%">
-          <div><i class="fas fa-chart-line"></i> CA</div>
+          <div><i class="fas fa-chart-line"></i> Besoin en fonds de roulement</div>
           <div id="turnover" style="font-size: 1.6rem">
             <span id="monthly-turnover"><%= @bfr %> <i class="fas fa-euro-sign"></i> <span class='date-italics'>(<%= @previous_year_month_variation_rate  %>%) <%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Variation par rapport au même chiffre année n-1"></i><% end %></span></span>
             <span id="yearly-turnover" class="d-none"><%= @caf %> <i class="fas fa-euro-sign"></i> <span class='date-italics'>(<%= @previous_year_past_12_month_variation_rate  %>%) <%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Variation par rapport au même chiffre année n-1"></i><% end %></span></span>
@@ -26,9 +26,9 @@
           </div>
         </div>
         <div class="dashboard-upper-part-card" style="width: 15%">
-          <div><i class="fas fa-users"></i> Nouveaux clients</div>
+          <div><i class="fas fa-users"></i> Capacité d'autofinancement</div>
           <div style="font-size: 1.6rem">
-            <span id="past-month-new-clients">+ 9</span>
+            <span id="past-month-new-clients"><%= @caf %></span>
             <span id="past-year-new-clients" class="d-none">+ 126</span>
             <span id="this-exercise-new-clients" class="d-none">+ 23</span>
           </div>
@@ -62,7 +62,7 @@
           </canvas>
         </div>
         <div class="col-xs-12 col-sm-4 dashboard-chart-card">
-          <div class='mb-0'>Chiffre d'affaire de l'année</div>
+          <div class='mb-0'>Seuil de rentabilité de l'année</div>
           <div class= 'date-italics'>(Évolution en % par rapport à l'année précédente)</div>
           <div class='mt-6 py-2'>
             <canvas id="doughnut-chart" data-current-year= "<%= @current_year_data_service %>" data-variation-rate= "<%= @previous_year_same_month_exercise_variation_rate %>" height="200" aria-label="Hello ARIA World" class="pt-6">
@@ -71,7 +71,7 @@
           </div>
           <div class="py-2 d-flex justify-content-around" style="font-size: 1.2rem">
               <div style="margin-left: 60px">
-                <%= @current_year_turnover %> <i class="fas fa-euro-sign"></i> / 72000 <i class="fas fa-euro-sign"></i>
+                <%= @seuil_rentabilite%> <i class="fas fa-euro-sign"></i> / 72000 <i class="fas fa-euro-sign"></i>
               </div>
               <div>
                  <%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="72000€ coorespond au CA max pour votre activité" ></i><% end %>
