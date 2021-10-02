@@ -1,6 +1,7 @@
 class ComptabilitesController < ApplicationController
 
   skip_before_action :verify_authenticity_token
+  before_action :set_user, only: [:edit, :upadate, :destroy, :calculate]
 
 
   def new
@@ -37,11 +38,11 @@ class ComptabilitesController < ApplicationController
 
     @comptabilite = Comptabilite.find_by(params[:user])
 
-    @bfr = (Comptabilite(:stocks)+Comptabilite(:creance))-(Comptabilite(:dettes_exploitations)+Comptabilite(:dettes_fiscales))
-    @caf = (Comptabilite(:resultats)+Comptabilite(:charges_repartir)) - (Comptabilite(:produits))
-    @marge = (Comptabilite(:vente_marchandise)-Comptabilite(:achats_marchandises))
-    @taux_marge = @marge/Comptabilite(:vente_marchandise)
-    @seuil_rentabilite = Comptabilite(:charges_repartir)/Comptabilite(:chiffre_affaire)
+    @bfr = (@comptabilite.stocks+@comptabilite.creance)-(@comptabilite.dettes_exploitations+@comptabilite.dettes_fiscales)
+    @caf = (@comptabilite.resultats+@comptabilite.charges_repartir) - (@comptabilite.produits)
+    @marge = (@comptabilite.vente_marchandise-@comptabilite.achat_marchandise)
+    @taux_marge = @marge/@comptabilite.vente_marchandise
+    @seuil_rentabilite = @comptabilite.vente_marchandise/@comptabilite.chiffre_affaire
 
   end
 
@@ -53,9 +54,8 @@ class ComptabilitesController < ApplicationController
 
   private
 
-  def set_name
-
-    @compta.name = current_user
+  def set_user
+    @user = current_user
   end
 
   def comptabilite_params
