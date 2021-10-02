@@ -39,10 +39,10 @@ class ComptabilitesController < ApplicationController
     @comptabilite = Comptabilite.find_by(params[:user])
 
     @bfr = (@comptabilite.stocks+@comptabilite.creance)-(@comptabilite.dettes_exploitations+@comptabilite.dettes_fiscales)
-    @caf = (@comptabilite.resultats+@comptabilite.charges_repartir) - (@comptabilite.produits)
-    @marge = (@comptabilite.vente_marchandise-@comptabilite.achat_marchandise)
-    @taux_marge = @marge/@comptabilite.vente_marchandise
-    @seuil_rentabilite = @comptabilite.vente_marchandise/@comptabilite.chiffre_affaire
+    @caf = (@comptabilite.resultats+@comptabilite.charges_repartir) - (@comptabilite.achats_marchandises)
+    @marge = (@comptabilite.ventes_marchandises-@comptabilite.achats_marchandises)
+    @taux_marge = @marge/@comptabilite.ventes_marchandises
+    @seuil_rentabilite = @comptabilite.ventes_marchandises/@comptabilite.chiffre_affaire
 
   end
 
