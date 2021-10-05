@@ -4,6 +4,12 @@ class DevisController < ApplicationController
     @devis = Devi.all
   end
 
+   def show
+    @devi=Devi.find(params[:id])
+    @devis = Devi.all
+  end
+
+
   def new
    @devi = Devi.new
   end
@@ -15,6 +21,10 @@ class DevisController < ApplicationController
     else
       render "new"
     end
+  end
+
+  def update
+    @devi = Devi.find(params[:id])
   end
 
 

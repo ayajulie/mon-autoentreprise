@@ -22,6 +22,7 @@ end
     # get '/company_info', to: 'users#company_info_users'
     resources :invoices
     resources :taxes, only: [:index]
+    resources :devis
   end
   resources :users, only: [:update] # Pas propre car current_user donc pas besoin d'id mais choisi par Joseph pour faciliter les simple forms
    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
