@@ -33,6 +33,12 @@ class DevisController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @devi = Devi.find(params[:id])
+    @devi.destroy
+    redirect_to root
+  end
+
   private
 
   def devis_params
