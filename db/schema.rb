@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_28_093109) do
+ActiveRecord::Schema.define(version: 2021_10_05_180209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 2021_09_28_093109) do
   end
 
   create_table "devis", force: :cascade do |t|
-    t.bigint "client_id", null: false
     t.bigint "user_id", null: false
     t.string "name"
     t.string "reference_devis"
@@ -86,7 +85,6 @@ ActiveRecord::Schema.define(version: 2021_09_28_093109) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "success"
-    t.index ["client_id"], name: "index_devis_on_client_id"
     t.index ["user_id"], name: "index_devis_on_user_id"
   end
 
@@ -161,7 +159,6 @@ ActiveRecord::Schema.define(version: 2021_09_28_093109) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "clients", "users"
   add_foreign_key "comptabilites", "users"
-  add_foreign_key "devis", "clients"
   add_foreign_key "devis", "users"
   add_foreign_key "invoices", "users"
 end
