@@ -43,8 +43,9 @@ class ComptabilitesController < ApplicationController
     @marge = (@comptabilite.ventes_marchandises-@comptabilite.achats_marchandises)
     @taux_marge = @marge/@comptabilite.ventes_marchandises
     @seuil_rentabilite = @comptabilite.ventes_marchandises/@comptabilite.chiffre_affaire
-    @taux_rentabilité = @ventes_marchandises/@achats_marchandises
-    @chiffre_a_rentrer = @ventes_marchandises - @achats_marchandises
+    @taux_rentabilité = @comptabilite.ventes_marchandises/@comptabilite.achats_marchandises
+    @chiffre_a_rentrer = @comptabilite.ventes_marchandises - @comptabilite.achats_marchandises
+    @reste_a_payer = @comptabilite.stocks + @comptabilite.valeur_credit_bail
 
   end
 
