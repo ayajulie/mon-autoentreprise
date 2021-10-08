@@ -46,6 +46,7 @@ class ComptabilitesController < ApplicationController
     @taux_rentabilité = @comptabilite.ventes_marchandises/@comptabilite.achats_marchandises
     @chiffre_a_rentrer = @comptabilite.ventes_marchandises - @comptabilite.achats_marchandises
     @reste_a_payer = @comptabilite.stocks + @comptabilite.valeur_credit_bail
+    @ebe = @valeur_ajoutee
 
   end
 
