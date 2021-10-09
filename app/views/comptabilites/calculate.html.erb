@@ -145,13 +145,11 @@
                 <td><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Calculé sur le CA de 2020"></i><% end %></td>
               </tr>
               <tr>
-                <td style="font-size: 1.2rem">Déclaration impôt sur le revenu année 2020 </td>
+                <td style="font-size: 1.2rem">Marge de sécurité </td>
                 <td style="opacity: 0.6" >
-                  <% if current_user.main_activity_choose == "commerce de détail" %>
-                    <%= @past_year_income_tax_revente %>
-                  <% else %>
-                    <%= @past_year_income_tax_service %>
-                  <% end %>
+
+                    <%= @marge_sécurite%>
+
                    <i class="fas fa-euro-sign"></i>
                 </td>
                 <td class= "date-italics">30/05/2021</td>
