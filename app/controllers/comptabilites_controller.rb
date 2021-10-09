@@ -38,17 +38,22 @@ class ComptabilitesController < ApplicationController
 
     @comptabilite = Comptabilite.find_by(params[:user])
 
+    @charges_variables = @comptabilite.charges_repartir/3
+    @charges_fixes = @comptabilite.charges_repartir- @charges_variables
+
+
     @bfr = (@comptabilite.stocks+@comptabilite.creance)-(@comptabilite.dettes_exploitations+@comptabilite.dettes_fiscales)
     @caf = (@comptabilite.resultats+@comptabilite.charges_repartir) - (@comptabilite.achats_marchandises)
     @marge = (@comptabilite.ventes_marchandises-@comptabilite.achats_marchandises)
     @taux_marge = @marge/@comptabilite.ventes_marchandises
-    @seuil_rentabilite = @comptabilite.ventes_marchandises/@comptabilite.chiffre_affaire
+    @seuil_rentabilite = @comptabilite.chiffre_affaire/@charges_fixes
     @taux_rentabilité = @comptabilite.ventes_marchandises/@comptabilite.achats_marchandises
     @chiffre_a_rentrer = @comptabilite.ventes_marchandises - @comptabilite.achats_marchandises
     @reste_a_payer = @comptabilite.stocks + @comptabilite.valeur_credit_bail
-    @ebe = 25 000
-    @marge_cout_variable = @comptabilite.chiffre_affaire -@comptabilite.charges_repartir
-
+    @ebe = "25 000"
+    @marge_cout_variable = @comptabilite.chiffre_affaire - @comptabilite.charges_repartir
+    @independance_financière = @comptabilite.capitaux_propres/@comptabilite.dettes_financieres
+    @marge_sécurite =
 
 
   end
