@@ -53,8 +53,7 @@ class ComptabilitesController < ApplicationController
     @ebe = "25 000"
     @marge_cout_variable = @comptabilite.chiffre_affaire - @comptabilite.charges_repartir
     @independance_financière = @comptabilite.capitaux_propres/@comptabilite.dettes_financieres
-    @marge_sécurite =
-
+    @marge_sécurite = "2000"
 
   end
 
