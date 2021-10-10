@@ -52,6 +52,37 @@ const myChart2 = () => {
   });
 }
 
+const myChart3 = () => {
+  new Chart(document.getElementById("myChart2"), {
+      type: 'bar',
+      data: {
+        labels: [ 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre','Janvier', 'Février', 'Mars'],
+        datasets: [
+          {
+            label: "Année précédente",
+            backgroundColor: "#0061f2",
+            data: JSON.parse(document.getElementById("myChart2").dataset.monthlyTurnoverPreviousYear)
+          }, {
+            label: "Année courante",
+            backgroundColor: "#edae2f",
+            data: JSON.parse(document.getElementById("myChart2").dataset.monthlyTurnoverPastYear)
+          }
+        ]
+      },
+      options: {
+        elements: {
+            center: {
+            text: '',
+            sidePadding: 60
+            }
+        },
+        title: {
+          display: false,
+          text: "Chiffre d'affaires en euros"
+        }
+      }
+  });
+}
 const myDoughnutChart = () => {
   new Chart(document.getElementById("doughnut-chart"), {
     type: 'doughnut',
