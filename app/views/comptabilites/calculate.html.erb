@@ -157,20 +157,16 @@
                 <td ><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Montant à déclarer pour l'activité de votre micro-entreprise"></i><% end %></td>
               </tr>
               <tr>
-                <td style="font-size: 1.2rem">CFE</td>
+                <td style="font-size: 1.2rem">Perte consolidée</td>
                 <td style="opacity: 0.6">823 <i class="fas fa-euro-sign"></i></td>
                 <td class= "date-italics">15/09/2021</td>
                 <td><span class="badge badge-secondary" style= "background-color: #0061f2">À payer</span></td>
                 <td><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Calculé sur la valeur locative des biens immobiliers de 2019"></i><% end %></td>
               </tr>
               <tr>
-                <td style="font-size: 1.2rem">Taxes consulaires</td>
+                <td style="font-size: 1.2rem">Marge bénéficiaire </td>
                 <td style="opacity: 0.6">
-                  <% if current_user.main_activity_choose == "commerce de détail" %>
-                    <%= @past_year_taxe_chambre_consulaire_vente %>
-                  <% else %>
-                    <%= @past_year_taxe_chambre_consulaire_service %>
-                  <% end %>
+                  2500
                    <i class="fas fa-euro-sign"></i>
                 </td>
                 <td class= "date-italics">30/09/2021</td>
