@@ -8,8 +8,17 @@ class RelancesController < ApplicationController
     @user = current_user
   end
 
-  def services
-    @user = current_user
+  def new
+    @relance = Relance.new
+  end
+
+  def create
+    @relance = Relance.new()
+    if @relance.save
+        redirect_to rooth_path
+    else
+        render "new"
+    end
   end
 
   respond_to :docx
