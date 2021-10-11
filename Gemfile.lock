@@ -123,7 +123,7 @@ GEM
       activesupport (>= 4.2.0)
     groupdate (5.2.2)
       activesupport (>= 5)
-    htmltoword (1.1.1)
+    htmltoword (0.7.0)
       actionpack
       nokogiri
       rubyzip (>= 1.0)
@@ -307,7 +307,7 @@ DEPENDENCIES
   faker!
   font-awesome-sass
   groupdate
-  htmltoword
+  htmltoword (~> 0.2)
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pdf-forms

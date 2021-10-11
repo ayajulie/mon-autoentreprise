@@ -12,7 +12,9 @@ class RelancesController < ApplicationController
     @user = current_user
   end
 
-  def relance
+  respond_to :docx
+
+  def lettre
     respond_to do |format|
     format.docx do
       render docx: 'relance.docx.erb', filename: 'my_file.docx'

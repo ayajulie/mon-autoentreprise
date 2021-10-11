@@ -45,7 +45,7 @@ gem 'groupdate'
 
 gem 'docx'
 
-gem 'htmltoword'
+gem 'htmltoword', '~> 0.2'
 
 group :development, :test do
   gem 'pry-byebug'
