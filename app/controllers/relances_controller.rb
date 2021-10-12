@@ -37,6 +37,12 @@ class RelancesController < ApplicationController
     cerfa_informations
     send_file "/tmp/2021_User.pdf"
   end
+
+  private
+
+  def relance_params
+     params.require(:relance).permit(:name, :creance, :creance_at, :user_id, :client_id)
+  end
 end
 
 
