@@ -18,7 +18,7 @@ end
     get '/services',  to: 'pages#services'
     get '/demarches',  to: 'users#demarches'
     get '/relances/:id', to: 'relances#show', :defaults => { :format => 'docx' }
-
+    get '/relance/new', to: 'relances#new'
 
 
     # get '/personal_info', to: 'users#personal_info_users'
