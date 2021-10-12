@@ -1,0 +1,30 @@
+<%= simple_form_for devi do |f| %>
+
+<div class="form-title py-3" style ="width:620px; ">
+    <h2 class="text-warning">Créer votre devis</h2>
+  </div>
+
+  <table class="table table-sm table-striped" style= "width: 600px; ">
+    <tbody>
+      <tr>
+         <td>  <%= f.input :name, label: "Nom du client", class:"form-control" %></td>
+      </tr>
+       <tr>
+         <td> <%= f.input :amount, label: "Montant", class:"form-control" %></td>
+      </tr>
+      <tr>
+         <td> <%= f.input :object, label: "Objet", class:"form-control" %></td>
+      </tr>
+       <tr>
+         <td> <%= f.input :devis_at, label: "Date du devis", as: :date, html5: true, class:"form-control" %></td>
+       </tr>
+       <tr>
+         <td> <%= f.input :success, label: "Succès du devis", as: :boolean, class:"checkbox_class" %></td>
+       </tr>
+  </tbody>
+</table>
+
+  <%= f.submit "Générez votre devis", class: "btn btn-warning"%>
+
+<% end -%>
+
