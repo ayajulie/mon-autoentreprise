@@ -105,6 +105,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    docx (0.6.2)
+      nokogiri (~> 1.10, >= 1.10.4)
+      rubyzip (~> 2.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
@@ -120,6 +123,10 @@ GEM
       activesupport (>= 4.2.0)
     groupdate (5.2.2)
       activesupport (>= 5)
+    htmltoword (0.7.0)
+      actionpack
+      nokogiri
+      rubyzip (>= 1.0)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -295,10 +302,12 @@ DEPENDENCIES
   cloudinary (~> 1.16.0)
   country_select
   devise
+  docx
   dotenv-rails
   faker!
   font-awesome-sass
   groupdate
+  htmltoword (~> 0.2)
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pdf-forms

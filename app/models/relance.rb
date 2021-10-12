@@ -1,0 +1,2 @@
+class Relance < ApplicationRecord
+end
