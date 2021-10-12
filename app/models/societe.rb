@@ -1,0 +1,3 @@
+class Societe < ApplicationRecord
+  belongs_to :user
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_12_080855) do
+ActiveRecord::Schema.define(version: 2021_10_12_173239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,6 +112,20 @@ ActiveRecord::Schema.define(version: 2021_10_12_080855) do
     t.index ["user_id"], name: "index_relances_on_user_id"
   end
 
+  create_table "societes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "denomination_sociale"
+    t.integer "apports"
+    t.integer "capital_social"
+    t.integer "duree"
+    t.integer "nombre_actions"
+    t.integer "valeur_actions"
+    t.integer "numero_RCS"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_societes_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -173,4 +187,5 @@ ActiveRecord::Schema.define(version: 2021_10_12_080855) do
   add_foreign_key "devis", "users"
   add_foreign_key "invoices", "users"
   add_foreign_key "relances", "users"
+  add_foreign_key "societes", "users"
 end
