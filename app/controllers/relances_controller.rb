@@ -13,7 +13,8 @@ class RelancesController < ApplicationController
   end
 
   def create
-    @relance = Relance.new()
+    @relance = Relance.new(relance_params)
+    @relance.user = current_user
     if @relance.save
         redirect_to relances_path
     else
@@ -41,7 +42,7 @@ class RelancesController < ApplicationController
   private
 
   def relance_params
-     params.require(:relance).permit(:name, :creance, :creance_at, :user_id, :client_id)
+     params.require(:relance).permit(:name, :creance, :creance_at, :user_id)
   end
 end
 
