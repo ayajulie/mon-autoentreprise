@@ -17,7 +17,8 @@ end
     get '/company_registration',  to: 'users#company_registration'
     get '/services',  to: 'pages#services'
     get '/demarches',  to: 'users#demarches'
-    get '/relances', to: 'relances#lettre', :defaults => { :format => 'docx' }
+    get '/relances/:id', to: 'relances#show', :defaults => { :format => 'docx' }
+
 
 
     # get '/personal_info', to: 'users#personal_info_users'

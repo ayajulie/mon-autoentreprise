@@ -14,9 +14,9 @@ class RelancesController < ApplicationController
 
   def create
     @relance = Relance.new(relance_params)
-    @relance.user = current_user
+    @relance.user_id = current_user
     if @relance.save
-        redirect_to relances_path
+        redirect_to new_relance_path
     else
         render "new"
     end
@@ -24,7 +24,8 @@ class RelancesController < ApplicationController
 
   respond_to :docx
 
-  def lettre
+  def show
+    @relance = Relance.find(params[:id])
     respond_to do |format|
     format.docx do
       render docx: 'relance.docx.erb', filename: 'my_file.docx'
