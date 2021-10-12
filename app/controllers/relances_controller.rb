@@ -15,7 +15,7 @@ class RelancesController < ApplicationController
   def create
     @relance = Relance.new()
     if @relance.save
-        redirect_to rooth_path
+        redirect_to relance_path
     else
         render "new"
     end

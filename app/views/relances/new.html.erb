@@ -1,0 +1,13 @@
+<%= render 'shared/navbar' %>
+<%= render '/pages/sidebar' %>
+<div class="dashboard-content">
+  <div class="container">
+    <div class="dashboard-information">
+      <%= render "simple_form", relance: @relance  %>
+      <hr>
+      <p> L'ajout d'élèments permettra de créer votre lettre de relance.</p>
+      <hr>
+      <%= link_to "Back to index", root_path %>
+    </div>
+  </div>
+</div>
