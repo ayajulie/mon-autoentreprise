@@ -16,7 +16,7 @@ class RelancesController < ApplicationController
     @relance = Relance.new(relance_params)
     @relance.user_id = current_user
     if @relance.save
-        redirect_to new_relance_path
+        redirect_to relance_path(@relance)
     else
         render "new"
     end
