@@ -17,12 +17,16 @@
             <%= link_to "Cesser son activité", services_path, class: "nav-link text-primary links" %>
           </li>
           <li class="nav-item">
+<<<<<<< HEAD
             <%= link_to "Analyse financière", comptabilites_calculate_path(@user), class: "nav-link text-primary links" %>
+=======
+            <%= link_to "Analyse financière", comptabilites_calculate_path( current_user, @comptabilite), class: "nav-link text-primary links" %>
+>>>>>>> f9cbba738f684312612d3aae8756807a9d8dd46f
           </li>
           <li class="nav-item dropdown">
-            <%= link_to "Mes services", invoices_calculate_path, class: "nav-link dropdown-toggle text-primary", id: "navbarDropdown", role: "button",  :"data-toggle"=> "dropdown", :"aria-haspopup"=> "true",  :"aria-expanded"=> "false" %>
+            <%= link_to "Mes services", invoices_calculate_path( current_user, @invoice), class: "nav-link dropdown-toggle text-primary", id: "navbarDropdown", role: "button",  :"data-toggle"=> "dropdown", :"aria-haspopup"=> "true",  :"aria-expanded"=> "false" %>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "Tableau de bord", invoices_calculate_path, class: "dropdown-item text-warning links" %>
+              <%= link_to "Tableau de bord", invoices_calculate_path( current_user, @invoice), class: "dropdown-item text-warning links" %>
               <a class="dropdown-item" href="#">Mes informations</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Mes écheances</a>

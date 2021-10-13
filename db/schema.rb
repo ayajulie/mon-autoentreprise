@@ -12,10 +12,14 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_09_27_164036) do
 =======
 ActiveRecord::Schema.define(version: 2021_09_28_093109) do
 >>>>>>> devis
+=======
+
+>>>>>>> f9cbba738f684312612d3aae8756807a9d8dd46f
 =======
 ActiveRecord::Schema.define(version: 2021_10_12_080855) do
 >>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
@@ -84,9 +88,14 @@ ActiveRecord::Schema.define(version: 2021_10_12_080855) do
 
   create_table "devis", force: :cascade do |t|
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.bigint "client_id", null: false
 =======
 >>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
+=======
+
+   
+>>>>>>> f9cbba738f684312612d3aae8756807a9d8dd46f
     t.bigint "user_id", null: false
     t.string "name"
     t.string "reference_devis"
@@ -98,6 +107,7 @@ ActiveRecord::Schema.define(version: 2021_10_12_080855) do
     t.datetime "updated_at", precision: 6, null: false
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     t.boolean "success"
 >>>>>>> devis
@@ -105,6 +115,13 @@ ActiveRecord::Schema.define(version: 2021_10_12_080855) do
 =======
     t.boolean "success"
 >>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
+=======
+
+  
+
+    t.boolean "success"
+
+>>>>>>> f9cbba738f684312612d3aae8756807a9d8dd46f
     t.index ["user_id"], name: "index_devis_on_user_id"
   end
 
@@ -191,9 +208,15 @@ ActiveRecord::Schema.define(version: 2021_10_12_080855) do
   add_foreign_key "clients", "users"
   add_foreign_key "comptabilites", "users"
 <<<<<<< HEAD
+<<<<<<< HEAD
   add_foreign_key "devis", "clients"
 =======
 >>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
+=======
+
+  add_foreign_key "devis", "clients"
+
+>>>>>>> f9cbba738f684312612d3aae8756807a9d8dd46f
   add_foreign_key "devis", "users"
   add_foreign_key "invoices", "users"
   add_foreign_key "relances", "users"
