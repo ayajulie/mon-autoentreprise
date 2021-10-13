@@ -1,0 +1,84 @@
+<%= simple_form_for(@compta, remote: true) do |f| %>
+  <div class="form-title py-3">
+    <h2 class="text-warning">Informations préalables</h2>
+  </div>
+  <table class="table table-sm table-striped">
+    <tbody>
+      <tr>
+        <td class="text-primary form-col"> <%= f.label :immobilisations,label: "Quels sont vos niveaux d'immobilisations?" %></td>
+        <td> <%= f.input_field :immobilisations, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class=" text-primary"> <%= f.label :valeur_credit_bail, "Valeur du crédit bail" %></td>
+        <td> <%= f.input_field :valeur_credit_bail, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class=" text-primary"> <%= f.label :charges_repartir, "Avez-vous des charges ?" %></td>
+        <td> <%= f.input_field :charges_repartir,  class: "form-control" %></td>
+      </tr>
+      <tr>
+       <td class=" text-primary"> <%= f.label :primes_remboursement, "Avez-vous des primes?" %></td>
+        <td> <%= f.input_field :primes_remboursement,  class: "form-control" %></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="form-title py-3">
+    <h2 class="text-warning">Déclaration à l'actif circulant</h2>
+  </div>
+  <table class="table table-sm table-striped">
+    <tbody>
+      <tr>
+        <td class="text-primary form-col"> <%= f.label :stocks,label: "Déclaration du stock" %></td>
+        <td> <%= f.input_field :stocks,  class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary form-col"> <%= f.label :avances,label: "Avances" %></td>
+        <td> <%= f.input_field :avances, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :creance, label: "Créances" %></td>
+        <td> <%= f.input_field :creance, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :effets_escomptes,label: "Effets escomptés" %></td>
+        <td> <%= f.input_field :effets_escomptes, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :valeur_mobiliere,label: "Valeurs mobilières" %></td>
+        <td> <%= f.input_field :valeur_mobilieres, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :disponibilites,label: "Disponibilités" %></td>
+        <td> <%= f.input_field :disponibilites, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :capitaux_propres,label: "Montant des capitaux propres" %></td>
+        <td> <%= f.input_field :capitaux_propres, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :dettes_financieres, label: "Dettes_financieres" %></td>
+        <td> <%= f.input_field :dettes_financieres, class:"form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :emprunt_credit_bail,label: "Emprunt Crédit Bail" %></td>
+        <td> <%= f.input_field :emprunt_credit_bail, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :dettes_exploitations,label: "Dettes d'exploitation " %></td>
+        <td> <%= f.input_field :dettes_exploitations, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :dettes_fiscales, label: "Dettes fiscales" %></td>
+        <td> <%= f.input_field :dettes_fiscales, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <td class="text-primary"> <%= f.label :tresorerie_passive,label: "Trésorerie passive" %></td>
+        <td> <%= f.input_field :tresorerie_passive, class: "form-control" %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= f.submit "Validez vos données", class: "btn btn-warning"%>
+<% end %>
+
+
+

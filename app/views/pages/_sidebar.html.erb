@@ -1,11 +1,11 @@
 <div class="col-2 sidebar sidebar-col fixed-top">
   <div class="row side-bar-title-container align-items-center justify-content-between">
-    <div class="row  container-fluid mx-0 pt-5 pb-4 sidebar-row  <%='sidebar-row-bg' if current_page?(invoices_calculate_path)  %>">
+    <div class="row  container-fluid mx-0 pt-5 pb-4 sidebar-row  <%='sidebar-row-bg' if current_page?(invoices_calculate_path( current_user, @invoice))  %>">
       <div class="col-2 sidebar-icon">
         <i class="fas fa-tachometer-alt dashboard-icon fa-2x"></i>
       </div>
       <div class="col-10 mr-auto sidebar-title h5">
-        <%= link_to "Dashboard", invoices_calculate_path, class: "nav-link sidebar-link" %>
+        <%= link_to "Dashboard", invoices_calculate_path( current_user, @invoice), class: "nav-link sidebar-link" %>
       </div>
       <div class="w-100 "> </div>
     </div>
@@ -54,6 +54,18 @@
         <%= link_to "Devis", new_devi_path, class: "nav-link sidebar-link" %>
       </div>
     </div>
+
+=======
+    <div class="w-100 "></div>
+    <div class= "row container-fluid py-4 mx-0 sidebar-row ">
+      <div class="col-2 sidebar-icon">
+        <i class="fas fa-history dashboard-icon fa-2x"></i>
+      </div>
+      <div class="col-10 mr-auto sidebar-title h5">
+        <%= link_to "Faire une lettre de relance", new_relance_path, class: "nav-link sidebar-link" %>
+      </div>
+    </div>
+
     <div class="w-100 "></div>
   </div>
 </div>
