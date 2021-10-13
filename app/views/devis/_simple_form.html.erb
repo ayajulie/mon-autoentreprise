@@ -1,13 +1,24 @@
+<<<<<<< HEAD
 %= simple_form_for devi do |f| %>
 
 <div class="form-title py-3" style ="width:620px; ">
     <h2 class="text-warning">Créer une facture</h2>
+=======
+<%= simple_form_for devi do |f| %>
+
+<div class="form-title py-3" style ="width:620px; ">
+    <h2 class="text-warning">Créer votre devis</h2>
+>>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
   </div>
 
   <table class="table table-sm table-striped" style= "width: 600px; ">
     <tbody>
       <tr>
+<<<<<<< HEAD
          <td>  <%= f.input :object, label: "Objet de la facture", class:"form-control" %></td>
+=======
+         <td>  <%= f.input :name, label: "Nom du client", class:"form-control" %></td>
+>>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
       </tr>
        <tr>
          <td> <%= f.input :amount, label: "Montant", class:"form-control" %></td>
@@ -18,6 +29,7 @@
        <tr>
          <td> <%= f.input :devis_at, label: "Date du devis", as: :date, html5: true, class:"form-control" %></td>
        </tr>
+<<<<<<< HEAD
        tr>
          <td> <%= f.input :success, label: "Succès du devis", as: :boolean, class:"checkbox_class" %></td>
        </tr>
@@ -28,6 +40,15 @@
 </table>
 
   <%= f.submit "Générez votre facture", class: "btn btn-warning"%>
+=======
+       <tr>
+         <td> <%= f.input :success, label: "Succès du devis", as: :boolean, class:"checkbox_class" %></td>
+       </tr>
+  </tbody>
+</table>
+
+  <%= f.submit "Générez votre devis", class: "btn btn-warning"%>
+>>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
 
 <% end -%>
 

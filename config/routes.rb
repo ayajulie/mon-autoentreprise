@@ -17,15 +17,25 @@ end
     get '/company_registration',  to: 'users#company_registration'
     get '/services',  to: 'pages#services'
     get '/demarches',  to: 'users#demarches'
+<<<<<<< HEAD
     get '/comptabilites/:id:/calculate', to: 'comptabilites#calculate'
     post '/comptabilites/:id/calculate', to: 'comptabilites#calculate'
+=======
+    get '/relances', to: 'relances#lettre', :defaults => { :format => 'docx' }
+
+>>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
 
     # get '/personal_info', to: 'users#personal_info_users'
     # get '/company_info', to: 'users#company_info_users'
     resources :invoices
     resources :taxes, only: [:index]
+<<<<<<< HEAD
     resources :comptabilites
     resources :devis
+=======
+    resources :devis
+    resources :relances
+>>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
   end
   resources :users, only: [:update] # Pas propre car current_user donc pas besoin d'id mais choisi par Joseph pour faciliter les simple forms
    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

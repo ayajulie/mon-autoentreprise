@@ -1,6 +1,7 @@
 class ComptabilitesController < ApplicationController
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   skip_before_action :verify_authenticity_token
 
 
@@ -12,6 +13,8 @@ class ComptabilitesController < ApplicationController
     @comptabilite=Comptabilite.find(params[:id])
     @comptabilites = Comptabilite.all
 =======
+=======
+>>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
    def new
     @compta = Comptabilite.new
   end
@@ -19,28 +22,38 @@ class ComptabilitesController < ApplicationController
   def show
     @compta=Comptabilite.find(params[:id])
     @comptas = Comptabilite.all
+<<<<<<< HEAD
 >>>>>>> devis
+=======
+>>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
   end
 
 
   def create
+<<<<<<< HEAD
 <<<<<<< HEAD
     @comptabilite = Comptabilite.new(comptabilite_params)
     @comptabilite.user = current_user
     if @comptabilite.save
         redirect_to root_path
 =======
+=======
+>>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
     @compta = Comptabilite.new()
     @compta.user_id = current_user
     if @compta.save
         redirect_to rooth_path
+<<<<<<< HEAD
 >>>>>>> devis
+=======
+>>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
     else
         render "new"
     end
   end
 
   def edit
+<<<<<<< HEAD
 <<<<<<< HEAD
      @comptabilite = Comptabilite.find(params[:id])
   end
@@ -50,6 +63,8 @@ class ComptabilitesController < ApplicationController
     @comptabilite.update!(comptabilite_params)
     redirect_to root_path
 =======
+=======
+>>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
      @compta = Comptabilite.find(params[:id])
   end
 
@@ -57,11 +72,15 @@ class ComptabilitesController < ApplicationController
     @compta = Comptabilite.find(params[:id])
     @compta.update!()
     redirect_to invoice
+<<<<<<< HEAD
 >>>>>>> devis
+=======
+>>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
   end
 
   def calculate
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     @comptabilite = Comptabilite.find_by(params[:user])
 
@@ -73,6 +92,8 @@ class ComptabilitesController < ApplicationController
 
 =======
 >>>>>>> devis
+=======
+>>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
   end
 
   def destroy
@@ -83,6 +104,7 @@ class ComptabilitesController < ApplicationController
 
   private
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   def set_name
 
@@ -98,6 +120,11 @@ class ComptabilitesController < ApplicationController
   def comptabilite_params
       params.require(:comptablite).permit!(:immobilisations, :valeur_credit_bail, :primes_remboursement, :charges_repartir, :stocks, :avances, :creance, :effets_escomptes, :valeur_mobilieres, :disponibilites, :capitaux_propres, :dettes_financieres, :emprunt_credit_bail, :dettes_exploitations, :dettes_fiscales, :tresorerie_passive)
 >>>>>>> devis
+=======
+
+  def comptabilite_params
+      params.require(:comptablite).permit!(:immobilisations, :valeur_credit_bail, :primes_remboursement, :charges_repartir, :stocks, :avances, :creance, :effets_escomptes, :valeur_mobilieres, :disponibilites, :capitaux_propres, :dettes_financieres, :emprunt_credit_bail, :dettes_exploitations, :dettes_fiscales, :tresorerie_passive)
+>>>>>>> 2af684f29dca831117579e4b7e4e6c6ae108ce91
   end
 
 end
