@@ -15,8 +15,7 @@ class ComptabilitesController < ApplicationController
     @comptabilite=Comptabilite.find(params[:id])
     @comptabilites = Comptabilite.all
 
-
-
+  end
 
   def create
     @comptabilite = Comptabilite.new(comptabilite_params)
@@ -97,3 +96,4 @@ class ComptabilitesController < ApplicationController
 end
 
 
+end
