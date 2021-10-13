@@ -10,10 +10,13 @@
          <td>  <%= f.input :name, label: "Objet de la facture", class:"form-control" %></td>
       </tr>
        <tr>
-         <td> <%= f.input :creance, label: "Montant", class:"form-control" %></td>
+         <td> <%= f.input :amount, label: "Montant", class:"form-control" %></td>
       </tr>
        <tr>
-         <td> <%= f.input :creance_at, label: "Date de la facture", as: :date, html5: true, class:"form-control" %></td>
+         <td> <%= f.input :day label: "Date de la facture", as: :date, html5: true, class:"form-control" %></td>
+       </tr>
+       tr>
+         <td> <%= f.input :adress label: "L'adresse du mauvais payeur", class:"form-control" %></td>
        </tr>
   </tbody>
 </table>
