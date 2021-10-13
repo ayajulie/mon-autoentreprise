@@ -14,7 +14,7 @@ class RelancesController < ApplicationController
 
   def create
     @relance = Relance.new(relance_params)
-    @relance.user = current_user
+    @relance.user_id = current_user
     if @relance.save
         redirect_to relances_path
     else
