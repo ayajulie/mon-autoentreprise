@@ -24,6 +24,6 @@ class SocietesController < ApplicationController
   private
 
   def societe_params
-      params.require(:societe).permit(:name, :creance, :creance_at, :user_id)
+      params.require(:societe).permit(:denomination_sociale, :creance, :creance_at, :user_id)
   end
 end
