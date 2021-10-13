@@ -18,10 +18,13 @@ end
     get '/services',  to: 'pages#services'
     get '/demarches',  to: 'users#demarches'
 
+
+
     get '/comptabilites/:id/calculate', to: 'comptabilites#calculate', as: :comptabilites_calculate
     post '/comptabilites/:id/calculate', to: 'comptabilites#calculate'
 
     get '/relances', to: 'relances#lettre', :defaults => { :format => 'docx' }
+
 
 
     # get '/personal_info', to: 'users#personal_info_users'
@@ -29,9 +32,13 @@ end
     resources :invoices
     resources :taxes, only: [:index]
 
-
     resources :devis
+
+
+
+  
     resources :relances
+
 
   end
   resources :users, only: [:update] # Pas propre car current_user donc pas besoin d'id mais choisi par Joseph pour faciliter les simple forms

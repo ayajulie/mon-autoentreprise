@@ -1,6 +1,7 @@
 class ComptabilitesController < ApplicationController
 
 
+
   skip_before_action :verify_authenticity_token
   before_action :set_user, only: [:edit, :upadate, :destroy, :calculate]
 
@@ -30,8 +31,10 @@ class ComptabilitesController < ApplicationController
 
   def edit
 
-     @comptabilite = Comptabilite.find(params[:id])
+     @compta = Comptabilite.find(params[:id])
   end
+
+
 
   def update
     @comptabilite = Comptabilite.find(params[:id])
@@ -64,6 +67,7 @@ class ComptabilitesController < ApplicationController
     @marge_sécurite = "2000"
 
 
+
   end
 
   def destroy
@@ -73,6 +77,8 @@ class ComptabilitesController < ApplicationController
   end
 
   private
+
+
 
 
   def set_user

@@ -11,8 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-=======
+
 ActiveRecord::Schema.define(version: 2021_10_12_080855) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,7 +79,6 @@ ActiveRecord::Schema.define(version: 2021_10_12_080855) do
 
   create_table "devis", force: :cascade do |t|
 
-   
     t.bigint "user_id", null: false
     t.string "name"
     t.string "reference_devis"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 2021_10_12_080855) do
   
 
     t.boolean "success"
+
 
     t.index ["user_id"], name: "index_devis_on_user_id"
   end
@@ -179,7 +180,9 @@ ActiveRecord::Schema.define(version: 2021_10_12_080855) do
   add_foreign_key "clients", "users"
   add_foreign_key "comptabilites", "users"
 
+
   add_foreign_key "devis", "clients"
+
 
   add_foreign_key "devis", "users"
   add_foreign_key "invoices", "users"
