@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :clients
   has_many :invoices
+  has_many :comptabilites
 
   def form_user_filled?
     first_name.present? && birth_last_name.present? && ssn.present?

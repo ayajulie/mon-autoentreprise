@@ -11,19 +11,22 @@
   </head>
   <body id="body">
     <%= render 'shared/flashes' %>
-   <div class="container">
+    <%= render 'shared/navbar' %>
+   <div class="container-fluid" id="actualites">
+
+  <%= cl_image_tag "lettre", width: 1500, height:400, class:"img-demarche" %>
+
+ <div style="padding-border: 100px">
+  <center>
   <h2> Actualités</h2>
-  <%= cl_image_tag "lettre", width: 400, height:200, class:"img-demarche" %>
-  <br>
-  <br>
-  <div>
     <h3> Les seuils des chiffres d'affaires en 2021 pour les micro-entrepreneurs</h3>
     <p> Les seuils des chiffres d'affaires pour les auto-entrepreneurs sont réévalués tous les trois ans.</p>
     <ul>
       <li> Activités libérales : 72 600 € </li>
       <li> Achats de marchandises : 176 200 € </li>
     </ul>
-  </div>
+  </center>
+</div>
 
 </div>
     <script></script>
