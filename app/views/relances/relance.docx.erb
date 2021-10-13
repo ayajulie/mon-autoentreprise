@@ -1,9 +1,13 @@
 
 
+<%= current_user.first_name%>
+<%= current_user.use_name%>
+<%= current_user.address%>
+
 <h2>Monsieur le Dirigeant</h2>
 
 
-<p>Sauf erreur ou omission de notre part, à ce jour, nous n’avons toujours pas reçu le règlement de notre facture n°xxxx du …./…./…… d’un montant de ….. euros.
+<p>Sauf erreur ou omission de notre part, à ce jour, nous n’avons toujours pas reçu le règlement de notre facture ayant pour référence : <%= @relance.name %>  du <%= @relance.created_at %> d’un montant de <%= @relance.creance %>  euros.
 
 L’échéance étant dépassée, nous sommes soucieux qu’un problème ait pu retarder votre paiement. Si tel était le cas, n’hésitez pas à nous contacter.
 
