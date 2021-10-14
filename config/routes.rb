@@ -24,7 +24,7 @@ end
     get '/relances/:id', to: 'relances#show', :defaults => { :format => 'docx' }
     get '/relance/new', to: 'relances#new'
 
-
+    get '/miseendemeure/:id', to: 'miseendemeures#show', :defaults => { :format => 'docx' }
 
 
 
