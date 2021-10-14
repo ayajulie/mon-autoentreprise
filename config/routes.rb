@@ -47,6 +47,7 @@ end
 
     resources :devis
     resources :relances
+    resources :miseendemeures
 
   end
   resources :users, only: [:update] # Pas propre car current_user donc pas besoin d'id mais choisi par Joseph pour faciliter les simple forms

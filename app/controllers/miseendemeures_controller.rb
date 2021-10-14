@@ -21,7 +21,8 @@ def show
       render docx: 'miseendemeure.docx.erb', filename: 'mise_en_demeure.docx'
   end
 
-
+end
+end
 
 
 private
@@ -29,4 +30,6 @@ private
 
 def miseendemeure_params
   params.require(:miseendemeure).permit(:denomination_sociale, :creance, :creance_at, :user_id)
+end
+
 end
