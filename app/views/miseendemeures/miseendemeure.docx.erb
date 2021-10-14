@@ -1,0 +1,37 @@
+<%= @current_user.use_name%>
+
+<%= @current_user.address %>
+
+<%= @current_user.phone%>
+
+<p><%= @miseendemeure.name %></p style = "margin-left : 400px">
+
+<p><%= @miseendemeure.adress %></p style = "margin-left : 400px">
+
+Le “date de l’envoi du courrier”
+
+
+Lettre recommandée avec AR
+Objet : mise en demeure de payer
+
+Madame, Monsieur,
+
+Suites à mes relances restées sans réponse, je reviens vers vous pour obtenir le paiement des factures suivantes :
+
+<%= @miseendemeure.reference %>  /   <%= @miseendemeure.jour %>   / <%= @miseendemeure.amount %>
+
+Conformément aux termes de la convention, le montant des factures est augmenté du taux d'intérêt contractuel de “montant des intérêts de retard”. Ce montant est également augmenté de la clause pénale, d’un montant forfaitaire de “montant de la clause pénale si elle existe”.
+
+Par la présente, nous vous mettons en demeure de régler la somme de <%= @miseendemeure.amount %>, toutes taxes comprises (TTC), augmentée des pénalités de retard précitées, dans un délai de huit jours à compter de la réception de la présente.
+
+Pour régulariser votre situation sans avoir à engager des frais supplémentaires, merci de bien vouloir effectuer un virement sur notre compte bancaire ou de nous faire parvenir un chèque.
+
+A défaut, nous serons dans l’obligation de saisir les juridictions compétentes d’une demande de condamnation à votre encontre. Cette demande sera augmentée des frais de justice et de procédure exposés inutilement pour se défendre.
+
+Vous devez considérer la présente comme une mise en demeure de nature à faire courir tout droit et intérêt que la loi et les tribunaux attachent aux mises en demeure.
+
+Dans l’attente de votre règlement, veuillez recevoir, Madame, Monsieur, l’expression de nos salutations les meilleures.
+
+<p><%= @current_user.use_name %></p style = "margin-left : 400px">
+
+

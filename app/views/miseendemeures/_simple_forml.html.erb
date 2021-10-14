@@ -1,0 +1,27 @@
+<%= simple_form_for miseendemeure do |f| %>
+
+<div class="form-title py-3" style ="width:620px; ">
+    <h2 class="text-warning">Créer une lettre de mise en demeure</h2>
+  </div>
+
+  <table class="table table-sm table-striped" style= "width: 600px; ">
+    <tbody>
+      <tr>
+         <td>  <%= f.input :name, label: "Objet de la facture", class:"form-control" %></td>
+      </tr>
+       <tr>
+         <td> <%= f.input :amount, label: "Montant", class:"form-control" %></td>
+      </tr>
+       <tr>
+         <td> <%= f.input :day label: "Date de la facture", as: :date, html5: true, class:"form-control" %></td>
+       </tr>
+       tr>
+         <td> <%= f.input :adress label: "L'adresse du mauvais payeur", class:"form-control" %></td>
+       </tr>
+  </tbody>
+</table>
+
+  <%= f.submit "Générez votre Mise en demeure", class: "btn btn-warning"%>
+
+<% end -%>
+

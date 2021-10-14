@@ -23,11 +23,27 @@ class DevisController < ApplicationController
 
       redirect_to dashboard_path
 
+
     else
       render "new"
     end
   end
 
+  def edit
+     @devi = Devi.find(params[:id])
+  end
+
+  def update
+    @devi= Devi.find(params[:id])
+    @devi.update!(devis_params)
+    redirect_to root_path
+  end
+
+  def destroy
+    @devi = Devi.find(params[:id])
+    @devi.destroy
+    redirect_to root
+  end
 
   def edit
      @devi = Devi.find(params[:id])

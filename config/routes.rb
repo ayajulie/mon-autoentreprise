@@ -21,6 +21,9 @@ end
     get '/company_registration',  to: 'users#company_registration'
     get '/services',  to: 'pages#services'
     get '/demarches',  to: 'users#demarches'
+    get '/relances/:id', to: 'relances#show', :defaults => { :format => 'docx' }
+    get '/relance/new', to: 'relances#new'
+
 
 
 
@@ -39,8 +42,8 @@ end
     resources :invoices
     resources :taxes, only: [:index]
 
+
     resources :comptabilites
-    resources :devis
 
     resources :devis
     resources :relances
