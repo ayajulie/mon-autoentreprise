@@ -13,10 +13,10 @@
          <td> <%= f.input :amount, label: "Montant", class:"form-control" %></td>
       </tr>
        <tr>
-         <td> <%= f.input :day label: "Date de la facture", class:"form-control" %></td>
+         <td> <%= f.input :day, label: "Date de la facture", class:"form-control" %></td>
        </tr>
-       tr>
-         <td> <%= f.input :adress label: "L'adresse du mauvais payeur", class:"form-control" %></td>
+        <tr>
+         <td> <%= f.input :adress, label: "L'adresse du mauvais payeur", class:"form-control" %></td>
        </tr>
   </tbody>
 </table>
@@ -24,4 +24,3 @@
   <%= f.submit "Générez votre Mise en demeure", class: "btn btn-warning"%>
 
 <% end -%>
-
