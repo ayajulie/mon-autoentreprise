@@ -77,12 +77,11 @@ ActiveRecord::Schema.define(version: 2021_10_13_122236) do
   end
 
   create_table "devis", force: :cascade do |t|
-<<<<<<< HEAD
+
 
     t.bigint "client_id", null: false
 
-=======
->>>>>>> miseendemeure
+
     t.bigint "user_id", null: false
     t.string "name"
     t.string "reference_devis"
@@ -92,7 +91,7 @@ ActiveRecord::Schema.define(version: 2021_10_13_122236) do
     t.string "interet"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-<<<<<<< HEAD
+
     t.index ["client_id"], name: "index_devis_on_client_id"
 
     t.boolean "success"
@@ -100,9 +99,7 @@ ActiveRecord::Schema.define(version: 2021_10_13_122236) do
 
 
 
-=======
-    t.boolean "success"
->>>>>>> miseendemeure
+
     t.index ["user_id"], name: "index_devis_on_user_id"
   end
 
@@ -119,8 +116,7 @@ ActiveRecord::Schema.define(version: 2021_10_13_122236) do
     t.index ["user_id"], name: "index_invoices_on_user_id"
   end
 
-<<<<<<< HEAD
-=======
+
   create_table "miseendemeures", force: :cascade do |t|
     t.string "name"
     t.string "adress"
@@ -133,7 +129,6 @@ ActiveRecord::Schema.define(version: 2021_10_13_122236) do
     t.index ["user_id"], name: "index_miseendemeures_on_user_id"
   end
 
->>>>>>> miseendemeure
   create_table "relances", force: :cascade do |t|
     t.string "name"
     t.datetime "creance_at"
