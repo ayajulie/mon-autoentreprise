@@ -1,0 +1,33 @@
+<%= simple_form_for achat do |f| %>
+
+<div class="form-title py-3" style ="width:620px; ">
+    <h2 class="text-warning">Créer une facture</h2>
+  </div>
+
+  <table class="table table-sm table-striped" style= "width: 600px; border-style: solid">
+    <tbody>
+      <tr>
+         <td>  <%= f.input :name, label: "Objet de l'achat", class:"form-control" %></td>
+      </tr>
+       <tr>
+         <td> <%= f.input :amount, label: "Montant", class:"form-control" %></td>
+      </tr>
+       <tr>
+         <td> <%= f.input :date_paiement, label: "Date de l'achat", as: :date, html5: true, class:"form-control" %></td>
+       </tr>
+       <tr>
+         <td> <%= f.input :date_facture, label: "Date de la facture", as: :date, html5: true, class:"form-control" %></td>
+       </tr>
+        <tr>
+         <td> <%= f.input :tva, label: "Montant de la TVA", class:"form-control" %></td>
+       </tr>
+       <tr>
+        <td> <%= f.input :reference, label: "Reference", class:"form-control"  %></td>
+      </tr>
+  </tbody>
+</table>
+
+  <%= f.submit "Générez votre facture", class: "btn btn-warning"%>
+
+<% end -%>
+

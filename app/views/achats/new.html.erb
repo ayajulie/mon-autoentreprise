@@ -1,0 +1,13 @@
+<%= render 'shared/navbar' %>
+<%= render '/pages/sidebar' %>
+<div class="dashboard-content">
+  <div class="container">
+    <div class="dashboard-information">
+      <%= render "simple_form", achat: @achat  %>
+      <br>
+      <p> L'ajout d'achat permettra de calculer vos dépenses.</p>
+      <hr>
+      <%= link_to "Back to index", root_path %>
+    </div>
+  </div>
+</div>

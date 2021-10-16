@@ -5,10 +5,10 @@ class AchatsController < ApplicationController
   end
 
   def create
-    @achat = achat.new(achat_params)
+    @achat = Achat.new(achat_params)
     @achat.user = current_user
-    if @miseendemeure.save
-        redirect_to achat_show_path(@achat)
+    if @achat.save
+        redirect_to achat_path(@achat)
     else
         render "new"
     end

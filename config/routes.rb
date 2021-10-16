@@ -28,6 +28,8 @@ end
 
     get '/comptabilites/:id', to: 'comptabilites#show_calculate', :defaults => { :format => 'docx' }, as: :show_calculate
 
+    get '/comptabilite/new', to: 'comptabilites#new', as: :new_comptabilite
+
 
     get '/comptabilites/:id/calculate', to: 'comptabilites#calculate', as: :comptabilites_calculate
     post '/comptabilites/:id/calculate', to: 'comptabilites#calculate'
@@ -48,6 +50,7 @@ end
     resources :devis
     resources :relances
     resources :miseendemeures, only: [:new, :create]
+    resources :achats
 
   end
   resources :users, only: [:update] # Pas propre car current_user donc pas besoin d'id mais choisi par Joseph pour faciliter les simple forms
