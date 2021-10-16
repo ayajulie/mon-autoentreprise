@@ -26,7 +26,7 @@ end
 
     get '/miseendemeure/:id', to: 'miseendemeures#show', :defaults => { :format => 'docx' }, as: :miseendemeure_show
 
-
+    get '/comptabilites/:id', to: 'comptabilites#show_calculate', :defaults => { :format => 'docx' }, as: :show_calculate
 
 
     get '/comptabilites/:id/calculate', to: 'comptabilites#calculate', as: :comptabilites_calculate

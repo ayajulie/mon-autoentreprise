@@ -73,6 +73,16 @@ class ComptabilitesController < ApplicationController
 
   end
 
+  def show_calculate
+    @comptabilite = Comptabilite.find_by(params[:user])
+    respond_to do |format|
+    format.docx do
+      render docx: 'presentation_financiere.docx.erb', filename: 'presentation_financiere.docx'
+
+   end
+   end
+  end
+
   def destroy
     @comptabilite = Comptabilite.find(params[:id])
     @comptabilite.destroy
