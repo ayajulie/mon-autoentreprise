@@ -21,7 +21,6 @@ class AchatsController < ApplicationController
   private
 
   def achat_params
-
-
+     params.require(:achat).permit(:name, :amount, :reference, :tva, :date_paiement, :date_facture, :user_id)
   end
 end
