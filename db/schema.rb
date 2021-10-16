@@ -10,12 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2021_10_13_122236) do
-
+ActiveRecord::Schema.define(version: 2021_10_16_171808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achats", force: :cascade do |t|
+    t.string "name"
+    t.integer "amount"
+    t.integer "reference"
+    t.integer "tva"
+    t.date "date_facture"
+    t.date "date_paiement"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_achats_on_user_id"
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -77,11 +88,6 @@ ActiveRecord::Schema.define(version: 2021_10_13_122236) do
   end
 
   create_table "devis", force: :cascade do |t|
-
-
-    t.bigint "client_id", null: false
-
-
     t.bigint "user_id", null: false
     t.string "name"
     t.string "reference_devis"
@@ -91,15 +97,7 @@ ActiveRecord::Schema.define(version: 2021_10_13_122236) do
     t.string "interet"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-
-    t.index ["client_id"], name: "index_devis_on_client_id"
-
     t.boolean "success"
-
-
-
-
-
     t.index ["user_id"], name: "index_devis_on_user_id"
   end
 
@@ -115,7 +113,6 @@ ActiveRecord::Schema.define(version: 2021_10_13_122236) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_invoices_on_user_id"
   end
-
 
   create_table "miseendemeures", force: :cascade do |t|
     t.string "name"
@@ -140,8 +137,6 @@ ActiveRecord::Schema.define(version: 2021_10_13_122236) do
     t.index ["user_id"], name: "index_relances_on_user_id"
   end
 
-<<<<<<< HEAD
-=======
   create_table "societes", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "denomination_sociale"
@@ -156,7 +151,6 @@ ActiveRecord::Schema.define(version: 2021_10_13_122236) do
     t.index ["user_id"], name: "index_societes_on_user_id"
   end
 
->>>>>>> miseendemeure
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -212,24 +206,13 @@ ActiveRecord::Schema.define(version: 2021_10_13_122236) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "achats", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "clients", "users"
   add_foreign_key "comptabilites", "users"
-<<<<<<< HEAD
-
-
-
-  add_foreign_key "devis", "clients"
-
-
-  add_foreign_key "devis", "users"
-  add_foreign_key "invoices", "users"
-  add_foreign_key "relances", "users"
-=======
   add_foreign_key "devis", "users"
   add_foreign_key "invoices", "users"
   add_foreign_key "miseendemeures", "users"
   add_foreign_key "relances", "users"
   add_foreign_key "societes", "users"
->>>>>>> miseendemeure
 end
