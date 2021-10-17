@@ -47,6 +47,8 @@ gem 'docx'
 
 gem 'htmltoword', '~> 0.2'
 
+gem 'pdftk-heroku'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
