@@ -25,12 +25,6 @@
               <a class="dropdown-item" href="#">Mes écheances</a>
             </div>
           </li>
-          <li class="nav-item">
-            <%= link_to "Ma liste des achats", achat_path, class: "nav-link text-primary links" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Ma liste des Recettes", invoice_path, class: "nav-link text-primary links" %>
-          </li>
         </ul>
         <nav class="navbar-light bg-light">
           <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link btn btn-sm btn-outline-primary rounded-pill links"%>
