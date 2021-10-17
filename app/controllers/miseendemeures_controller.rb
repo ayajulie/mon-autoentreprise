@@ -15,6 +15,7 @@ def create
 end
 
 def show
+    @today = Date.current
     @miseendemeure = Miseendemeure.find(params[:id])
     respond_to do |format|
     format.docx do
