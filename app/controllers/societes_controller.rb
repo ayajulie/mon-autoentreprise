@@ -20,6 +20,8 @@ class SocietesController < ApplicationController
     format.docx do
       render docx: 'sas.docx.erb', filename: 'statut.docx'
   end
+end
+end
 
   private
 
