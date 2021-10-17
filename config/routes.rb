@@ -10,7 +10,7 @@ end
   get'/dashboard', to: 'pages#dashboard'
   scope '/dashboard' do
     get '/cerfa_informations', to: 'pages#cerfa_informations'
-    get '/cerfa_download', to: 'pages#download'
+
 
 
 
