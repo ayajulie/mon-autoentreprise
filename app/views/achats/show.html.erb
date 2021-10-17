@@ -8,82 +8,19 @@
           <div class="dashboard-upper-part-card px-0" style="width: 95%">
             <table class="table">
             <tbody>
+              <% @achats.each do |achat| %>
               <tr>
-                <td style="border-top: 0px; font-size: 1.2rem">Chiffres d'affaire de février 2021</td>
-                <td style="border-top: 0px; opacity: 0.6"><%= @current_month_turnover  %> <i class="fas fa-euro-sign"></i></td>
-                <td class= "date-italics" style="border-top: 0px">31/03/2021</td>
-                <td style="border-top: 0px"><span class="badge badge-secondary" style= "background-color: #edae2f">À déclarer</span></td>
+                <td style="border-top: 0px; font-size: 1.2rem"> <%= achat.name %></td>
+                <td style="border-top: 0px; opacity: 0.6"><%= @achat.amount  %> <i class="fas fa-euro-sign"></i></td>
+                <td class= "date-italics" style="border-top: 0px"><%= @achat.date_paiement  %> </td>
+                <td style="border-top: 0px"><span class="badge badge-secondary" style= "background-color: #edae2f"><%= @achat.tva  %> </span></td>
                 <td style="border-top: 0px"><%= link_to root_path do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="À déclarer à l'URSAFF"></i><% end %></td>
               </tr>
-              <tr>
-                <td style="font-size: 1.2rem">Cotisations sociales de février 2021</td>
-                <td style="opacity: 0.6" >
-                  <% if current_user.main_activity_choose == "commerce de détail" %>
-                    <%= @past_month_charge_sociale_vente %>
-                  <% else %>
-                  <%= @past_month_charge_sociale_service %>
-                  <% end %>
-                   <i class="fas fa-euro-sign"></i>
-                </td>
-                <td class= "date-italics">31/03/2021</td>
-                <td><span class="badge badge-secondary" style= "background-color: #0061f2"> À payer </span></td>
-                <td><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="À payer à l'URSAFF, calculé sur le CA de février 2021" ></i><% end %></td>
-              </tr>
-              <tr>
-                <td style="font-size: 1.2rem">Impôt sur le revenu mensualisé</td>
-                <td style="opacity: 0.6" >
-                  <% if current_user.main_activity_choose == "commerce de détail" %>
-                    <%= @monthly_income_tax_revente_to_pay  %>
-                  <% else %>
-                    <%= @monthly_income_tax_service_to_pay %>
-                  <% end %>
-                  <i class="fas fa-euro-sign"></i>
-                </td>
-                <td class= "date-italics">31/03/2021</td>
-                <td><span class="badge badge-secondary" style= "background-color: #0061f2">À payer</span></td>
-                <td><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Calculé sur vos revenus 2019"></i><% end %></td>
-              </tr>
-                <tr>
-                <td style="font-size: 1.2rem">TVA année 2020</td>
-                <td style="opacity: 0.6"><%= @past_year_tva %> <i class="fas fa-euro-sign"></i></td>
-                <td class= "date-italics">02/05/2021 </td>
-                <td><span class="badge badge-secondary" style= "background-color: #edae2f">À déclarer</span></td>
-                <td><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Calculé sur le CA de 2020"></i><% end %></td>
-              </tr>
-              <tr>
-                <td style="font-size: 1.2rem">Déclaration impôt sur le revenu année 2020 </td>
-                <td style="opacity: 0.6" >
-                  <% if current_user.main_activity_choose == "commerce de détail" %>
-                    <%= @past_year_income_tax_revente %>
-                  <% else %>
-                    <%= @past_year_income_tax_service %>
-                  <% end %>
-                   <i class="fas fa-euro-sign"></i>
-                </td>
-                <td class= "date-italics">30/05/2021</td>
-                <td><span class="badge badge-secondary" style= "background-color: #edae2f">À déclarer</span></td>
-                <td ><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Montant à déclarer pour l'activité de votre micro-entreprise"></i><% end %></td>
-              </tr>
-              <tr>
-                <td style="font-size: 1.2rem">CFE</td>
-                <td style="opacity: 0.6">823 <i class="fas fa-euro-sign"></i></td>
-                <td class= "date-italics">15/09/2021</td>
-                <td><span class="badge badge-secondary" style= "background-color: #0061f2">À payer</span></td>
-                <td><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Calculé sur la valeur locative des biens immobiliers de 2019"></i><% end %></td>
-              </tr>
-              <tr>
-                <td style="font-size: 1.2rem">Taxes consulaires</td>
-                <td style="opacity: 0.6">
-                  <% if current_user.main_activity_choose == "commerce de détail" %>
-                    <%= @past_year_taxe_chambre_consulaire_vente %>
-                  <% else %>
-                    <%= @past_year_taxe_chambre_consulaire_service %>
-                  <% end %>
-                   <i class="fas fa-euro-sign"></i>
-                </td>
-                <td class= "date-italics">30/09/2021</td>
-                <td><span class="badge badge-secondary" style= "background-color: #0061f2">À payer</span></td>
-                <td><%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="" ></i><% end %></td>
+            <% end %>
+            <tr>
+                <td style="border-top: 0px; font-size: 1.2rem"> Somme des achats</td>
+                <td style="border-top: 0px; font-size: 1.2rem"> <%= @achat_somme %></td>
+
               </tr>
             </tbody>
           </table>

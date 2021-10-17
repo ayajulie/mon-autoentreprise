@@ -15,7 +15,9 @@ class AchatsController < ApplicationController
   end
 
   def show
-    Achat.find_by(params[:user])
+    @achat = Achat.find_by(params[:user])
+    @achats = Achat.all
+    @achat_somme = Achat.sum(:amount)
   end
 
   private
