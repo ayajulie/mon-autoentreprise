@@ -15,13 +15,5 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
-  def cerfa_informations
 
-  end
-
-  def download
-    @user = current_user
-    cerfa_informations
-
-  end
 end
