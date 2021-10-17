@@ -47,6 +47,8 @@ gem 'docx'
 
 gem 'htmltoword', '~> 0.2'
 
+gem 'mimemagic', '~> 0.3.10'
+
 
 
 group :development, :test do
