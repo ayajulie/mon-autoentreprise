@@ -38,11 +38,6 @@ class RelancesController < ApplicationController
   end
   end
 
-  def download
-    @user = current_user
-    cerfa_informations
-    send_file "/tmp/2021_User.pdf"
-  end
 
   private
 
