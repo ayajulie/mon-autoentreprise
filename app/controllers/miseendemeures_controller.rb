@@ -15,8 +15,9 @@ def create
 end
 
 def show
-    @today = Date.current
+    @today = Date.current.to_time.strftime('%d /%m /%Y')
     @miseendemeure = Miseendemeure.find(params[:id])
+    @jour = @miseendemeure.day.to_time.strftime('%d /%m /%Y')
     respond_to do |format|
     format.docx do
       render docx: 'miseendemeure.docx.erb', filename: 'mise_en_demeure.docx'

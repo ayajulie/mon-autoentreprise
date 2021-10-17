@@ -2,11 +2,11 @@
 <%= current_user.address %>
 <%= current_user.phone_number %>
 
-               <p><%= @miseendemeure.name %></p style = "margin-left : 400px">
+                                                                                               <%= @miseendemeure.name %>
 
-               <p><%= @miseendemeure.adress %></p style = "margin-left : 400px">
+                                                                                               <%= @miseendemeure.adress %>
 
-               Le <%= @today %>
+                                                                                               Le <%= @today %>
 
 
 Lettre recommandée avec AR
@@ -16,7 +16,7 @@ Madame, Monsieur,
 
 Suites à mes relances restées sans réponse, je reviens vers vous pour obtenir le paiement des factures suivantes :
 
-<%= @miseendemeure.refence %>  /   <%= @miseendemeure.day %>   / <%= @miseendemeure.amount %>
+<%= @miseendemeure.refence %>  /   <%= @jour %>   / <%= @miseendemeure.amount %>
 
 Conformément aux termes de la convention, le montant des factures est augmenté du taux d'intérêt contractuel de “montant des intérêts de retard”. Ce montant est également augmenté de la clause pénale, d’un montant forfaitaire de “montant de la clause pénale si elle existe”.
 
@@ -30,6 +30,6 @@ Vous devez considérer la présente comme une mise en demeure de nature à faire
 
 Dans l’attente de votre règlement, veuillez recevoir, Madame, Monsieur, l’expression de nos salutations les meilleures.
 
-<p><%= current_user.use_name %></p style = "margin-left : 400px">
+                                                                                              <%= current_user.use_name %>
 
 
