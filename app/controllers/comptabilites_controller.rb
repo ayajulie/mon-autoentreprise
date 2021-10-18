@@ -51,7 +51,7 @@ class ComptabilitesController < ApplicationController
   def calculate
 
 
-    @comptabilite=Comptabilite.find(params[:id])
+    @comptabilite=Comptabilite.find(params[:user_id])
 
     @charges_variables = @comptabilite.charges_repartir/3
     @charges_fixes = @comptabilite.charges_repartir- @charges_variables
