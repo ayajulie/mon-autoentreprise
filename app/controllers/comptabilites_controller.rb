@@ -119,7 +119,7 @@ class ComptabilitesController < ApplicationController
   def comptabilite_params
       params.require(:comptabilite).permit(:immobilisations, :valeur_credit_bail, :charges_repartir, :primes_remboursement, :stocks, :avances, :creance, :effets_escomptes, :valeur_mobilieres,
        :disponibilites, :capitaux_propres, :dettes_financieres, :emprunt_credit_bail,
-       :dettes_exploitations, :dettes_fiscales, :tresorerie_passive, :resultats)
+       :dettes_exploitations, :dettes_fiscales, :tresorerie_passive, :resultats, :achats_marchandises, :chiffre_affaire)
 end
 
 
