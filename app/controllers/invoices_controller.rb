@@ -1,6 +1,6 @@
 class InvoicesController < ApplicationController
 
-  before_action :set_client, only: [:edit, :upadate, :destroy]
+
 
 
   def new
@@ -155,9 +155,6 @@ class InvoicesController < ApplicationController
       params.require(:invoice).permit(:object, :amount, :invoiced_at, :user_id,)
   end
 
-  def set_client
-      @client = Client.find(params[:id])
-  end
 
   def variation_percentage(a, b)
     (((b.to_f - a.to_f) * 100) / a).round(1)
