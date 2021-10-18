@@ -14,7 +14,7 @@ end
 
 
 
-    get '/invoices/:id/calculate', to: 'invoices#calculate', as: :invoices_calculate
+    get '/invoices/:id/calculate/:id', to: 'invoices#calculate', as: :invoices_calculate
     post '/invoices/calculate', to: 'invoices#calculate'
 
     get '/my_informations', to: 'users#informations'
@@ -31,7 +31,7 @@ end
     get '/comptabilite/new', to: 'comptabilites#new', as: :new_comptabilite
 
 
-    get '/comptabilites/:id/calculate', to: 'comptabilites#calculate', as: :comptabilites_calculate
+    get '/comptabilites/:id/calculate/:id', to: 'comptabilites#calculate', as: :comptabilites_calculate
     post '/comptabilites/:id/calculate', to: 'comptabilites#calculate'
 
     get '/relances', to: 'relances#lettre', :defaults => { :format => 'docx' }
