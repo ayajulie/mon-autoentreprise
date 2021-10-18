@@ -61,7 +61,7 @@ class ComptabilitesController < ApplicationController
     @caf = (@comptabilite.resultats+@comptabilite.charges_repartir) - (@comptabilite.achats_marchandises)
     @marge = (@comptabilite.ventes_marchandises-@comptabilite.achats_marchandises)
     @taux_marge = @marge/@comptabilite.ventes_marchandises
-    @seuil_rentabilite = @comptabilite.chiffre_affaire/@charges_fixes
+    @seuil_rentabilite = @comptabilite.chiffre_affaire/@comptabilite.charges_repartir
     @taux_rentabilité = @comptabilite.ventes_marchandises/@comptabilite.achats_marchandises
     @chiffre_a_rentrer = @comptabilite.ventes_marchandises - @comptabilite.achats_marchandises
     @reste_a_payer = @comptabilite.stocks + @comptabilite.valeur_credit_bail
