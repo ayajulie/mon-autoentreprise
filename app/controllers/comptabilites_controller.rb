@@ -106,6 +106,12 @@ class ComptabilitesController < ApplicationController
     redirect_to root
   end
 
+  def update
+     @comptabilite = Comptabilite.find(params[:id])
+    @comptabilite.update!(comptabilite_params)
+    redirect_to root_path
+  end
+
   private
 
 
