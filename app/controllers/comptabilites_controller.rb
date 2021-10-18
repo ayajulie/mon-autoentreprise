@@ -59,7 +59,7 @@ class ComptabilitesController < ApplicationController
 
     @bfr = (@comptabilite.stocks+@comptabilite.creance)-(@comptabilite.dettes_exploitations+@comptabilite.dettes_fiscales)
     @caf = (@comptabilite.resultats+@comptabilite.charges_repartir) - (@comptabilite.achats_marchandises)
-    @marge = (@comptabilite.ventes_marchandises-@comptabilite.achats_marchandises)
+    @marge = @comptabilite.ventes_marchandises-@comptabilite.achats_marchandises
     @taux_marge = @marge/@comptabilite.ventes_marchandises
     @seuil_rentabilite = @comptabilite.chiffre_affaire/@comptabilite.charges_repartir
     @taux_rentabilité = @comptabilite.ventes_marchandises/@comptabilite.achats_marchandises
