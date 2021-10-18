@@ -67,7 +67,7 @@ class InvoicesController < ApplicationController
 
 
 # Calcul CA 12 mois glissant
-    @past_12_months_turnover = @monthly_past_12_months_turnover.sum(:amount)
+    @past_12_months_turnover = @monthly_past_12_months_turnover.sum
    # @previous_past_12_months_turnover = @monthly_previous_past_12_months_turnover.sum(:amount)
 
 # Calcul pour le mois en cours
@@ -132,13 +132,7 @@ class InvoicesController < ApplicationController
     @past_month_charge_sociale_service = (@past_month_turnover * 0.22).round
 
 # Calcul augmentation par rapport à l'année précédente
-    @one_year_before_month_turnover = Invoice.group_by_month(:invoiced_at).sum(:amount).values[-13]
-    @previous_year_month_variation_rate = variation_percentage(@one_year_before_month_turnover, @current_month_turnover)
 
-    @previous_year_past_12_month_variation_rate = variation_percentage(@previous_past_12_months_turnover, @past_12_months_turnover)
-
-    @previous_year_same_month_exercise = Invoice.group_by_month(:invoiced_at).sum(:amount).values[-15..-13].sum
-    @previous_year_same_month_exercise_variation_rate = variation_percentage(@previous_year_same_month_exercise, @current_year_turnover)
 
   end
 
@@ -156,8 +150,5 @@ class InvoicesController < ApplicationController
   end
 
 
-  def variation_percentage(a, b)
-    (((b.to_f - a.to_f) * 100) / a).round(1)
-  end
 
 end
