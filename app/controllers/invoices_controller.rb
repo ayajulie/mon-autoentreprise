@@ -75,7 +75,7 @@ class InvoicesController < ApplicationController
 
 # Calcul pour l'année en cours
     @current_year_turnover = Invoice.group_by_year(:invoiced_at).sum(:amount).values.last
-    @current_year_charge_sociale_vente = (@current_year_turnover * 0.12).round
+   # @current_year_charge_sociale_vente = (@current_year_turnover * 0.12).round
     @current_year_taxe_chambre_consulaire_vente = (@current_year_turnover * 0.0015).round
     @current_year_income_tax_revente = ((@current_year_turnover * 0.7) * 1.07).round
     @current_year_income_tax_revente_to_pay = (@current_year_income_tax_revente * 0.12).round
