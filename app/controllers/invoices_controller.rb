@@ -151,7 +151,7 @@ class InvoicesController < ApplicationController
   require 'date'
 
   def invoice_params
-      params.require(:invoice).permit(:object, :amount, :invoiced_at, :user_id, :client_id)
+      params.require(:invoice).permit(:object, :amount, :invoiced_at, :user_id,)
   end
 
   def set_client
