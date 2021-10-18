@@ -68,7 +68,7 @@ class InvoicesController < ApplicationController
 
 # Calcul CA 12 mois glissant
     @past_12_months_turnover = @monthly_past_12_months_turnover.sum(:amount)
-    @previous_past_12_months_turnover = @monthly_previous_past_12_months_turnover.sum(:amount)
+   # @previous_past_12_months_turnover = @monthly_previous_past_12_months_turnover.sum(:amount)
 
 # Calcul pour le mois en cours
     @current_month_turnover = Invoice.group_by_month(:invoiced_at).sum(:amount).values.last
