@@ -53,7 +53,9 @@ class ComptabilitesController < ApplicationController
 
     @comptabilite=Comptabilite.find_by(user:current_user)
 
-    if @comptabilite.charges_repartir.nil?
+    @charge = @comptabilite.charges_repartir
+
+    if @charge.nil?
         @charges_variables =0
         @charges_fixes = 0
     else
