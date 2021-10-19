@@ -53,21 +53,63 @@ class ComptabilitesController < ApplicationController
 
     @comptabilite=Comptabilite.find_by(user:current_user)
 
+    if @comptabilite.charges_repartir.nil?
+        @charges_variables =0
+        @charges_fixes = 0
+    else
     @charges_variables = @comptabilite.charges_repartir/3
     @charges_fixes = @comptabilite.charges_repartir- @charges_variables
+    end
 
-
+    if @comptabilite.stocks.nil? || @comptabilite.creance.nil? || @comptabilite.dettes_exploitations.nil? || @comptabilite.dettes_fiscales.nil?
+    @bfr = 0
+     else
     @bfr = (@comptabilite.stocks+@comptabilite.creance)-(@comptabilite.dettes_exploitations+@comptabilite.dettes_fiscales)
+    end
+    if @comptabilite.resultats.nil? || @comptabilite.charges_repartir.nil? || @comptabilite.achats_marchandises.nil?
+       @caf= 0
+    else
     @caf = (@comptabilite.resultats+@comptabilite.charges_repartir) - (@comptabilite.achats_marchandises)
+  end
+
+    if @comptabilite.ventes_marchandises.nil? || @comptabilite.achats_marchandises.nil?
+      @marge=0
+    else
     @marge = @comptabilite.ventes_marchandises-@comptabilite.achats_marchandises
+  end
+
+    if @comptabilite.ventes_marchandises.nil?
+      taux_marge= 0
+    else
     @taux_marge = @marge/@comptabilite.ventes_marchandises
+  end
+
+    if @comptabilite.chiffre_affaire.nil? || @comptabilite.charges_repartir.nil?
+      @seuil_rentabilite = 0
+    else
     @seuil_rentabilite = @comptabilite.chiffre_affaire/@comptabilite.charges_repartir
+  end
+
+    if @comptabilite.ventes_marchandises.nil? || @comptabilite.achats_marchandises.nil?
+       @taux_rentabilité = 0
+    else
     @taux_rentabilité = @comptabilite.ventes_marchandises/@comptabilite.achats_marchandises
-    @chiffre_a_rentrer = @comptabilite.ventes_marchandises - @comptabilite.achats_marchandises
-    @reste_a_payer = @comptabilite.stocks + @comptabilite.valeur_credit_bail
+  end
+
+
     @ebe = "25 000"
+
+    if @comptabilite.chiffre_affaire.nil? || @comptabilite.charges_repartir.nil?
+       @marge_cout_variable = 0
+    else
     @marge_cout_variable = @comptabilite.chiffre_affaire - @comptabilite.charges_repartir
+     end
+
+    if @comptabilite.capitaux_propres.nil? || @comptabilite.dettes_financieres.nil?
+      @independance_financière = 0
+    else
     @independance_financière = @comptabilite.capitaux_propres/@comptabilite.dettes_financieres
+  end
     @marge_sécurite = "2000"
 
 

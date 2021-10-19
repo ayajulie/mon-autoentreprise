@@ -14,7 +14,7 @@ end
 
 
 
-    get '/invoices/calculate/', to: 'invoices#calculate', as: :invoices_calculate
+    get '/invoices/:id/calculate/', to: 'invoices#calculate', as: :invoices_calculate
     post '/invoices/calculate', to: 'invoices#calculate'
 
     get '/my_informations', to: 'users#informations'

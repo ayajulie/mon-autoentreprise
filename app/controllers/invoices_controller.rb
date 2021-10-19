@@ -33,7 +33,7 @@ class InvoicesController < ApplicationController
   end
 
   def calculate
-    @invoices = Invoice.all
+    @invoices = Invoice.all.where(user_id:current_user)
 =begin
     @turn_over = 0
     @invoices.each do |invoice|
