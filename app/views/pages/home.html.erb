@@ -7,7 +7,9 @@
       <p>Le site qui vous aide à réaliser toutes les démarches administratives pour votre auto entreprise.<br> Il préremplit vos Cerfa et vous simplifie la vie.</p>
 
       <%  if user_signed_in?  %>
+      Enregistrez-vous ! Commencez par vos informations personnelles et vos données financières :
         <%= link_to "Je me lance", company_registration_path(tab: "personal_info"), class: "btn btn-warning" %>
+         <%= link_to "Mes données financières", new_comptabilite_path, class: "btn btn-warning" %>
       <% else %>
         <%= link_to "Je me lance", new_user_registration_path(tab: "personal_info"), class: "btn btn-warning" %>
       <% end %>
