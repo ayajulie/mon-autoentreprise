@@ -49,6 +49,8 @@ gem 'htmltoword', '~> 0.2'
 
 gem 'mimemagic', '~> 0.3.10'
 
+gem "defaults"
+
 
 
 group :development, :test do
