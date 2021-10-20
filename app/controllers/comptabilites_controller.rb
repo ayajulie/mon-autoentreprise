@@ -55,7 +55,7 @@ class ComptabilitesController < ApplicationController
 
   if @comptabilite.nil?
     @comptabilite = 0
-    @comptabilite.chiffre_affaire = 0
+
   else
    @charges_variables = @comptabilite.charges_repartir
     @charges_fixes = 6000
