@@ -40,6 +40,7 @@ class InvoicesController < ApplicationController
       @invoices =0
 
    else
+    @invoices = Invoice.find_by(user:current_user).all
     @invoices.each do |invoice|
       @turn_over += invoice.amount
       @charge_sociale_service = (@turn_over*0.22).round(2)
