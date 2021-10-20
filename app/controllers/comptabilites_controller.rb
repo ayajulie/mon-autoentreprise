@@ -55,6 +55,7 @@ class ComptabilitesController < ApplicationController
 
   if @comptabilite.nil?
     @comptabilite = 0
+    redirect_to new_comptabilite_path
 
   else
    @charges_variables = @comptabilite.charges_repartir
