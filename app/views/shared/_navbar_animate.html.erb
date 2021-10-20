@@ -24,8 +24,9 @@
           <li class="nav-item dropdown">
             <%= link_to "Mes services", invoices_calculate_path( current_user, @invoice), class: "nav-link dropdown-toggle text-primary", id: "navbarDropdown", role: "button",  :"data-toggle"=> "dropdown", :"aria-haspopup"=> "true",  :"aria-expanded"=> "false" %>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "Tableau de bord", invoices_calculate_path( current_user, @invoice), class: "dropdown-item text-warning links" %>
+              <%= link_to "Rentrez des Clients", new_client_path, class: "dropdown-item text-warning links" %>
               <%= link_to "Rentrez des factures", new_invoice_path, class: "dropdown-item text-warning links" %>
+              <%= link_to "Tableau de bord", invoices_calculate_path( current_user, @invoice), class: "dropdown-item text-warning links" %>
               <a class="dropdown-item" href="#">Mes informations</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Mes écheances</a>

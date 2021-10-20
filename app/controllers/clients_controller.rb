@@ -33,6 +33,6 @@ class ClientsController < ApplicationController
 private
 
 def client_params
-  parmas.require(:client).permit(:user_id, :client)
+  params.require(:client).permit(:user_id, :client)
 end
 end

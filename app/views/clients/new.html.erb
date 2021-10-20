@@ -4,10 +4,10 @@
   <div class="container">
     <div class="dashboard-information">
       <%= render "simple_form", clients: @client, locals: { user: @user } %>
+
+      <p> L'ajout de Client permettra de calculer votre chiffre d'affaires.</p>
       <hr>
-      <p> L'ajout de factures permettra de calculer votre chiffre d'affaires.</p>
-      <hr>
-      <%= link_to "Remplissez vos factures", invoice_new_path %>
+      <%= link_to "Remplissez vos factures", new_invoice_path %>
     </div>
   </div>
 </div>
