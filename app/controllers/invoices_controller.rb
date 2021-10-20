@@ -33,7 +33,7 @@ class InvoicesController < ApplicationController
   end
 
   def calculate
-    @invoices = Invoice.all.where(user_id:current_user)
+    @invoices = Invoice.find_by(user:current_user)
 =begin
     @turn_over = 0
     @invoices.each do |invoice|
@@ -49,7 +49,7 @@ class InvoicesController < ApplicationController
     end
 =end
 
-    @turn_over = Invoice.sum(:amount)
+    @turn_over = @invoices.sum(:amount)
     if @turn_over.nil?
       @turn_over=0
     else
