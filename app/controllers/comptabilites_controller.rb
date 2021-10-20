@@ -51,11 +51,9 @@ class ComptabilitesController < ApplicationController
   def calculate
 
 
-    @comptabilite=Comptabilite.find_by(user:current_user)
+    @comptabilite=Comptabilite.all.where(user:current_user)
 
-    @charge = @comptabilite(:charges_repartir)
-
-    if @charge.nil?
+    if @comptabilite.charges_repartir.nil?
         @charges_variables =0
         @charges_fixes = 0
     else
