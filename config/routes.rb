@@ -51,6 +51,7 @@ end
     resources :relances
     resources :miseendemeures, only: [:new, :create]
     resources :achats
+    resources :clients
 
   end
   resources :users, only: [:update] # Pas propre car current_user donc pas besoin d'id mais choisi par Joseph pour faciliter les simple forms

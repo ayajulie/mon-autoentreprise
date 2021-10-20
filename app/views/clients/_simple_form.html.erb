@@ -1,0 +1,24 @@
+
+<%= simple_form_for client do |f| %>
+
+<div class="form-title py-3" style ="width:620px; ">
+    <h2 class="text-warning">Nom de vos Clients</h2>
+
+  </div>
+
+  <table class="table table-sm table-striped" style= "width: 600px; border-style: solid; border-radius: 30px">
+    <tbody>
+      <tr>
+         <td>  <%= f.input :client, label: "Nom du client", class:"form-control" %></td>
+
+      </tr>
+
+
+  </tbody>
+</table>
+
+  <%= f.submit "Générez votre devis", class: "btn btn-warning"%>
+
+
+<% end -%>
+
