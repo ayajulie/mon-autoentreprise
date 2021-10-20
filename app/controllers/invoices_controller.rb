@@ -40,7 +40,7 @@ class InvoicesController < ApplicationController
       @invoices =0
 
    else
-    @invoices = Invoice.all
+    @invoices = Invoice.all.where(user:current_user)
     @turn_over = 0
     @invoices.each do |invoice|
       @turn_over += invoice.amount
