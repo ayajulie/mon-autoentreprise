@@ -41,6 +41,7 @@ class InvoicesController < ApplicationController
 
    else
     @invoices = Invoice.all
+    @turn_over = 0
     @invoices.each do |invoice|
       @turn_over += invoice.amount
       @charge_sociale_service = (@turn_over*0.22).round(2)
