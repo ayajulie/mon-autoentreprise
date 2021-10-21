@@ -41,7 +41,7 @@ class InvoicesController < ApplicationController
       redirect_to new_client_path
 
    else
-    @invoices = Invoice.all.where(user:current_user)
+    @monthly_past_12_months_turnover = Invoice.group_by_month(:invoiced_at).sum(:amount).values.last(12).where(user:current_user)
     @turn_over = 0
     @invoices.each do |invoice|
       @turn_over += invoice.amount
