@@ -43,8 +43,7 @@ class InvoicesController < ApplicationController
    else
     @monthly_past_12_months_turnover = Invoice.where(user:current_user).group_by_month(:invoiced_at).sum(:amount).values.last(12)
     @turn_over = 0
-    @invoices.each do |invoice|
-      @turn_over += invoice.amount
+
       @charge_sociale_service = (@turn_over*0.22).round(2)
       @charge_sociale_vente = (@turn_over*0.12).round(2)
 
