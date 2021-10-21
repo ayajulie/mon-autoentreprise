@@ -33,7 +33,7 @@ const myChart2 = () => {
           }, {
             label: "Année courante",
             backgroundColor: "#edae2f",
-            data: JSON.parse(document.getElementById("myChart2").dataset.monthlyTurnoverPastYear)
+            data: JSON.parse(document.getElementById("myChart2").dataset.turn_over)
           }
         ]
       },
