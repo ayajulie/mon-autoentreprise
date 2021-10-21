@@ -44,7 +44,11 @@ class InvoicesController < ApplicationController
     date = Date.today
     @monthly_past_12_months_turnover = Invoice.where(user:current_user).where(invoiced_at:(date.at_beginning_of_year..date))
 
+
     @turn_over = 0
+     @monthly_past_12_months_turnover.each do |invoice|
+       @turn_over =+ invoice.amount
+     end
 
       @charge_sociale_service = (@turn_over*0.22).round(2)
       @charge_sociale_vente = (@turn_over*0.12).round(2)
