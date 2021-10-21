@@ -51,7 +51,7 @@ class InvoicesController < ApplicationController
       @taxe_chambre_consulaire_vente = (@turn_over*0.0015).round(2)
       @taxe_chambre_consulaire_service = (@turn_over*0.0044).round(2)
       @income_tax_revente = ((@turn_over*0.7)*1.07).round(2)
-      @income_tax_service = ((@turn_over*0.5)).round(2)
+      @income_tax_service = ((@turn_over*0.25)).round(2)
       @tva = (@turn_over*0.20).round(2)
     end
     end
