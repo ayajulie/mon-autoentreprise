@@ -29,11 +29,11 @@ const myChart2 = () => {
           {
             label: "Année précédente",
             backgroundColor: "#0061f2",
-            data: JSON.parse(document.getElementById("myChart2").dataset.monthlyTurnoverPreviousYear)
+            data: JSON.parse(document.getElementById("myChart2").dataset.monthly_past_12_months_turnoverr)
           }, {
             label: "Année courante",
             backgroundColor: "#edae2f",
-            data: JSON.parse(document.getElementById("myChart2").dataset.turn_over)
+            data: JSON.parse(document.getElementById("myChart2").dataset.monthly_past_12_months_turnover)
           }
         ]
       },
