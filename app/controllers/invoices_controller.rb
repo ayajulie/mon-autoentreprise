@@ -38,7 +38,7 @@ class InvoicesController < ApplicationController
 
     if @invoices.nil?
       @invoices =0
-      redirect_to new_client_path
+      redirect_to new_invoice_path
 
    else
     date = Date.today
