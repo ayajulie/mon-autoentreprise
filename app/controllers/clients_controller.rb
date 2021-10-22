@@ -21,7 +21,6 @@ class ClientsController < ApplicationController
     @client.user = current_user
     if @client.save
 
-
       redirect_to new_invoice_path
 
     else
