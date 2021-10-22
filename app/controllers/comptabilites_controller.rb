@@ -61,7 +61,7 @@ class ComptabilitesController < ApplicationController
    @charges_variables = @comptabilite.charges_repartir
     @charges_fixes = 6000
 
-
+    @chiffre_affaires = @turn_over
     @bfr = (@comptabilite.stocks+@comptabilite.creance)-(@comptabilite.dettes_exploitations+@comptabilite.dettes_fiscales)
     @caf = (@comptabilite.resultats+@comptabilite.charges_repartir) - (@comptabilite.achats_marchandises)
     @marge = (@comptabilite.ventes_marchandises-@comptabilite.achats_marchandises)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_19_184212) do
+ActiveRecord::Schema.define(version: 2021_10_22_062554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 2021_10_19_184212) do
     t.integer "ventes_marchandises"
     t.integer "chiffre_affaire"
     t.string "name"
+    t.bigint "invoices_id"
+    t.index ["invoices_id"], name: "index_comptabilites_on_invoices_id"
     t.index ["user_id"], name: "index_comptabilites_on_user_id"
   end
 
@@ -209,6 +211,7 @@ ActiveRecord::Schema.define(version: 2021_10_19_184212) do
   add_foreign_key "achats", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "clients", "users"
+  add_foreign_key "comptabilites", "invoices", column: "invoices_id"
   add_foreign_key "comptabilites", "users"
   add_foreign_key "devis", "users"
   add_foreign_key "invoices", "clients"
