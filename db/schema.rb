@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_22_062554) do
+ActiveRecord::Schema.define(version: 2021_10_22_205303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,11 +50,8 @@ ActiveRecord::Schema.define(version: 2021_10_22_062554) do
   end
 
   create_table "clients", force: :cascade do |t|
-    t.string "client"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_clients_on_user_id"
   end
 
   create_table "comptabilites", force: :cascade do |t|
@@ -110,9 +107,7 @@ ActiveRecord::Schema.define(version: 2021_10_22_062554) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "client_id"
     t.integer "amount"
-    t.index ["client_id"], name: "index_invoices_on_client_id"
     t.index ["user_id"], name: "index_invoices_on_user_id"
   end
 
@@ -210,11 +205,9 @@ ActiveRecord::Schema.define(version: 2021_10_22_062554) do
 
   add_foreign_key "achats", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "clients", "users"
   add_foreign_key "comptabilites", "invoices", column: "invoices_id"
   add_foreign_key "comptabilites", "users"
   add_foreign_key "devis", "users"
-  add_foreign_key "invoices", "clients"
   add_foreign_key "invoices", "users"
   add_foreign_key "miseendemeures", "users"
   add_foreign_key "relances", "users"
