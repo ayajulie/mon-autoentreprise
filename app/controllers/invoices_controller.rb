@@ -33,7 +33,7 @@ class InvoicesController < ApplicationController
   end
 
   def calculate
-    @invoices = Invoice.find_by(user:current_user)
+    @invoices = Invoice.all(user:current_user)
 
 
     if @invoices.nil?
