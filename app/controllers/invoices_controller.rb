@@ -16,7 +16,7 @@ class InvoicesController < ApplicationController
     @invoice = Invoice.new(invoice_params)
     @invoice.user = current_user
     if @invoice.save
-        redirect_to invoices_calculate_path
+        redirect_to invoices_calculate_path(@invoice)
     else
         render "new"
     end
