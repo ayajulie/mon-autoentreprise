@@ -42,7 +42,7 @@ class InvoicesController < ApplicationController
 
    else
     date = Date.today
-    @monthly_past_12_months_turnover = Invoice.where(user:current_user)
+    @monthly_past_12_months_turnover = Invoice.all(user:current_user)
 
 
     @turn_over = 0
