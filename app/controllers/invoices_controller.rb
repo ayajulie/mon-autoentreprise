@@ -53,7 +53,7 @@ class InvoicesController < ApplicationController
       @income_tax_revente = ((@turn_over*0.7)*1.07).round(2)
       @income_tax_service = ((@turn_over*0.25)).round(2)
       @tva = (@turn_over*0.20).round(2)
-    end
+
 
   end
 
