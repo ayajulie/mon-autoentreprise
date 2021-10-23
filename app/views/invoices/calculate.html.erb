@@ -11,7 +11,7 @@
         <div class="dashboard-upper-part-card" style="width: 15%">
           <div><i class="fas fa-chart-line"></i> CA</div>
           <div id="turnover" style="font-size: 1.6rem">
-            <span id="monthly-turnover"><%= @turn_over %> <i class="fas fa-euro-sign"></i> <span class='date-italics'>(<%= @previous_year_month_variation_rate  %>%) <%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Variation par rapport au même chiffre année n-1"></i><% end %></span></span>
+            <span id="monthly-turnover"><%= @monthly_past_12_months_turnover  %> <i class="fas fa-euro-sign"></i> <span class='date-italics'>(<%= @previous_year_month_variation_rate  %>%) <%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Variation par rapport au même chiffre année n-1"></i><% end %></span></span>
             <span id="yearly-turnover" class="d-none"><%= @past_12_months_turnover %> <i class="fas fa-euro-sign"></i> <span class='date-italics'>(<%= @previous_year_past_12_month_variation_rate  %>%) <%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Variation par rapport au même chiffre année n-1"></i><% end %></span></span>
             <span id="exercise-turnover" class="d-none"><%= @current_year_turnover %> <i class="fas fa-euro-sign"></i> <span class='date-italics'>(<%= @previous_year_same_month_exercise_variation_rate  %>%) <%= link_to '#' do %><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Variation par rapport au même chiffre année n-1"></i><% end %></span></span>
           </div>
