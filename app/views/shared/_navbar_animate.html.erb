@@ -11,10 +11,10 @@
             <%= link_to "Créer son activité", company_registration_path(tab: "personal_info"),  class: "nav-link text-primary links" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Créer une relance", relance_new_path(current_user, @relance), class: "nav-link text-primary links" %>
+            <%= link_to "Créer une relance", invoices_calculate_path( current_user, @invoice), class: "nav-link text-primary links" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Faire un devis", new_devi_path(current_user, @devi), class: "nav-link text-primary links" %>
+            <%= link_to "Faire un devis", invoices_calculate_path( current_user, @invoice), class: "nav-link text-primary links" %>
           </li>
           <li class="nav-item">
 
