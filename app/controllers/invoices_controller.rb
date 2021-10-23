@@ -33,7 +33,7 @@ class InvoicesController < ApplicationController
   end
 
   def calculate
-    @invoices = Invoice.all(user:current_user)
+    @invoices = Invoice.find_by(user:current_user)
 
 
     if @invoices.nil?
@@ -42,7 +42,7 @@ class InvoicesController < ApplicationController
 
    else
     date = Date.today
-    @monthly_past_12_months_turnover = Invoice.all(user:current_user)
+    @monthly_past_12_months_turnover = Invoice.select(user:current_user)
 
 
     @turn_over = 0
