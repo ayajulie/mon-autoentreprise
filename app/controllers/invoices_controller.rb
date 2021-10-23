@@ -42,7 +42,7 @@ class InvoicesController < ApplicationController
 
    else
     date = Date.today
-    @invoices = Invoice.find_by(user:current_user)
+    @invoices = Invoice.all.find_by(user:current_user)
 
 
     @turn_over = 0
