@@ -11,10 +11,10 @@
             <%= link_to "Créer son activité", company_registration_path(tab: "personal_info"),  class: "nav-link text-primary links" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Créer une relance", relance_new_path, class: "nav-link text-primary links" %>
+            <%= link_to "Créer une relance", relance_new_path(@user), class: "nav-link text-primary links" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Faire un devis", new_devi_path, class: "nav-link text-primary links" %>
+            <%= link_to "Faire un devis", new_devi_path(@user), class: "nav-link text-primary links" %>
           </li>
           <li class="nav-item">
 
