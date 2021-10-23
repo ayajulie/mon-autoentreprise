@@ -41,12 +41,11 @@ class InvoicesController < ApplicationController
       redirect_to new_invoice_path
 
    else
-    date = Date.today
-    @monthly_past_12_months_turnover = Invoice.select(user:current_user)
+
 
 
     @turn_over = 0
-     @monthly_past_12_months_turnover.each do |invoice|
+    @invoices.each do |invoice|
        @turn_over =+ invoice.amount
      end
 
