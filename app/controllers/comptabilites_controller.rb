@@ -50,6 +50,23 @@ class ComptabilitesController < ApplicationController
 
   def calculate
 
+    @invoices = Invoice.find_by(user:current_user)
+
+
+    if @invoices.nil?
+      @invoices =0
+      redirect_to new_invoice_path
+
+   else
+    date = Date.today
+    @monthly_past_12_months_turnover = Invoice.where(user:current_user).where(invoiced_at:(date.at_beginning_of_year..date))
+
+
+    @turn_over = 0
+     @monthly_past_12_months_turnover.each do |invoice|
+       @turn_over =+ invoice.amount
+     end
+
 
     @comptabilite=Comptabilite.find_by(user:current_user)
 
@@ -61,7 +78,7 @@ class ComptabilitesController < ApplicationController
    @charges_variables = @comptabilite.charges_repartir
     @charges_fixes = 6000
 
-    @chiffre_affaires = @turn_over
+
     @bfr = (@comptabilite.stocks+@comptabilite.creance)-(@comptabilite.dettes_exploitations+@comptabilite.dettes_fiscales)
     @caf = (@comptabilite.resultats+@comptabilite.charges_repartir) - (@comptabilite.achats_marchandises)
     @marge = (@comptabilite.ventes_marchandises-@comptabilite.achats_marchandises)
