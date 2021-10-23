@@ -66,7 +66,7 @@ class ComptabilitesController < ApplicationController
      @monthly_past_12_months_turnover.each do |invoice|
        @turn_over =+ invoice.amount
      end
-
+  end
 
     @comptabilite=Comptabilite.find_by(user:current_user)
 
