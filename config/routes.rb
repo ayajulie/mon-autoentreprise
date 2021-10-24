@@ -48,6 +48,7 @@ end
     resources :comptabilites
 
     resources :devis
+    post '/devis/:id/create', to: 'deviss#create'
     resources :relances
     resources :miseendemeures, only: [:new, :create]
     resources :achats
