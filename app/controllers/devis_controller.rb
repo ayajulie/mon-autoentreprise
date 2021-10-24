@@ -20,7 +20,6 @@ class DevisController < ApplicationController
     @devi = Devi.new(devis_params)
     if @devi.save
       redirect_to dashboard_path
-
     else
       render "new"
     end
@@ -50,7 +49,7 @@ class DevisController < ApplicationController
   private
 
   def devis_params
-    params.require(:devi).permit(:name, :object, :devis_at, :amount, :success)
+    params.require(:devi).permit( :name, :object, :devis_at, :amount, :success, :user_id)
 
   end
 end
