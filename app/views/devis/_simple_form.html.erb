@@ -6,29 +6,26 @@
 
   </div>
 
-  <table class="table table-sm table-striped" style= "width: 600px; border-style: solid">
-    <tbody>
-      <tr>
-         <td>  <%= f.input :name, label: "Nom du client", class:"form-control" %></td>
+ <form>
+      <div class ="form-group">
 
-      </tr>
-       <tr>
-         <td> <%= f.input :amount, label: "Montant", class:"form-control" %></td>
-      </tr>
-      <tr>
-         <td> <%= f.input :object, label: "Objet", class:"form-control" %></td>
-      </tr>
-       <tr>
-         <td> <%= f.input :devis_at, label: "Date du devis", as: :date, html5: true, class:"form-control" %></td>
-       </tr>
+       <%= f.input :name, label: "Nom du client", class:"form-control" %></div>
 
+        <div class ="form-group">
+      <%= f.input :amount, label: "Montant", class:"form-control" %></div>
 
-         <td> <%= f.input :success, label: "Succès du devis", as: :boolean, class:"checkbox_class" %></td>
-       </tr>
+      <div class ="form-group">
+     <%= f.input :object, label: "Objet", class:"form-control" %></div>
+
+       <div class ="form-group">
+       <%= f.input :devis_at, label: "Date du devis", as: :date, html5: true, class:"form-control" %></div>
+
+       <div class ="form-group">
+      <%= f.input :success, label: "Succès du devis", as: :boolean, class:"checkbox_class" %></div>
 
 
-  </tbody>
-</table>
+
+</form>
 
   <%= f.submit "Générez votre devis", class: "btn btn-warning"%>
 
