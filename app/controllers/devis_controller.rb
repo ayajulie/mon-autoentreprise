@@ -18,6 +18,7 @@ class DevisController < ApplicationController
 
   def create
     @devi = Devi.new(devis_params)
+    @devi.user = current_user
     if @devi.save
       redirect_to dashboard_path
     else
