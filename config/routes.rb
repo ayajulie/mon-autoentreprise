@@ -21,10 +21,7 @@ end
     get '/company_registration',  to: 'users#company_registration'
     get '/services',  to: 'pages#services'
     get '/demarches',  to: 'users#demarches'
-    get '/relances/:id', to: 'relances#show', :defaults => { :format => 'docx' }
-    get '/relance/new', to: 'relances#new'
 
-    get '/miseendemeure/:id', to: 'miseendemeures#show', :defaults => { :format => 'docx' }, as: :miseendemeure_show
 
     get '/comptabilites/:id', to: 'comptabilites#show_calculate', :defaults => { :format => 'docx' }, as: :show_calculate
 
@@ -34,7 +31,7 @@ end
     get '/comptabilites/:id/calculate/', to: 'comptabilites#calculate', as: :comptabilites_calculate
     post '/comptabilites/:id/calculate', to: 'comptabilites#calculate'
 
-    get '/relances', to: 'relances#lettre', :defaults => { :format => 'docx' }
+
 
 
 
@@ -47,13 +44,23 @@ end
 
     resources :comptabilites
 
-    resources :devis
-    resources :relances
-    resources :miseendemeures, only: [:new, :create]
+
     resources :achats
     resources :clients
 
   end
+
+    resources :devis
+    resources :relances
+    resources :miseendemeures, only: [:new, :create]
+    get '/relances', to: 'relances#lettre', :defaults => { :format => 'docx' }
+    et '/relances/:id', to: 'relances#show', :defaults => { :format => 'docx' }
+    get '/relance/new', to: 'relances#new'
+
+    get '/miseendemeure/:id', to: 'miseendemeures#show', :defaults => { :format => 'docx' }, as: :miseendemeure_show
+
+
+
   resources :users, only: [:update] # Pas propre car current_user donc pas besoin d'id mais choisi par Joseph pour faciliter les simple forms
    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
