@@ -47,7 +47,7 @@ end
 
     resources :comptabilites
 
-    get '/devis/:id/new', to: 'deviss#new', as: :new_devi_path
+    get '/devis/:id/new', to: 'devis#new', as: :new_devi_path
     post '/devis/:id/create', to: 'deviss#create'
     resources :relances
     resources :miseendemeures, only: [:new, :create]
