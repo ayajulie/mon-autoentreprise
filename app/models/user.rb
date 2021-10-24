@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :miseendemeures
   has_many :relances
   has_many :achats
+  has_many :devis
 
   def form_user_filled?
     first_name.present? && birth_last_name.present? && ssn.present?
