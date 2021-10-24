@@ -40,14 +40,6 @@ class ComptabilitesController < ApplicationController
 
 
 
-  def update
-    @comptabilite = Comptabilite.find(params[:id])
-    @comptabilite.update!(comptabilite_params)
-    redirect_to root_path
-
-  end
-
-
   def calculate
 
     @invoices = Invoice.find_by(user:current_user)
