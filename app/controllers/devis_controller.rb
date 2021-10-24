@@ -50,7 +50,7 @@ class DevisController < ApplicationController
   private
 
   def devis_params
-    params.require(:devi).permit(:name, :objet, :devis_at, :amount, :success)
+    params.require(:devi).permit(:name, :object, :devis_at, :amount, :success)
 
   end
 end
