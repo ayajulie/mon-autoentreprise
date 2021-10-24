@@ -19,10 +19,7 @@ class DevisController < ApplicationController
   def create
     @devi = Devi.new(devis_params)
     if @devi.save
-
-
       redirect_to dashboard_path
-
 
     else
       render "new"
