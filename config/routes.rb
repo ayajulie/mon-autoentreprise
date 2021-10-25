@@ -36,7 +36,7 @@ end
 
     get '/relances', to: 'relances#lettre', :defaults => { :format => 'docx' }
 
-
+   get '/devis/:id', to: 'devis#show', :defaults => { :format => 'docx' }
 
 
     # get '/personal_info', to: 'users#personal_info_users'

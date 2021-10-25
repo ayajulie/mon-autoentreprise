@@ -20,13 +20,26 @@ class DevisController < ApplicationController
     @devi = Devi.new(devis_params)
     @devi.user = current_user
     if @devi.save
-      redirect_to dashboard_path
+      redirect_to devi_path(@devi)
     else
       render "new"
     end
   end
 
+require "sablon"
   def show
+
+ respond_to do |format|
+    format.docx do
+
+template = Sablon.template(File.expand_path("~/code/mon-autoentreprise/lib/assets/modèle_devis.docx"))
+context = {
+  title: "Fabulous Document",
+  technologies: ["Ruby", "HTML", "ODF"]
+}
+template.render_to_file File.expand_path("~/output.docx"), context
+   end
+  end
   end
 
   def edit
