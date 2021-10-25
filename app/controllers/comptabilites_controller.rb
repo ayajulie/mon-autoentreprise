@@ -2,7 +2,7 @@ class ComptabilitesController < ApplicationController
 
 
   skip_before_action :verify_authenticity_token
-
+  attr_accessible :@turn_over
 
 
 
@@ -20,7 +20,7 @@ class ComptabilitesController < ApplicationController
   def create
     @comptabilite = Comptabilite.new(comptabilite_params)
     @comptabilite.user = current_user
-    if @comptabilite.save
+    if @comptabilite.save, notice: "Vos données ont bien été enregistrées"
         redirect_to root_path
     else
         render "new"
