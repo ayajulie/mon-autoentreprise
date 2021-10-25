@@ -1,7 +1,7 @@
 class InvoicesController < ApplicationController
 
 
- attr_accessible :@turn_over
+
 
   def new
     @invoice = Invoice.new
