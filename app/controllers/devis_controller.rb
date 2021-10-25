@@ -26,18 +26,14 @@ class DevisController < ApplicationController
     end
   end
 
-require "sablon"
+
   def show
+
+
 
  respond_to do |format|
     format.docx do
 
-template = Sablon.template(File.expand_path("~/code/mon-autoentreprise/lib/assets/modèle_devis.docx"))
-context = {
-  title: "Fabulous Document",
-  technologies: ["Ruby", "HTML", "ODF"]
-}
-template.render_to_file File.expand_path("~/output.docx"), context
    end
   end
   end
