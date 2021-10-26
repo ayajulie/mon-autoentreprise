@@ -1,22 +1,23 @@
-<%= current_user.use_name %>
-<%= current_user.address %>
-<%= current_user.phone_number %>
+<%= current_user.use_name %><br>
+<%= current_user.address %><br>
+<%= current_user.phone_number %><br>
 
 
+<br>
+<br>
+                                                                                               <%= @miseendemeure.name %><br>
 
-                                                                                               <%= @miseendemeure.name %>
+                                                                                               <%= @miseendemeure.adress %><br>
 
-                                                                                               <%= @miseendemeure.adress %>
+                                                                                               Le <%= @today %><br>
 
-                                                                                               Le <%= @today %>
-
-
-Lettre recommandée avec AR
-Objet : mise en demeure de payer
-
+<br>
+Lettre recommandée avec AR<br>
+Objet : mise en demeure de payer<br>
+<br>
 Madame, Monsieur,
 
-Suites à mes relances restées sans réponse, je reviens vers vous pour obtenir le paiement des factures suivantes :
+Suites à mes relances restées sans réponse, je reviens vers vous pour obtenir le paiement des factures suivantes :<br>
 
 <%= @miseendemeure.refence %>  /   <%= @miseendemeure.day %>   / <%= @miseendemeure.amount %> €
 
@@ -30,7 +31,7 @@ A défaut, nous serons dans l’obligation de saisir les juridictions compétent
 
 Vous devez considérer la présente comme une mise en demeure de nature à faire courir tout droit et intérêt que la loi et les tribunaux attachent aux mises en demeure.
 
-Dans l’attente de votre règlement, veuillez recevoir, Madame, Monsieur, l’expression de nos salutations les meilleures.
+Dans l’attente de votre règlement, veuillez recevoir, Madame, Monsieur, l’expression de nos salutations les meilleures.<br>
 
                                                                                               <%= current_user.use_name %>
 
