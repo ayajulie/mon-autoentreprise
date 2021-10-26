@@ -2,6 +2,10 @@ class DevisController < ApplicationController
 
   def index
     @devis = Devi.where(user:current_user)
+    @somme_devis = 0
+    @devis.each do |devi|
+      @somme_devis =+ devi.amount
+    end
   end
 
 
