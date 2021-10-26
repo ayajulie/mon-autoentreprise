@@ -51,11 +51,6 @@ gem 'mimemagic', '~> 0.3.10'
 
 gem "defaults"
 
-gem 'sablon'
-
-gem 'rubyzip'
-
-gem 'docx_replace'
 
 
 
