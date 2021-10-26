@@ -6,8 +6,6 @@ class DevisController < ApplicationController
 
 
 
-
-
   def new
    @devi = Devi.new
   end
