@@ -1,14 +1,10 @@
 class DevisController < ApplicationController
 
   def index
-    @devis = Devi.all
+    @devis = Devi.where(user:current_user)
   end
 
 
-   def show
-    @devi=Devi.find(params[:id])
-    @devis = Devi.all
-  end
 
 
 
@@ -20,7 +16,7 @@ class DevisController < ApplicationController
     @devi = Devi.new(devis_params)
     @devi.user = current_user
     if @devi.save
-      redirect_to devi_path(@devi)
+      redirect_to devi_path
     else
       render "new"
     end
@@ -29,18 +25,9 @@ class DevisController < ApplicationController
 require "sablon"
   def show
 
- respond_to do |format|
-    format.docx do
 
-template = Sablon.template(File.expand_path("~/code/mon-autoentreprise/lib/assets/modèle_devis.docx"))
-context = {
-  title: "Fabulous Document",
-  technologies: ["Ruby", "HTML", "ODF"]
-}
-template.render_to_file File.expand_path("~/output.docx"), context
-   end
   end
-  end
+
 
   def edit
      @devi = Devi.find(params[:id])
