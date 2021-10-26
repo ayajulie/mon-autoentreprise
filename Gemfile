@@ -53,6 +53,10 @@ gem "defaults"
 
 gem 'sablon'
 
+gem 'rubyzip'
+
+gem 'docx_replace'
+
 
 
 group :development, :test do
