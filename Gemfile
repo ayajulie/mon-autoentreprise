@@ -53,7 +53,7 @@ gem "defaults"
 
 gem 'sablon'
 
-gem 'rubyzip'
+
 
 group :development, :test do
   gem 'pry-byebug'

@@ -109,6 +109,8 @@ GEM
     docx (0.6.2)
       nokogiri (~> 1.10, >= 1.10.4)
       rubyzip (~> 2.0)
+    docx_replace (1.0.0)
+      rubyzip
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
@@ -306,6 +308,7 @@ DEPENDENCIES
   defaults
   devise
   docx
+  docx_replace
   dotenv-rails
   faker!
   font-awesome-sass

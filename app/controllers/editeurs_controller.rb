@@ -1,0 +1,2 @@
+class EditeursController < ApplicationController
+end
