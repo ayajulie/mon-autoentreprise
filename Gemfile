@@ -51,6 +51,7 @@ gem 'mimemagic', '~> 0.3.10'
 
 gem "defaults"
 
+gem 'excon'
 
 
 
