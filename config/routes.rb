@@ -39,6 +39,9 @@ end
 
   get '/devis/:id/show/', to: 'devis#show', as: :devi_show
 
+  get '/devis/search', to: 'devis#search', as: :devi_search
+
+
 
     # get '/personal_info', to: 'users#personal_info_users'
     # get '/company_info', to: 'users#company_info_users'
