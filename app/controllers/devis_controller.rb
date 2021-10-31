@@ -26,17 +26,11 @@ class DevisController < ApplicationController
 
   end
 
-  include HTTParty
 
-  BASE_URL = https://api.datainfogreffe.fr/api/v1/Entreprise/notapme/performance/
-  KEY = ENV[DATA_KEY]
 
-  def query
-    request = HTTParty.get(BASE_URL+@search_format+KEY).to_json
-  end
 
-  def initialize(user_serach_input)
-    @search_format= "q=#{user_serach_input.gsub}"
+  def search
+   @resultat= find_with(params[:siren])
   end
 
   def edit
@@ -59,14 +53,20 @@ class DevisController < ApplicationController
 
   private
 
-  key = ENV[DATA_KEY]
+
+
+  KEY = ENV['DATA_KEY']
+
 
   def devis_params
     params.require(:devi).permit( :name, :object, :devis_at, :amount, :success, :user_id)
 
   end
 
-  def url
-    @url = https://api.datainfogreffe.fr/api/v1/Entreprise/notapme/performance/{id}?token={key}
+  def find_with(siren)
+    @request = HTTParty.get('https://api.datainfogreffe.fr/api/v1/Entreprise/notapme/performance/(siren)?api_key=KEY')
+    @result = JSON.parse(@request.body)
   end
+
+
 end

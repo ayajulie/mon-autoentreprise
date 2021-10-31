@@ -53,6 +53,7 @@ gem "defaults"
 
 gem 'excon'
 
+gem 'httparty'
 
 
 group :development, :test do
