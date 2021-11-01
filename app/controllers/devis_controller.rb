@@ -15,7 +15,7 @@ class DevisController < ApplicationController
     @devi = Devi.new(devis_params)
     @devi.user = current_user
     if @devi.save
-      redirect_to devi_path
+      redirect_to devi_path, notice: "Votre devis a été enregistré"
     else
       render "new"
     end
@@ -31,6 +31,10 @@ class DevisController < ApplicationController
 
   def search
    @resultat= find_with(params[:siren])
+   redirect_to resultat_devi_path(@resultat)
+  end
+
+  def resultat
   end
 
   def edit
@@ -64,7 +68,7 @@ class DevisController < ApplicationController
   end
 
   def find_with(siren)
-    @request = HTTParty.get('https://api.datainfogreffe.fr/api/v1/Entreprise/notapme/performance/(siren)?api_key=KEY')
+    @request = HTTParty.get('https://api.datainfogreffe.fr/api/v1/Entreprise/notapme/performance/348925959?millesime=2020?token=Cag6ok3nx3iukTpSChY5adOxrdbz6dz6irnJzT5jvdiPQEDNEZdCcthqfvH7Rjs')
     @result = JSON.parse(@request.body)
   end
 
