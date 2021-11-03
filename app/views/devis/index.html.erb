@@ -7,6 +7,15 @@
         <div class='mt-6 py-2'>
           <div class="dashboard-upper-part-card px-0" style="width: 95%">
             <table class="table">
+               <thead>
+            <tr>
+             <th style="border-top: 0px; font-size: 1.2rem"> Nom du devis</th>
+             <th style="border-top: 0px; font-size: 1.2rem"> Montant</th>
+             <th style="border-top: 0px; font-size: 1.2rem"> Date du devis</th>
+             <th style="border-top: 0px; font-size: 1.2rem"> Succès du devis</th>
+             <th style="border-top: 0px; font-size: 1.2rem"> Retour</th>
+            </tr>
+            </thead>
             <tbody>
               <% @devis.each do |devi| %>
               <tr>

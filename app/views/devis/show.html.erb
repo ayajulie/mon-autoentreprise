@@ -3,10 +3,21 @@
 
 <div class="row pt-4 d-flex justify-content-between my-0 py-0">
       <div class="col-12 dashboard-chart-card">
+
         <div class='mb-2' style="font-size: 1.5rem">VOS devis </div>
         <div class='mt-6 py-2'>
           <div class="dashboard-upper-part-card px-0" style="width: 95%">
+
             <table class="table">
+            <thead>
+            <tr>
+             <th style="border-top: 0px; font-size: 1.2rem"> Nom du devis</th>
+             <th style="border-top: 0px; font-size: 1.2rem"> Montant</th>
+             <th style="border-top: 0px; font-size: 1.2rem"> Date du devis</th>
+             <th style="border-top: 0px; font-size: 1.2rem"> Succès du devis</th>
+             <th style="border-top: 0px; font-size: 1.2rem"> Retour</th>
+            </tr>
+            </thead>
             <tbody>
               <% @devis.each do |devi| %>
               <tr>
