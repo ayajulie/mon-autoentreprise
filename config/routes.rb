@@ -41,7 +41,7 @@ end
 
   get '/devis/search', to: 'devis#search', as: :devi_search
 
-   get '/devis/resultat', to: 'devis#resultat', as: :resultat_devi
+  get '/devis/resultat', to: 'devis#resultat', as: :resultat_devi
 
 
 
