@@ -27,7 +27,9 @@ class DevisController < ApplicationController
   end
 
 
-
+  def success
+    @devi=Devi.find(params[:id])
+  end
 
   def search
    @resultat= find_with(params[:siren])

@@ -1,0 +1,2 @@
+class ControledegestionsController < ApplicationController
+end

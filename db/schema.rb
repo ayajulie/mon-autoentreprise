@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_073122) do
+ActiveRecord::Schema.define(version: 2021_11_04_185806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,17 @@ ActiveRecord::Schema.define(version: 2021_10_26_073122) do
     t.bigint "invoices_id"
     t.index ["invoices_id"], name: "index_comptabilites_on_invoices_id"
     t.index ["user_id"], name: "index_comptabilites_on_user_id"
+  end
+
+  create_table "controle_de_gestions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "cost"
+    t.integer "variable_cost"
+    t.integer "unit_cost"
+    t.integer "budget"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_controle_de_gestions_on_user_id"
   end
 
   create_table "devis", force: :cascade do |t|
@@ -215,6 +226,7 @@ ActiveRecord::Schema.define(version: 2021_10_26_073122) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comptabilites", "invoices", column: "invoices_id"
   add_foreign_key "comptabilites", "users"
+  add_foreign_key "controle_de_gestions", "users"
   add_foreign_key "devis", "users"
   add_foreign_key "editeurs", "users"
   add_foreign_key "invoices", "users"
