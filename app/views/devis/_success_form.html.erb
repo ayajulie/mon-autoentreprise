@@ -1,0 +1,28 @@
+
+<%= simple_form_for devi do |f| %>
+
+
+    <h2 class="text-warning">Le suuccès devis</h2>
+
+
+<div class="container">
+
+ <form class="form-inline">
+      <div class ="form-group">
+
+
+      <div class ="form-group">
+  <%= f.checkbox :success, label: "Succès du devis",  input_html: { class:'form-control' } %></div>
+
+
+
+</form>
+
+  <%= f.submit "Générez votre devis", class: "btn btn-warning"%>
+
+</div>
+
+
+<% end -%>
+
+
