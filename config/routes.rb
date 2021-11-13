@@ -59,6 +59,7 @@ end
     resources :miseendemeures, only: [:new, :create]
     resources :achats
     resources :clients
+    resources :controledegestions
 
   end
 

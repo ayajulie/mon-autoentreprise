@@ -1,1 +1,20 @@
-new.html.erb
+<%= render 'shared/navbar_sansachat' %>
+
+<div class="dashboard-content">
+  <div class="container">
+    <div class="dashboard-information">
+      <%= render "simple_form", controledegestion: @controledegestion  %>
+      <br>
+
+
+      <p> L'ajout de devis permettra de calculer votre chiffre d'affaires.</p>
+
+      <hr>
+      <%= link_to "Back to index", root_path, class:"btn btn-warning"  %>
+      <%= link_to "Voir mes devis", devis_path(@user), class:"btn btn-warning" %>
+       <%= link_to "Chercher le sérieux de mon cocontractant", devi_search_path, class:"btn btn-warning" %>
+    </div>
+  </div>
+</div>
+
+

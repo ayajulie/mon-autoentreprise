@@ -1,0 +1,33 @@
+
+<%= simple_form_for controledegestion do |f| %>
+
+
+    <h2 class="text-warning">Créer votre devis</h2>
+
+
+<div class="container">
+
+ <form class="form-inline">
+      <div class ="form-group">
+
+       <%= f.input :name, label: "Nom du client", class:"form-control" %></div>
+
+        <div class ="form-group">
+      <%= f.input :amount, label: "Montant", class:"form-control" %></div>
+
+      <div class ="form-group">
+     <%= f.input :object, label: "Objet", class:"form-control" %></div>
+
+      <div class ="form-group">
+      &nbsp;  <%= f.input :devis_at, label: "Date du devis", as: :date, html5: true, input_html: { class:'form-control' } %></div>
+
+
+
+</form>
+
+  <%= f.submit "Générez votre devis", class: "btn btn-warning"%>
+
+</div>
+
+
+<% end -%>
