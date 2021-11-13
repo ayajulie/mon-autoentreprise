@@ -45,23 +45,6 @@ class ComptabilitesController < ApplicationController
     @invoices = Invoice.find_by(user:current_user)
 
 
-    if @invoices.nil?
-      @invoices =0
-      redirect_to new_invoice_path
-
-   else
-    date = Date.today
-    @monthly_past_12_months_turnover = Invoice.all.where(user:current_user).where(invoiced_at:(date.at_beginning_of_year..date))
-
-
-    @turn_over = 0
-     @monthly_past_12_months_turnover.each do |invoice|
-       @turn_over =+ invoice.amount
-     end
-  end
-
-    @comptabilite=Comptabilite.find_by(user:current_user)
-
   if @comptabilite.nil?
     @comptabilite = 0
     redirect_to new_comptabilite_path
