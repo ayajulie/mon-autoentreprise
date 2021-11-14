@@ -1,7 +1,7 @@
 class ControledegestionsController < ApplicationController
 
   def new
-    @controledegestion= ControledeGestion.new
+    @controledegestion= ControleDeGestion.new
   end
 
   def create

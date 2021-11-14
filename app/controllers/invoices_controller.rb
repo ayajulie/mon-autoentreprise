@@ -43,7 +43,7 @@ class InvoicesController < ApplicationController
    else
 
     @turn_over = Invoice.where(user_id: current_user).sum(:amount)
-     end
+
 
       @charge_sociale_service = (@turn_over*0.22).round(2)
       @charge_sociale_vente = (@turn_over*0.12).round(2)
@@ -54,7 +54,7 @@ class InvoicesController < ApplicationController
       @income_tax_service = ((@turn_over*0.25)).round(2)
       @tva = (@turn_over*0.20).round(2)
 
-
+   end
   end
 
 
