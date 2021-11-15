@@ -1,10 +1,18 @@
 class ControledegestionsController < ApplicationController
 
   def new
-    @controledegestion= ControleDeGestion.new
+    @controledegestion = ControleDeGestion.new()
   end
 
   def create
+    @controledegestion= ControleDeGestion.new(set_params)
+    @controledegestion.user = current_user
+    if @controledegestion.save
+        redirect_to achat_path(@achat)
+    else
+        render "new"
+    end
+
   end
 
   def calculate

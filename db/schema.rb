@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_13_080047) do
+ActiveRecord::Schema.define(version: 2021_11_15_110344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,18 @@ ActiveRecord::Schema.define(version: 2021_11_13_080047) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_editeurs_on_user_id"
+  end
+
+  create_table "gestions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "invoice_id", null: false
+    t.integer "cost"
+    t.integer "variable_cost"
+    t.integer "unit_cost"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["invoice_id"], name: "index_gestions_on_invoice_id"
+    t.index ["user_id"], name: "index_gestions_on_user_id"
   end
 
   create_table "invoices", force: :cascade do |t|
@@ -226,6 +238,8 @@ ActiveRecord::Schema.define(version: 2021_11_13_080047) do
   add_foreign_key "controle_de_gestions", "users"
   add_foreign_key "devis", "users"
   add_foreign_key "editeurs", "users"
+  add_foreign_key "gestions", "invoices"
+  add_foreign_key "gestions", "users"
   add_foreign_key "invoices", "users"
   add_foreign_key "miseendemeures", "users"
   add_foreign_key "relances", "users"
